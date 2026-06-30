@@ -16,10 +16,6 @@ export default function HomePage() {
       {/* Section 1: Hero — Interactive Enterprise Map */}
       <section id="hero" className="min-h-screen flex items-center border-b border-zinc-900">
         <div className="max-w-7xl mx-auto px-6 py-24 w-full">
-          <div className="flex items-center gap-2 mb-8">
-            <div className="w-1.5 h-1.5 rounded-full bg-red-600" />
-            <span className="text-zinc-500 text-xs uppercase tracking-widest">Phase 1 — Hero + Enterprise Map</span>
-          </div>
           <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight mb-6">
             Cybersecurity Isn&apos;t One Service.<br />
             <span className="text-red-600">It&apos;s a Continuously Engineered Journey.</span>
