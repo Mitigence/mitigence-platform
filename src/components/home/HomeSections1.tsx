@@ -8,7 +8,6 @@ import {
   staggerContainer,
   staggerItem,
   slideInLeft,
-  slideInRight,
   slowTransition,
 } from '@/lib/animations'
 
@@ -35,15 +34,15 @@ function InViewSection({ children, className }: { children: React.ReactNode; cla
 // Section 2 — Why Security Is Different
 // ---------------------------------------------------------------------------
 const stats = [
-  { value: '68%', label: 'of breaches involve a non-malicious human element' },
+  { value: '68%', label: 'of breaches involve a human element — not just malware' },
   { value: '277 days', label: 'average time to identify and contain a data breach' },
-  { value: '$3.86M', label: 'average cost of a data breach globally' },
+  { value: '$4.88M', label: 'average cost of a data breach globally in 2024' },
 ]
 
 const bullets = [
-  'Threats evolve faster than annual assessments',
-  'Compliance is a floor, not a ceiling',
-  "Point solutions don't add up to a security program",
+  'Engineering, not just advice — we design, implement, and validate',
+  'Vendor-neutral by design — no product commissions, no hidden agendas',
+  'Lifecycle delivery — from assessment through continuous improvement',
 ]
 
 function WhySecuritySection() {
@@ -61,7 +60,7 @@ function WhySecuritySection() {
         >
           <div className="w-8 h-0.5 bg-red-600 mb-6" />
           <h2 className="text-3xl font-bold text-white mb-12">
-            Security Has Become More Connected—and More Complex.
+            Security Has Become More Connected — and More Complex.
           </h2>
         </motion.div>
 
@@ -126,38 +125,43 @@ function WhySecuritySection() {
 }
 
 // ---------------------------------------------------------------------------
-// Section 3 — Explore Your Digital Enterprise
+// Section 3 — The 5 Pillars
 // ---------------------------------------------------------------------------
-const domainCards = [
+const pillars = [
   {
-    title: 'Cloud Infrastructure',
-    description: 'Secure your cloud environments across IaaS, PaaS, and SaaS workloads.',
-    href: '/solutions/cloud',
+    number: '01',
+    title: 'Assess',
+    description:
+      'Understand your risk surface before committing to controls. Infrastructure assessments, penetration testing, architecture reviews, maturity evaluations, and threat modeling.',
+    href: '/solutions/assess',
   },
   {
-    title: 'Applications & APIs',
-    description: 'Identify vulnerabilities in code, APIs, and web-facing services.',
-    href: '/solutions/applications',
+    number: '02',
+    title: 'Engineer',
+    description:
+      'Design and implement security that fits your actual architecture. Vendor-neutral engineering across cloud, identity, network, application, and data security.',
+    href: '/solutions/engineer',
   },
   {
-    title: 'Identity & Access',
-    description: 'Control who has access to what — and eliminate privilege sprawl.',
-    href: '/solutions/identity',
+    number: '03',
+    title: 'Validate',
+    description:
+      'Test what was built. Verify what was claimed. Fix what is broken. Configuration validation, control testing, health checks, and deployment verification.',
+    href: '/solutions/validate',
   },
   {
-    title: 'Network & Perimeter',
-    description: 'Defend your network edge, segmentation, and east-west traffic.',
-    href: '/solutions/network',
+    number: '04',
+    title: 'Operate',
+    description:
+      'Continuous monitoring, detection engineering, incident readiness, and operational optimization — keeping your program running and improving.',
+    href: '/solutions/operate',
   },
   {
-    title: 'Endpoints & Devices',
-    description: 'Protect every device — managed, unmanaged, and remote.',
-    href: '/solutions/endpoints',
-  },
-  {
-    title: 'Security Monitoring',
-    description: 'Gain visibility across your environment with continuous detection.',
-    href: '/solutions/monitoring',
+    number: '05',
+    title: 'Evolve',
+    description:
+      'Strategic roadmaps, maturity improvement programs, vCISO advisory, and long-term partnerships that grow your security posture over time.',
+    href: '/solutions/evolve',
   },
 ]
 
@@ -176,11 +180,11 @@ function ExploreEnterpriseSection() {
         >
           <div className="w-8 h-0.5 bg-red-600 mb-6" />
           <h2 className="text-3xl font-bold text-white mb-4">
-            Every organization is different. Start with what you&apos;re protecting.
+            One Platform. Five Outcomes.
           </h2>
           <p className="text-zinc-400 text-base mb-12 max-w-2xl">
-            Security programs are built around domains — not generic checklists. Choose the area
-            most relevant to your environment and see how Mitigence approaches it.
+            Every Mitigence engagement maps to one or more of these pillars. Start where your
+            program needs it most.
           </p>
         </motion.div>
 
@@ -190,28 +194,48 @@ function ExploreEnterpriseSection() {
           initial="initial"
           animate={inView ? 'animate' : 'initial'}
         >
-          {domainCards.map((card) => (
+          {pillars.map((pillar) => (
             <motion.div
-              key={card.title}
+              key={pillar.title}
               variants={staggerItem}
               transition={slowTransition}
             >
               <Link
-                href={card.href}
-                className="group block bg-zinc-900 border border-zinc-800 hover:border-red-600/50 rounded-lg p-6 transition-colors duration-200"
+                href={pillar.href}
+                className="group block bg-zinc-900 border border-zinc-800 hover:border-red-600/50 rounded-lg p-6 transition-colors duration-200 h-full"
               >
-                {/* Icon placeholder */}
-                <div className="w-10 h-10 rounded-md bg-red-600/10 border border-red-600/20 mb-5 flex items-center justify-center">
-                  <div className="w-4 h-4 rounded-sm bg-red-600/60" />
+                <div className="text-xs font-bold text-red-600 tracking-widest mb-3">
+                  {pillar.number}
                 </div>
-                <h3 className="text-white font-semibold text-base mb-2 group-hover:text-red-500 transition-colors">
-                  {card.title}
+                <h3 className="text-white font-bold text-xl mb-3 group-hover:text-red-500 transition-colors tracking-tight">
+                  {pillar.title}
                 </h3>
-                <p className="text-zinc-500 text-sm leading-relaxed mb-4">{card.description}</p>
-                <span className="text-red-600 text-sm font-medium">Explore →</span>
+                <p className="text-zinc-500 text-sm leading-relaxed mb-4">{pillar.description}</p>
+                <span className="text-red-600 text-sm font-medium">Explore {pillar.title} →</span>
               </Link>
             </motion.div>
           ))}
+          {/* Sixth card — CTA */}
+          <motion.div variants={staggerItem} transition={slowTransition}>
+            <Link
+              href="/consultation"
+              className="group block bg-red-600/5 border border-red-600/20 hover:bg-red-600/10 hover:border-red-600/40 rounded-lg p-6 transition-colors duration-200 h-full flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-8 h-0.5 bg-red-600 mb-6" />
+                <h3 className="text-white font-bold text-xl mb-3">
+                  Not sure where to start?
+                </h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">
+                  Talk to a Mitigence engineer. No sales script — a focused conversation about
+                  your environment and objectives.
+                </p>
+              </div>
+              <span className="text-red-500 text-sm font-medium mt-6 block">
+                Book a strategy session →
+              </span>
+            </Link>
+          </motion.div>
         </motion.div>
       </div>
     </section>
@@ -219,24 +243,28 @@ function ExploreEnterpriseSection() {
 }
 
 // ---------------------------------------------------------------------------
-// Section 4 — Discover Your Attack Surface
+// Section 4 — Why Traditional Security Programs Fail
 // ---------------------------------------------------------------------------
-const threatCategories = [
+const failurePoints = [
   {
-    title: 'External Attack Surface',
-    description: 'Internet-facing assets, exposed services, shadow IT',
+    title: 'Fragmented Vendors',
+    description:
+      'Tools purchased in isolation. No integration, no shared context, no unified program.',
   },
   {
-    title: 'Identity Risk',
-    description: 'Credential exposure, privilege sprawl, MFA gaps',
+    title: 'Compliance-Only Focus',
+    description:
+      'Passing audits is not the same as being secure. Checkbox security leaves real gaps uncovered.',
   },
   {
-    title: 'Application Vulnerabilities',
-    description: 'Code flaws, misconfigurations, dependency risks',
+    title: 'Reports Without Engineering',
+    description:
+      'Assessments that find problems but provide no path to fix them. Findings that sit in a PDF.',
   },
   {
-    title: 'Operational Gaps',
-    description: 'Unpatched systems, detection blind spots, response delays',
+    title: 'Black-Box Delivery',
+    description:
+      'No visibility into scope, timelines, or progress. You pay and wait — then receive a document.',
   },
 ]
 
@@ -245,7 +273,7 @@ function AttackSurfaceSection() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="attack-surface" className="border-b border-zinc-900 py-24 bg-black">
+    <section id="why-programs-fail" className="border-b border-zinc-900 py-24 bg-black">
       <div className="max-w-7xl mx-auto px-6" ref={ref}>
         <motion.div
           variants={fadeInUp}
@@ -254,9 +282,11 @@ function AttackSurfaceSection() {
           transition={slowTransition}
         >
           <div className="w-8 h-0.5 bg-red-600 mb-6" />
-          <h2 className="text-3xl font-bold text-white mb-3">Discover Your Attack Surface</h2>
+          <h2 className="text-3xl font-bold text-white mb-3">
+            Why Most Security Programs Don&apos;t Deliver
+          </h2>
           <p className="text-zinc-400 text-base mb-12 max-w-xl">
-            Before you can defend it, you need to see it.
+            The problem is rarely the budget. It&apos;s the approach.
           </p>
         </motion.div>
 
@@ -266,9 +296,9 @@ function AttackSurfaceSection() {
           initial="initial"
           animate={inView ? 'animate' : 'initial'}
         >
-          {threatCategories.map((cat, i) => (
+          {failurePoints.map((point, i) => (
             <motion.div
-              key={cat.title}
+              key={point.title}
               variants={staggerItem}
               transition={{ ...slowTransition, delay: i * 0.08 }}
               className="bg-zinc-950 border border-zinc-800 rounded-lg p-6"
@@ -276,13 +306,12 @@ function AttackSurfaceSection() {
               <div className="text-xs font-semibold text-red-600 uppercase tracking-widest mb-3">
                 0{i + 1}
               </div>
-              <h3 className="text-white font-semibold text-sm mb-3 leading-snug">{cat.title}</h3>
-              <p className="text-zinc-500 text-xs leading-relaxed">{cat.description}</p>
+              <h3 className="text-white font-semibold text-sm mb-3 leading-snug">{point.title}</h3>
+              <p className="text-zinc-500 text-xs leading-relaxed">{point.description}</p>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* CTA row */}
         <motion.div
           className="flex items-center gap-4"
           variants={fadeInUp}
@@ -291,13 +320,13 @@ function AttackSurfaceSection() {
           transition={{ ...slowTransition, delay: 0.4 }}
         >
           <p className="text-zinc-400 text-sm">
-            Not sure where to start? Start with what&apos;s exposed.
+            Mitigence addresses all four. Engineering-led, transparent, and outcome-driven.
           </p>
           <Link
-            href="/solutions/applications"
+            href="/platform"
             className="text-red-600 hover:text-red-500 text-sm font-medium transition-colors whitespace-nowrap"
           >
-            See Application Security →
+            See how we work →
           </Link>
         </motion.div>
       </div>
@@ -306,25 +335,33 @@ function AttackSurfaceSection() {
 }
 
 // ---------------------------------------------------------------------------
-// Section 5 — Build Your Security Program
+// Section 5 — The Mitigence Approach (5-phase journey)
 // ---------------------------------------------------------------------------
 const phases = [
   {
     number: '01',
-    name: 'UNDERSTAND',
-    description: 'Map your environment, assess your risks, establish your baseline.',
+    name: 'ASSESS',
+    description: 'Map your environment, evaluate risks, and establish your security baseline.',
   },
   {
     number: '02',
     name: 'ENGINEER',
-    description:
-      'Design and implement controls built for your specific architecture.',
+    description: 'Design and implement controls built for your specific architecture.',
   },
   {
     number: '03',
+    name: 'VALIDATE',
+    description: 'Test controls, verify configurations, and confirm deployment effectiveness.',
+  },
+  {
+    number: '04',
     name: 'OPERATE',
-    description:
-      'Continuous monitoring, improvement cycles, and transparent delivery.',
+    description: 'Continuous monitoring, detection engineering, and operational readiness.',
+  },
+  {
+    number: '05',
+    name: 'EVOLVE',
+    description: 'Strategic roadmaps, maturity programs, and long-term security improvement.',
   },
 ]
 
@@ -342,54 +379,46 @@ function SecurityProgramSection() {
           transition={slowTransition}
         >
           <div className="w-8 h-0.5 bg-red-600 mb-6" />
-          <h2 className="text-3xl font-bold text-white mb-4">Build Your Security Program</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">The Mitigence Approach</h2>
           <p className="text-zinc-400 text-base mb-16 max-w-2xl">
-            A real security program has three interlocking phases. Most vendors only address one.
+            A structured journey from initial assessment to continuous improvement. Every engagement
+            follows this framework — tailored to your environment at each stage.
           </p>
         </motion.div>
 
-        {/* Timeline */}
         <motion.div
           className="relative"
           variants={staggerContainer}
           initial="initial"
           animate={inView ? 'animate' : 'initial'}
         >
-          {/* Connecting line (desktop) */}
-          <div className="hidden md:block absolute top-8 left-[calc(16.67%-1px)] right-[calc(16.67%-1px)] h-px bg-zinc-800 z-0" />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6 relative z-10">
             {phases.map((phase, i) => (
               <motion.div
                 key={phase.name}
                 variants={staggerItem}
-                transition={{ ...slowTransition, delay: i * 0.15 }}
+                transition={{ ...slowTransition, delay: i * 0.12 }}
                 className="flex flex-col"
               >
-                {/* Number badge */}
-                <div className="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center mb-6 text-white font-bold text-lg flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center mb-5 text-white font-bold text-sm flex-shrink-0">
                   {phase.number}
                 </div>
-                <div className="text-xs font-bold text-red-600 uppercase tracking-widest mb-2">
-                  Phase {phase.number}
-                </div>
-                <h3 className="text-white font-bold text-xl mb-3 tracking-tight">{phase.name}</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">{phase.description}</p>
+                <h3 className="text-white font-bold text-base mb-2 tracking-wider">{phase.name}</h3>
+                <p className="text-zinc-400 text-xs leading-relaxed">{phase.description}</p>
               </motion.div>
             ))}
           </div>
         </motion.div>
 
-        {/* Footer copy + link */}
         <motion.div
           className="mt-16 pt-8 border-t border-zinc-900 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
           variants={fadeInUp}
           initial="initial"
           animate={inView ? 'animate' : 'initial'}
-          transition={{ ...slowTransition, delay: 0.6 }}
+          transition={{ ...slowTransition, delay: 0.7 }}
         >
           <p className="text-zinc-300 text-base">
-            Mitigence manages all three phases — together, not in silos.
+            Mitigence covers all five stages — together, not in silos.
           </p>
           <Link
             href="/platform"

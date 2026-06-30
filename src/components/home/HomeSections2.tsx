@@ -24,26 +24,29 @@ function useScrollRef() {
 }
 
 /* ─────────────────────────────────────────
-   Section 6 — Build Your Cybersecurity Team
+   Section 6 — The Expertise Behind Every Engagement
 ───────────────────────────────────────── */
 
 const teamRoles = [
   {
     title: 'Security Architects',
-    description: 'Design resilient security frameworks across your full stack.',
-  },
-  {
-    title: 'Penetration Testers',
-    description: 'Adversarial testing that finds what automated tools miss.',
-  },
-  {
-    title: 'Compliance Engineers',
-    description: 'Translate regulatory requirements into operational controls.',
-  },
-  {
-    title: 'Detection Engineers',
     description:
-      'Build detection logic tuned to your environment, not generic rulesets.',
+      'Design resilient security programs across cloud, identity, network, and application environments. Architecture that reflects your actual risk profile.',
+  },
+  {
+    title: 'Offensive Security Specialists',
+    description:
+      'Penetration testers, red team operators, and application security assessors who find what automated tools miss.',
+  },
+  {
+    title: 'Security Operations Engineers',
+    description:
+      'Detection engineers, SOC builders, and threat hunters who turn monitoring into operational capability.',
+  },
+  {
+    title: 'Security Advisors',
+    description:
+      'vCISO-level guidance, governance frameworks, security strategy, and board-level advisory for organizations that need executive security leadership.',
   },
 ]
 
@@ -55,10 +58,11 @@ function TeamBuilderSection() {
       <div className="max-w-7xl mx-auto px-6">
         <RedAccentLine />
         <h2 className="text-3xl font-bold text-white mb-3">
-          Build Your Cybersecurity Team
+          The Expertise Behind Every Engagement
         </h2>
         <p className="text-zinc-400 text-lg mb-12 max-w-2xl">
-          The right expertise, scoped to your environment.
+          Mitigence brings the right specialists to your program — without the overhead of building
+          a full internal team.
         </p>
 
         <motion.div
@@ -94,14 +98,14 @@ function TeamBuilderSection() {
           className="flex flex-col sm:flex-row sm:items-center gap-4"
         >
           <p className="text-zinc-400 max-w-xl">
-            Mitigence brings specialized roles to your program — without the
-            overhead of building a full internal team.
+            Every engagement is staffed with engineers who have done this work — not generalists
+            reading from a playbook.
           </p>
           <a
             href="/engineering"
             className="shrink-0 text-red-500 hover:text-red-400 font-medium transition-colors whitespace-nowrap"
           >
-            Explore engineering roles →
+            Explore our capabilities →
           </a>
         </motion.div>
       </div>
@@ -117,27 +121,27 @@ const lifecycleSteps = [
   {
     number: '01',
     name: 'DISCOVER',
-    description: 'Asset inventory, threat modeling, gap analysis',
+    description: 'Asset inventory, threat modeling, gap analysis, and risk prioritization',
   },
   {
     number: '02',
     name: 'DESIGN',
-    description: 'Architecture review, control mapping, roadmap creation',
+    description: 'Security architecture, control mapping, and program roadmap creation',
   },
   {
     number: '03',
     name: 'IMPLEMENT',
-    description: 'Hands-on engineering, configuration, integration',
+    description: 'Hands-on engineering, configuration, integration, and hardening',
   },
   {
     number: '04',
     name: 'VALIDATE',
-    description: 'Testing, red team exercises, control verification',
+    description: 'Testing, red team exercises, control verification, and health checks',
   },
   {
     number: '05',
     name: 'IMPROVE',
-    description: 'Continuous monitoring, retrospectives, program evolution',
+    description: 'Continuous monitoring, optimization cycles, and program evolution',
   },
 ]
 
@@ -155,8 +159,8 @@ function EngineeringLifecycleSection() {
           The Engineering Lifecycle
         </h2>
         <p className="text-zinc-400 text-lg mb-16 max-w-2xl">
-          A structured process that turns security goals into engineered
-          outcomes — from discovery through continuous improvement.
+          A structured process that turns security goals into engineered outcomes — from discovery
+          through continuous improvement.
         </p>
 
         <motion.div
@@ -177,7 +181,7 @@ function EngineeringLifecycleSection() {
               className="relative flex gap-6 pb-10 last:pb-0"
             >
               {/* Step number circle */}
-              <div className="relative z-10 shrink-0 w-10 h-10 rounded-full bg-black border border-red-600 flex items-center justify-center hidden sm:flex">
+              <div className="relative z-10 shrink-0 w-10 h-10 rounded-full bg-black border border-red-600 items-center justify-center hidden sm:flex">
                 <span className="text-red-600 text-xs font-bold">
                   {step.number}
                 </span>
@@ -204,27 +208,33 @@ function EngineeringLifecycleSection() {
 }
 
 /* ─────────────────────────────────────────
-   Section 8 — Delivery Models
+   Section 8 — How We Engage (4 Delivery Models)
 ───────────────────────────────────────── */
 
 const deliveryModels = [
   {
-    badge: 'One-time',
+    badge: 'One-Time',
     title: 'Project Engagements',
     description:
-      'Scoped, time-bound engagements for specific assessments, implementations, or audits. Clear deliverables, defined timelines.',
-  },
-  {
-    badge: 'Monthly',
-    title: 'Retainer Programs',
-    description:
-      'Ongoing security engineering support on a monthly basis. Priority access, recurring deliverables, continuous improvement.',
+      'Fixed-scope engagements for defined security objectives — assessments, implementations, architecture reviews, and validations. Clear milestones, defined deliverables, formal project governance.',
   },
   {
     badge: 'Ongoing',
-    title: 'Embedded Engineering',
+    title: 'Managed Engineering Programs',
     description:
-      'Mitigence engineers work alongside your team — integrated into sprints, pipelines, and operations.',
+      'Continuous engineering support with scheduled reviews, health checks, configuration validation, and operational optimization. Strategic advisory included. Recurring engineering cadence.',
+  },
+  {
+    badge: 'Integrated',
+    title: 'Embedded Security Engineering',
+    description:
+      'Mitigence engineers work directly alongside your team — integrated into sprints, pipelines, and operations. Flexible duration, knowledge transfer included, works with your existing staff.',
+  },
+  {
+    badge: 'Executive',
+    title: 'Strategic Advisory Programs',
+    description:
+      'vCISO-level guidance for organizations that need executive security leadership without a full-time hire. Covers governance, board advisory, security strategy, roadmap development, and investment prioritization.',
   },
 ]
 
@@ -239,11 +249,10 @@ function DeliveryModelsSection() {
       <div className="max-w-7xl mx-auto px-6">
         <RedAccentLine />
         <h2 className="text-3xl font-bold text-white mb-3">
-          Choose How You&apos;d Like to Work With Us
+          Choose How You&apos;d Like to Engage
         </h2>
         <p className="text-zinc-400 text-lg mb-12 max-w-2xl">
-          Every organization engages differently. Pick the model that fits
-          your program.
+          Every organization has different needs and buying patterns. Mitigence works within yours.
         </p>
 
         <motion.div
@@ -251,7 +260,7 @@ function DeliveryModelsSection() {
           variants={staggerContainer}
           initial="initial"
           animate={inView ? 'animate' : 'initial'}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
           {deliveryModels.map((model) => (
             <motion.div
@@ -294,34 +303,34 @@ function DeliveryModelsSection() {
 
 const capabilities = [
   {
-    title: 'Application Security',
-    description: 'Code review, SAST/DAST, API security, secure SDLC',
-    href: '/solutions/applications',
+    title: 'Security Assessments',
+    description: 'Infrastructure, cloud, application, identity, and endpoint security assessments',
+    href: '/solutions/assess',
   },
   {
-    title: 'Cloud Security',
-    description: 'Architecture review, IAM, misconfiguration remediation',
-    href: '/solutions/cloud',
+    title: 'Penetration Testing',
+    description: 'External, internal, web, mobile, API, network, and red team exercises',
+    href: '/solutions/assess',
   },
   {
-    title: 'Identity & Access',
-    description: 'MFA, PAM, SSO, directory hardening',
-    href: '/solutions/identity',
+    title: 'Security Architecture',
+    description: 'Zero Trust design, enterprise security architecture, hybrid infrastructure',
+    href: '/solutions/engineer',
   },
   {
-    title: 'Security Monitoring',
-    description: 'SIEM tuning, detection rules, alert triage',
-    href: '/solutions/monitoring',
+    title: 'Security Operations',
+    description: 'SOC build, detection engineering, use case development, threat hunting',
+    href: '/solutions/operate',
   },
   {
-    title: 'Endpoint Protection',
-    description: 'EDR configuration, policy hardening, response playbooks',
-    href: '/solutions/endpoints',
+    title: 'Incident Response',
+    description: 'IR planning, tabletop exercises, cyber crisis simulation, ransomware readiness',
+    href: '/solutions/operate',
   },
   {
-    title: 'Network Security',
-    description: 'Segmentation, firewall review, traffic analysis',
-    href: '/solutions/network',
+    title: 'Security Validation',
+    description: 'Control validation, health checks, post-implementation reviews, remediation validation',
+    href: '/solutions/validate',
   },
 ]
 
@@ -339,8 +348,7 @@ function CapabilityExplorerSection() {
           Explore Security Capabilities
         </h2>
         <p className="text-zinc-400 text-lg mb-12 max-w-2xl">
-          Not every organization needs the same controls. Explore by what
-          matters to you.
+          Not every organization needs the same controls. Explore by what matters to your program.
         </p>
 
         <motion.div

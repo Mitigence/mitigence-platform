@@ -4,28 +4,28 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { staggerContainer, staggerItem, fadeInUp } from '@/lib/animations'
 
-// ─── Section 10: Customer Workspace ──────────────────────────────────────────
+// ─── Section 10: Transparent Delivery ────────────────────────────────────────
 
 const workspaceFeatures = [
   {
     title: 'Live Project Dashboard',
     description:
-      'Track milestones, deliverables, and engineering progress in real time.',
+      'Track milestones, deliverables, and engineering progress in real time — not via a quarterly report.',
   },
   {
     title: 'Findings & Remediation',
     description:
-      'Prioritized findings with engineering guidance, not just a PDF report.',
+      'Prioritized findings with engineering guidance. Not just a PDF — a path to resolution.',
   },
   {
-    title: 'Team Communication',
+    title: 'Direct Engineer Access',
     description:
-      'Direct access to your Mitigence engineers — not a ticketing queue.',
+      'Direct access to your Mitigence engineers throughout the engagement. Not a ticketing queue.',
   },
   {
-    title: 'Improvement Roadmap',
+    title: 'Living Security Roadmap',
     description:
-      'A living roadmap that evolves with your security program.',
+      'A roadmap that evolves as your program matures — updated at every review cycle.',
   },
 ]
 
@@ -34,7 +34,7 @@ function CustomerWorkspace() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="customer-workspace" className="border-b border-zinc-900 py-24 bg-black">
+    <section id="transparent-delivery" className="border-b border-zinc-900 py-24 bg-black">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           ref={ref}
@@ -48,8 +48,8 @@ function CustomerWorkspace() {
             Your Security Journey, Visible at Every Stage
           </h2>
           <p className="text-zinc-400 text-lg max-w-2xl mb-12">
-            No more black boxes. Mitigence gives your team real-time visibility
-            into every engagement.
+            No more black boxes. You see the scope, the timeline, the progress, and the outcomes —
+            throughout the entire engagement.
           </p>
         </motion.div>
 
@@ -84,14 +84,14 @@ function CustomerWorkspace() {
           transition={{ duration: 0.4, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
           className="flex flex-col sm:flex-row sm:items-center gap-3"
         >
-          <p className="text-zinc-600 text-sm italic">
-            Coming in Phase 4 — Early access available for active engagements.
+          <p className="text-zinc-500 text-sm">
+            Transparent delivery is built into every engagement model — not an add-on.
           </p>
           <a
             href="/consultation"
             className="text-red-500 hover:text-red-400 text-sm font-medium transition-colors whitespace-nowrap"
           >
-            Request early access →
+            Talk to an engineer →
           </a>
         </motion.div>
       </div>
@@ -99,32 +99,32 @@ function CustomerWorkspace() {
   )
 }
 
-// ─── Section 11: Success Stories ─────────────────────────────────────────────
+// ─── Section 11: Outcomes ─────────────────────────────────────────────────────
 
-const successStories = [
+const outcomeStories = [
   {
     industry: 'Financial Services',
     challenge:
-      'Gaps in privileged access controls and insufficient detection coverage across a hybrid environment.',
+      'Privileged access sprawl across a hybrid environment, with insufficient detection coverage and high alert fatigue.',
     outcome:
-      'PAM implementation, detection rule library built, 40% reduction in alert fatigue.',
-    tags: ['Identity', 'Monitoring'],
+      'Identity architecture redesigned, PAM controls implemented, detection rule library built — alert fatigue reduced, coverage extended across hybrid environment.',
+    tags: ['Identity', 'Detection Engineering'],
   },
   {
     industry: 'Healthcare',
     challenge:
-      'Legacy systems with unpatched vulnerabilities and no formal incident response process.',
+      'Legacy systems with unpatched vulnerabilities and no formal incident response process, creating compliance and operational risk.',
     outcome:
-      'Vulnerability program established, IR playbooks deployed, compliance posture improved.',
-    tags: ['Endpoints', 'Compliance'],
+      'Vulnerability management program established, incident response playbooks deployed, security posture aligned to compliance requirements.',
+    tags: ['Vulnerability Management', 'IR Readiness'],
   },
   {
     industry: 'Technology',
     challenge:
-      'Rapid cloud expansion without security architecture review, exposing critical APIs.',
+      'Rapid cloud expansion without security architecture review — APIs exposed, IAM misconfigured, attack surface growing faster than controls.',
     outcome:
-      'Cloud security architecture designed, API gateway hardened, attack surface reduced by 60%.',
-    tags: ['Cloud', 'Applications'],
+      'Cloud security architecture designed, API security hardened, IAM posture corrected — attack surface systematically reduced.',
+    tags: ['Cloud Security', 'Application Security'],
   },
 ]
 
@@ -133,7 +133,7 @@ function SuccessStories() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="success-stories" className="border-b border-zinc-900 py-24 bg-black">
+    <section id="outcomes" className="border-b border-zinc-900 py-24 bg-black">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           ref={ref}
@@ -144,10 +144,10 @@ function SuccessStories() {
         >
           <div className="w-8 h-0.5 bg-red-600 mb-6" />
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Organizations That Chose a Different Path
+            What Structured Security Engineering Achieves
           </h2>
           <p className="text-zinc-400 text-lg max-w-2xl mb-12">
-            Real engagements. Measurable outcomes.
+            Representative outcomes from the kind of programs Mitigence is built to deliver.
           </p>
         </motion.div>
 
@@ -157,12 +157,12 @@ function SuccessStories() {
           variants={staggerContainer}
           className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10"
         >
-          {successStories.map((story) => (
+          {outcomeStories.map((story) => (
             <motion.div
               key={story.industry}
               variants={staggerItem}
               transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
-              className="bg-zinc-900 rounded-lg border border-zinc-800 border-t-2 border-t-red-600 overflow-hidden hover:border-zinc-700 transition-colors flex flex-col"
+              className="bg-zinc-900 rounded-lg border-t-2 border border-zinc-800 border-t-red-600 overflow-hidden hover:border-zinc-700 transition-colors flex flex-col"
             >
               <div className="p-6 flex flex-col gap-4 flex-1">
                 <span className="text-red-500 text-xs font-semibold uppercase tracking-widest">
@@ -206,10 +206,10 @@ function SuccessStories() {
           transition={{ duration: 0.4, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <a
-            href="/success-stories"
+            href="/consultation"
             className="text-zinc-300 hover:text-white text-sm font-medium transition-colors"
           >
-            View all success stories →
+            Discuss your security objectives →
           </a>
         </motion.div>
       </div>
@@ -224,22 +224,22 @@ const knowledgeResources = [
     label: 'GUIDE',
     title: 'Building a Security Program From Scratch',
     description:
-      'A structured approach to understanding your risks, selecting controls, and building a continuous improvement cycle.',
-    href: '/knowledge/architecture',
+      'A structured approach to understanding your risks, selecting the right controls, and building a continuous improvement cycle.',
+    href: '/knowledge/security-program',
   },
   {
     label: 'FRAMEWORK',
     title: 'The Mitigence Engineering Lifecycle',
     description:
-      'How Mitigence approaches security engagements — from discovery to deployment to ongoing improvement.',
-    href: '/knowledge/cloud',
+      'How Mitigence structures security engagements — from discovery through deployment and continuous improvement.',
+    href: '/knowledge/engineering-lifecycle',
   },
   {
-    label: 'RESEARCH',
-    title: 'Identity Security in 2025: What\'s Actually Working',
+    label: 'GUIDE',
+    title: 'Vendor-Neutral Security Architecture',
     description:
-      'Patterns from real engagements: what identity controls are reducing risk and what\'s still failing.',
-    href: '/knowledge/identity',
+      'How to evaluate, select, and integrate security platforms based on your requirements — not a vendor relationship.',
+    href: '/knowledge/vendor-neutral-architecture',
   },
 ]
 
@@ -259,10 +259,10 @@ function KnowledgeCenter() {
         >
           <div className="w-8 h-0.5 bg-red-600 mb-6" />
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            What Would You Like to Understand?
+            Practical Security Knowledge
           </h2>
           <p className="text-zinc-400 text-lg max-w-2xl mb-12">
-            Practical cybersecurity knowledge from engineers who build security programs.
+            Written by engineers who build security programs — not marketing copy.
           </p>
         </motion.div>
 
