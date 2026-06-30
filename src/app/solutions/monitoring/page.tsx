@@ -1,19 +1,56 @@
-﻿import type { Metadata } from 'next'
-import { PageShell } from '@/components/layout/PageShell'
+import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Security Monitoring',
-  description: 'Visibility, detection, correlation, investigation, and response — engineered and optimised by Mitigence.',
-  alternates: {
-    canonical: '/solutions/monitoring',
-  },
+  title: "Security Monitoring — Mitigence",
+  description: "Visibility, detection, and response built for continuous operations. Discovery, assessment, engineering, and continuous improvement.",
+  alternates: { canonical: "/solutions/monitoring" },
 }
 
-export default function MonitoringPage() {
+export default function SolutionsMonitoringPage() {
   return (
-    <PageShell
-      title="Security Monitoring"
-      description="Visibility, detection, correlation, investigation, and response. Mitigence engineers and optimises your monitoring capability — from log collection and SIEM tuning through use-case development and operational runbooks."
-    />
+    <main className="min-h-screen pt-24 bg-black">
+      <div className="max-w-3xl mx-auto px-6 py-16">
+        <div className="w-8 h-0.5 bg-red-600 mb-6" />
+        <h1 className="text-4xl font-bold text-white mb-4">Security Monitoring</h1>
+        <p className="text-zinc-400 text-lg mb-12 leading-relaxed">Visibility, detection, and response built for continuous operations.</p>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+          <div>
+            <h2 className="text-white font-semibold text-xs uppercase tracking-wide mb-4">Common challenges</h2>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-2 text-zinc-400 text-sm"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-600 flex-shrink-0" />Log collection gaps across critical systems</li>
+              <li className="flex items-start gap-2 text-zinc-400 text-sm"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-600 flex-shrink-0" />Detection rules that were never tuned for the environment</li>
+              <li className="flex items-start gap-2 text-zinc-400 text-sm"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-600 flex-shrink-0" />Alert volumes that overwhelm analyst teams</li>
+              <li className="flex items-start gap-2 text-zinc-400 text-sm"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-600 flex-shrink-0" />No defined response process for common alert types</li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="text-white font-semibold text-xs uppercase tracking-wide mb-4">Business risk</h2>
+            <p className="text-zinc-400 text-sm leading-relaxed">Without effective monitoring, attackers can dwell in an environment for weeks or months before detection. Average dwell time in environments without dedicated monitoring programs is measured in hundreds of days.</p>
+          </div>
+        </div>
+
+        <div className="rounded-lg border border-zinc-800 bg-zinc-950 p-6 mb-10">
+          <h2 className="text-white font-semibold text-xs uppercase tracking-wide mb-4">How Mitigence helps</h2>
+          <ol className="space-y-3">
+            <li className="flex items-center gap-3"><span className="w-7 h-7 rounded-full bg-red-600 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">1</span><span className="text-zinc-300 text-sm">Visibility Assessment</span></li>
+              <li className="flex items-center gap-3"><span className="w-7 h-7 rounded-full bg-red-600 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">2</span><span className="text-zinc-300 text-sm">Log Source Onboarding</span></li>
+              <li className="flex items-center gap-3"><span className="w-7 h-7 rounded-full bg-red-600 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">3</span><span className="text-zinc-300 text-sm">Detection Engineering</span></li>
+              <li className="flex items-center gap-3"><span className="w-7 h-7 rounded-full bg-red-600 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">4</span><span className="text-zinc-300 text-sm">Tuning & Optimization</span></li>
+              <li className="flex items-center gap-3"><span className="w-7 h-7 rounded-full bg-red-600 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">5</span><span className="text-zinc-300 text-sm">Analyst Runbook Development</span></li>
+          </ol>
+        </div>
+
+        <div className="flex flex-wrap gap-4">
+          <Link href="/platform/engineer/engagement-studio" className="bg-red-600 hover:bg-red-700 text-white font-medium px-5 py-2.5 rounded-lg text-sm transition-colors">
+            Design an engagement &rarr;
+          </Link>
+          <Link href="/consultation" className="border border-zinc-800 hover:border-zinc-700 text-zinc-300 hover:text-white font-medium px-5 py-2.5 rounded-lg text-sm transition-colors">
+            Talk to a specialist
+          </Link>
+        </div>
+      </div>
+    </main>
   )
 }

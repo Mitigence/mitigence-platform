@@ -1,19 +1,47 @@
-﻿import type { Metadata } from 'next'
-import { PageShell } from '@/components/layout/PageShell'
+import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Security Optimization',
-  description: 'Security engineering doesn\'t end at deployment — Mitigence continuously optimises configurations and tunes detection logic.',
-  alternates: {
-    canonical: '/engineering/optimization',
-  },
+  title: "Security Optimization",
+  description: "Improve control effectiveness, reduce noise, and close gaps that emerge over time.",
+  alternates: { canonical: "/engineering/optimization" },
 }
 
-export default function OptimizationPage() {
+export default function EngineeringOptimizationPage() {
   return (
-    <PageShell
-      title="Security Optimization"
-      description="Security engineering doesn't end at deployment. Mitigence continuously optimises configurations, tunes detection logic, updates policies, and improves operational efficiency as your environment evolves."
-    />
+    <main className="min-h-screen pt-24 bg-black">
+      <div className="max-w-3xl mx-auto px-6 py-16">
+        <div className="w-8 h-0.5 bg-red-600 mb-6" />
+        <h1 className="text-4xl font-bold text-white mb-4">Security Optimization</h1>
+        <p className="text-zinc-400 text-lg mb-12 leading-relaxed">After controls are in place, the work shifts from deployment to optimization. Detection rules need tuning, coverage gaps emerge, and the threat landscape keeps changing. Optimization is the ongoing discipline of keeping a security program effective.</p>
+
+        <h2 className="text-white font-semibold mb-4">What this covers</h2>
+        <ul className="space-y-3 mb-10">
+          <li className="flex items-start gap-2 text-zinc-400 text-sm"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-zinc-600 flex-shrink-0" />Detection tuning to reduce false positives and improve signal quality</li>
+              <li className="flex items-start gap-2 text-zinc-400 text-sm"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-zinc-600 flex-shrink-0" />Attack surface reduction through privilege cleanup and exposure management</li>
+              <li className="flex items-start gap-2 text-zinc-400 text-sm"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-zinc-600 flex-shrink-0" />Tool consolidation and rationalization</li>
+              <li className="flex items-start gap-2 text-zinc-400 text-sm"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-zinc-600 flex-shrink-0" />Continuous coverage gap analysis against MITRE ATT&CK</li>
+              <li className="flex items-start gap-2 text-zinc-400 text-sm"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-zinc-600 flex-shrink-0" />Performance benchmarking against peer organizations</li>
+        </ul>
+
+        <div className="rounded-lg border border-zinc-800 bg-zinc-950 p-6 mb-10">
+          <h3 className="text-white font-semibold text-xs uppercase tracking-wide mb-4">Typical deliverables</h3>
+          <ul className="space-y-2">
+                <li key="Optimization Report" className="flex items-start gap-2 text-zinc-400 text-sm"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-600 flex-shrink-0" />Optimization Report</li>
+                <li key="Updated Configurations" className="flex items-start gap-2 text-zinc-400 text-sm"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-600 flex-shrink-0" />Updated Configurations</li>
+                <li key="Coverage Analysis" className="flex items-start gap-2 text-zinc-400 text-sm"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-600 flex-shrink-0" />Coverage Analysis</li>
+          </ul>
+        </div>
+
+        <div className="flex flex-wrap gap-4">
+          <Link href="/platform/engineer/engagement-studio" className="bg-red-600 hover:bg-red-700 text-white font-medium px-5 py-2.5 rounded-lg text-sm transition-colors">
+            Design an engagement &rarr;
+          </Link>
+          <Link href="/consultation" className="border border-zinc-800 hover:border-zinc-700 text-zinc-300 hover:text-white font-medium px-5 py-2.5 rounded-lg text-sm transition-colors">
+            Talk to a specialist
+          </Link>
+        </div>
+      </div>
+    </main>
   )
 }

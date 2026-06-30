@@ -1,19 +1,55 @@
-﻿import type { Metadata } from 'next'
-import { PageShell } from '@/components/layout/PageShell'
+import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Identity Security',
-  description: 'Identity is the new perimeter. Mitigence architects, deploys, validates, and continuously optimises identity security controls.',
-  alternates: {
-    canonical: '/solutions/identity',
-  },
+  title: "Identity — Mitigence",
+  description: "Identity and access services governing who can reach what, and how. Discovery, assessment, engineering, and continuous improvement.",
+  alternates: { canonical: "/solutions/identity" },
 }
 
-export default function IdentityPage() {
+export default function SolutionsIdentityPage() {
   return (
-    <PageShell
-      title="Identity Security"
-      description="Identity is the new perimeter. Mitigence architects, deploys, validates, and continuously optimises identity security controls — from directory hardening and PAM to zero-trust access and conditional policy."
-    />
+    <main className="min-h-screen pt-24 bg-black">
+      <div className="max-w-3xl mx-auto px-6 py-16">
+        <div className="w-8 h-0.5 bg-red-600 mb-6" />
+        <h1 className="text-4xl font-bold text-white mb-4">Identity</h1>
+        <p className="text-zinc-400 text-lg mb-12 leading-relaxed">Identity and access services governing who can reach what, and how.</p>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+          <div>
+            <h2 className="text-white font-semibold text-xs uppercase tracking-wide mb-4">Common challenges</h2>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-2 text-zinc-400 text-sm"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-600 flex-shrink-0" />Excess standing privilege across users and services</li>
+              <li className="flex items-start gap-2 text-zinc-400 text-sm"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-600 flex-shrink-0" />Weak or inconsistent MFA enforcement</li>
+              <li className="flex items-start gap-2 text-zinc-400 text-sm"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-600 flex-shrink-0" />Orphaned accounts and stale access grants</li>
+              <li className="flex items-start gap-2 text-zinc-400 text-sm"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-600 flex-shrink-0" />Fragmented identity across SaaS and on-prem</li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="text-white font-semibold text-xs uppercase tracking-wide mb-4">Business risk</h2>
+            <p className="text-zinc-400 text-sm leading-relaxed">Identity compromise is the most common entry point in modern breaches — it bypasses most perimeter controls outright.</p>
+          </div>
+        </div>
+
+        <div className="rounded-lg border border-zinc-800 bg-zinc-950 p-6 mb-10">
+          <h2 className="text-white font-semibold text-xs uppercase tracking-wide mb-4">How Mitigence helps</h2>
+          <ol className="space-y-3">
+            <li className="flex items-center gap-3"><span className="w-7 h-7 rounded-full bg-red-600 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">1</span><span className="text-zinc-300 text-sm">Assessment</span></li>
+              <li className="flex items-center gap-3"><span className="w-7 h-7 rounded-full bg-red-600 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">2</span><span className="text-zinc-300 text-sm">Architecture</span></li>
+              <li className="flex items-center gap-3"><span className="w-7 h-7 rounded-full bg-red-600 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">3</span><span className="text-zinc-300 text-sm">Engineering</span></li>
+              <li className="flex items-center gap-3"><span className="w-7 h-7 rounded-full bg-red-600 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">4</span><span className="text-zinc-300 text-sm">Operational Readiness</span></li>
+          </ol>
+        </div>
+
+        <div className="flex flex-wrap gap-4">
+          <Link href="/platform/engineer/engagement-studio" className="bg-red-600 hover:bg-red-700 text-white font-medium px-5 py-2.5 rounded-lg text-sm transition-colors">
+            Design an engagement &rarr;
+          </Link>
+          <Link href="/consultation" className="border border-zinc-800 hover:border-zinc-700 text-zinc-300 hover:text-white font-medium px-5 py-2.5 rounded-lg text-sm transition-colors">
+            Talk to a specialist
+          </Link>
+        </div>
+      </div>
+    </main>
   )
 }
