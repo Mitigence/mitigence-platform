@@ -1,0 +1,64 @@
+{
+  "models": [
+    {
+      "id": "assessment",
+      "name": "One-Time Assessment",
+      "tagline": "Understand your risk surface before you commit to a broader program.",
+      "description": "A focused engagement to assess a specific area — application, cloud, identity, or infrastructure. Delivers a clear findings report with prioritized recommendations.",
+      "team": ["Lead Consultant", "Security Analyst", "Testing Specialist"],
+      "timeline": "4–8 weeks",
+      "collaboration": ["Kickoff Workshop", "Weekly Status Updates", "Findings Presentation"],
+      "deliverables": ["Assessment Report", "Risk Register", "Remediation Roadmap", "Executive Summary"],
+      "reporting": ["Findings Report at completion", "Optional interim update at midpoint"],
+      "bestFor": "Organizations starting a security program or evaluating a specific technology or domain."
+    },
+    {
+      "id": "project",
+      "name": "Project Delivery",
+      "tagline": "Build and implement the controls your environment needs.",
+      "description": "A scoped engineering engagement with defined deliverables, milestones, and timelines. Covers assessment, design, engineering, validation, and knowledge transfer.",
+      "team": ["Security Architect", "Security Engineer", "Integration Specialist", "Project Lead"],
+      "timeline": "8–20 weeks",
+      "collaboration": ["Kickoff Workshop", "Weekly Engineering Reviews", "Milestone Reviews", "Knowledge Transfer Sessions"],
+      "deliverables": ["Engineering Workplan", "Architecture Design", "Deployed Controls", "Configuration Documentation", "Validation Report", "Knowledge Transfer Package"],
+      "reporting": ["Weekly status reports", "Milestone completion summaries", "Final delivery report"],
+      "bestFor": "Organizations with a defined security objective requiring expert engineering delivery."
+    },
+    {
+      "id": "dedicated-team",
+      "name": "Dedicated Specialists",
+      "tagline": "Embedded expertise that works as an extension of your team.",
+      "description": "Dedicated Mitigence specialists embedded into your team on a defined schedule. Provides ongoing engineering, operational support, and continuous improvement.",
+      "team": ["Security Architect", "Security Engineers", "SOC Analysts", "Threat Hunter"],
+      "timeline": "3-month minimum, typically 6–12 months",
+      "collaboration": ["Weekly Engineering Reviews", "Monthly Steering Meetings", "On-demand consultation"],
+      "deliverables": ["Monthly Security Report", "Continuous Engineering Output", "Quarterly Roadmap", "Operational Improvements"],
+      "reporting": ["Weekly engineering updates", "Monthly security report", "Quarterly strategic review"],
+      "bestFor": "Organizations that need consistent security engineering without a full internal team."
+    },
+    {
+      "id": "managed-operations",
+      "name": "Managed Engineering Program",
+      "tagline": "Continuous security operations managed by Mitigence engineers.",
+      "description": "A fully managed security engineering service covering monitoring, detection engineering, incident response, and continuous improvement across your environment.",
+      "team": ["Program Manager", "Security Architects", "SOC Analysts", "Threat Hunters", "Incident Responders"],
+      "timeline": "Ongoing",
+      "collaboration": ["Weekly Operational Reviews", "Monthly Executive Reviews", "Quarterly Planning Sessions"],
+      "deliverables": ["Monthly Security Report", "Detection Coverage Report", "Incident Retrospectives", "Quarterly Roadmap", "Annual Program Review"],
+      "reporting": ["Weekly operational digest", "Monthly executive report", "Quarterly strategic briefing"],
+      "bestFor": "Organizations seeking continuous security operations without building an in-house team."
+    },
+    {
+      "id": "advisory",
+      "name": "Strategic Advisory Program",
+      "tagline": "Senior expertise to guide your program at the strategic level.",
+      "description": "Ongoing vCISO or security advisory relationship providing guidance on program strategy, risk governance, board reporting, and vendor evaluation.",
+      "team": ["Principal Consultant", "Security Architect"],
+      "timeline": "Ongoing (6+ months)",
+      "collaboration": ["Bi-weekly advisory sessions", "Board and leadership briefings", "Strategic workshops"],
+      "deliverables": ["Security Strategy Document", "Risk Register", "Board-level Reporting", "Technology Roadmap"],
+      "reporting": ["Monthly advisory summaries", "Quarterly board briefing support"],
+      "bestFor": "Organizations that need strategic security leadership rather than engineering delivery."
+    }
+  ]
+}

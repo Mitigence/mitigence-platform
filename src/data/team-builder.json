@@ -1,0 +1,93 @@
+{
+  "pods": [
+    {
+      "id": "assessment",
+      "name": "Assessment Pod",
+      "description": "Evaluates your environment, identifies gaps, and establishes your security baseline.",
+      "deliverables": ["Risk Assessment Report", "Vulnerability Findings", "Prioritized Remediation Plan"],
+      "specialists": [
+        { "id": "lead-consultant", "role": "Lead Consultant", "description": "Leads the assessment, coordinates findings, produces the executive summary." },
+        { "id": "security-analyst", "role": "Security Analyst", "description": "Performs technical testing, validates findings, documents evidence." },
+        { "id": "testing-specialist", "role": "Testing Specialist", "description": "Executes penetration tests, red-team simulations, and validation checks." }
+      ],
+      "engagementImpact": {
+        "deliveryModel": "Project Engagement",
+        "collaborationPattern": "Fixed-term sprint with weekly reviews and discovery workshops",
+        "estimatedDuration": "4–8 weeks",
+        "deliverables": ["Assessment Report", "Findings Register", "Executive Briefing", "Remediation Roadmap"]
+      },
+      "compatiblePods": ["engineering", "architecture"]
+    },
+    {
+      "id": "engineering",
+      "name": "Engineering Pod",
+      "description": "Designs, implements, and validates security controls across your environment.",
+      "deliverables": ["Architecture Design", "Deployed Controls", "Configuration Documentation", "Validation Report"],
+      "specialists": [
+        { "id": "architect", "role": "Security Architect", "description": "Designs the control architecture and reviews implementation decisions." },
+        { "id": "engineer", "role": "Security Engineer", "description": "Implements, configures, and tests controls in your environment." },
+        { "id": "integration-specialist", "role": "Integration Specialist", "description": "Connects security controls into your existing tooling and workflows." }
+      ],
+      "engagementImpact": {
+        "deliveryModel": "Project Engagement or Dedicated Specialists",
+        "collaborationPattern": "Embedded delivery with bi-weekly steering and structured handoff",
+        "estimatedDuration": "8–16 weeks",
+        "deliverables": ["Engineering Workplan", "Deployed Controls", "Configuration Baseline", "Knowledge Transfer Package"]
+      },
+      "compatiblePods": ["assessment", "operations", "architecture"]
+    },
+    {
+      "id": "operations",
+      "name": "Operations Pod",
+      "description": "Provides continuous monitoring, detection engineering, and operational support.",
+      "deliverables": ["Detection Rulesets", "Monitoring Coverage Report", "Incident Response Runbooks"],
+      "specialists": [
+        { "id": "soc-analyst", "role": "SOC Analyst", "description": "Monitors alerts, triages incidents, and operates detection tools." },
+        { "id": "threat-hunter", "role": "Threat Hunter", "description": "Conducts proactive hunts for adversary activity and attacker techniques." },
+        { "id": "incident-responder", "role": "Incident Responder", "description": "Investigates and contains security incidents end-to-end." }
+      ],
+      "engagementImpact": {
+        "deliveryModel": "Managed Engineering Program",
+        "collaborationPattern": "Ongoing service with weekly operational reviews and monthly reporting",
+        "estimatedDuration": "Ongoing (3-month minimum)",
+        "deliverables": ["Monthly Security Report", "Detection Coverage Summary", "Incident Retrospectives", "Quarterly Roadmap"]
+      },
+      "compatiblePods": ["engineering", "incident-response"]
+    },
+    {
+      "id": "incident-response",
+      "name": "Incident Response Pod",
+      "description": "Prepares your team for incidents and responds when they happen.",
+      "deliverables": ["IR Playbooks", "Tabletop Exercise Report", "Post-Incident Review"],
+      "specialists": [
+        { "id": "ir-lead", "role": "IR Lead", "description": "Commands response operations, communicates with leadership, and owns the post-incident review." },
+        { "id": "forensics-analyst", "role": "Digital Forensics Analyst", "description": "Analyzes affected systems, traces attack paths, and preserves evidence." },
+        { "id": "ir-engineer", "role": "Response Engineer", "description": "Implements containment, eradication, and recovery measures." }
+      ],
+      "engagementImpact": {
+        "deliveryModel": "Project Engagement or Retainer",
+        "collaborationPattern": "Retainer for readiness; activate on-demand for live incidents",
+        "estimatedDuration": "Retainer or incident-scoped",
+        "deliverables": ["IR Plan", "Playbooks", "Tabletop Exercise", "Response Retainer SLA"]
+      },
+      "compatiblePods": ["operations", "assessment"]
+    },
+    {
+      "id": "architecture",
+      "name": "Architecture Pod",
+      "description": "Provides strategic security architecture guidance and program design.",
+      "deliverables": ["Security Architecture Blueprint", "Capability Roadmap", "Reference Designs"],
+      "specialists": [
+        { "id": "principal-architect", "role": "Principal Architect", "description": "Defines the strategic security architecture and provides advisory-level guidance." },
+        { "id": "solutions-architect", "role": "Solutions Architect", "description": "Translates architecture decisions into technical designs and reference implementations." }
+      ],
+      "engagementImpact": {
+        "deliveryModel": "Strategic Advisory Program",
+        "collaborationPattern": "Advisory cadence with structured workshops and architecture reviews",
+        "estimatedDuration": "Ongoing advisory or 12-week program",
+        "deliverables": ["Architecture Blueprint", "Capability Gap Analysis", "Technology Roadmap", "Design Reviews"]
+      },
+      "compatiblePods": ["assessment", "engineering"]
+    }
+  ]
+}

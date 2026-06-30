@@ -1,0 +1,94 @@
+{
+  "phases": [
+    {
+      "id": "assess",
+      "name": "ASSESS",
+      "order": 1,
+      "description": "Understand the current state before making any changes.",
+      "inputs": ["Asset inventory", "Existing tooling and configurations", "Business context and risk appetite"],
+      "activities": ["Infrastructure assessment", "Control gap analysis", "Risk prioritization", "Stakeholder discovery"],
+      "deliverables": ["Assessment Report", "Risk Register", "Prioritized Finding List"],
+      "customerTouchpoints": ["Kickoff workshop", "Discovery interviews", "Findings review meeting"]
+    },
+    {
+      "id": "plan",
+      "name": "PLAN",
+      "order": 2,
+      "description": "Translate findings into a structured engineering workplan.",
+      "inputs": ["Assessment findings", "Business objectives", "Timeline and resource constraints"],
+      "activities": ["Architecture design", "Control selection", "Resource planning", "Milestone mapping"],
+      "deliverables": ["Engineering Workplan", "Architecture Design", "Project Schedule"],
+      "customerTouchpoints": ["Planning workshop", "Workplan review", "Sign-off meeting"]
+    },
+    {
+      "id": "design",
+      "name": "DESIGN",
+      "order": 3,
+      "description": "Define the technical design for each control before implementation begins.",
+      "inputs": ["Engineering workplan", "Environment specifications", "Integration requirements"],
+      "activities": ["Detailed technical design", "Configuration specification", "Integration mapping", "Risk review"],
+      "deliverables": ["Technical Design Document", "Configuration Templates", "Integration Map"],
+      "customerTouchpoints": ["Design review", "Technical walkthrough"]
+    },
+    {
+      "id": "engineer",
+      "name": "ENGINEER",
+      "order": 4,
+      "description": "Implement, configure, and integrate security controls.",
+      "inputs": ["Technical design", "Configuration specifications", "Access to environment"],
+      "activities": ["Control implementation", "Configuration hardening", "Integration testing", "Documentation"],
+      "deliverables": ["Deployed Controls", "Configuration Baseline Document", "Implementation Notes"],
+      "customerTouchpoints": ["Weekly progress updates", "Change request reviews"]
+    },
+    {
+      "id": "validate",
+      "name": "VALIDATE",
+      "order": 5,
+      "description": "Confirm that what was built works as designed.",
+      "inputs": ["Deployed controls", "Technical design", "Validation criteria"],
+      "activities": ["Functional testing", "Penetration testing", "Configuration validation", "Edge case testing"],
+      "deliverables": ["Validation Report", "Test Evidence Package", "Finding Remediation List"],
+      "customerTouchpoints": ["Validation results briefing"]
+    },
+    {
+      "id": "operate",
+      "name": "OPERATE",
+      "order": 6,
+      "description": "Transition controls into operational management with full runbook coverage.",
+      "inputs": ["Validated controls", "Operational requirements", "Team capabilities"],
+      "activities": ["Runbook development", "Alert tuning", "Staff knowledge transfer", "Operational handoff"],
+      "deliverables": ["Operational Runbooks", "Alert Playbooks", "Knowledge Transfer Package"],
+      "customerTouchpoints": ["Operational readiness review", "Handoff meeting"]
+    },
+    {
+      "id": "optimize",
+      "name": "OPTIMIZE",
+      "order": 7,
+      "description": "Improve control effectiveness, reduce noise, and address gaps that emerge over time.",
+      "inputs": ["Operational data", "Alert volumes", "Incident retrospectives"],
+      "activities": ["Tuning and optimization", "Coverage gap analysis", "Tool rationalization", "Process improvement"],
+      "deliverables": ["Optimization Report", "Updated Configurations", "Coverage Analysis"],
+      "customerTouchpoints": ["Quarterly optimization review"]
+    },
+    {
+      "id": "review",
+      "name": "REVIEW",
+      "order": 8,
+      "description": "Periodic review of the entire program against evolving risk and business context.",
+      "inputs": ["Current program state", "Updated threat landscape", "Business changes"],
+      "activities": ["Program maturity assessment", "Risk re-evaluation", "Strategic roadmap update"],
+      "deliverables": ["Program Review Report", "Updated Roadmap", "Executive Briefing"],
+      "customerTouchpoints": ["Quarterly business review", "Executive briefing"]
+    },
+    {
+      "id": "repeat",
+      "name": "REPEAT",
+      "order": 9,
+      "description": "Cybersecurity is not a one-time project. Begin the next improvement cycle.",
+      "inputs": ["Review outputs", "Prioritized improvement areas", "Business roadmap"],
+      "activities": ["Planning for next cycle", "Objective setting", "Resource alignment"],
+      "deliverables": ["Next Cycle Plan"],
+      "customerTouchpoints": ["Program planning workshop"]
+    }
+  ]
+}
