@@ -1,0 +1,67 @@
+{
+  "stories": [
+    {
+      "id": "finserv-cloud-program",
+      "slug": "finserv-cloud-program",
+      "title": "Cloud Security Program for a Regional Bank",
+      "industry": "Financial Services",
+      "organizationSize": "Mid-Market",
+      "securityObjective": "Cloud Security",
+      "environment": "Hybrid",
+      "deliveryModel": "Project Delivery",
+      "summary": "A regional bank migrating workloads to AWS needed to establish a cloud security baseline before expanding the program. Mitigence delivered an assessment, architecture design, and engineering engagement over 16 weeks.",
+      "challenge": "The bank's cloud environment had grown organically across three years without a formal security architecture. Over 40% of S3 buckets had public access enabled. IAM permissions were broadly scoped and unused accounts remained active from previous projects.",
+      "approach": "Mitigence conducted a full cloud security assessment against CIS AWS Foundations Benchmark, produced a prioritized remediation plan, redesigned the IAM architecture, implemented a landing zone with guardrails, and enabled AWS Security Hub with custom detection rules.",
+      "timeline": "16 weeks",
+      "outcomes": [
+        "100% of public S3 bucket access removed within first 4 weeks",
+        "IAM privilege reduced by 68% through role consolidation",
+        "AWS Security Hub enabled with 94% CIS compliance score",
+        "Detection coverage increased from 12 to 47 MITRE ATT&CK techniques"
+      ],
+      "continuousImprovement": "The bank retained Mitigence for quarterly cloud security reviews and ongoing detection rule updates as the environment evolves."
+    },
+    {
+      "id": "healthcare-ir-readiness",
+      "slug": "healthcare-ir-readiness",
+      "title": "Ransomware Readiness Program for a Healthcare Provider",
+      "industry": "Healthcare",
+      "organizationSize": "Enterprise",
+      "securityObjective": "Incident Response",
+      "environment": "Hybrid",
+      "deliveryModel": "Project Engagement",
+      "summary": "A multi-site healthcare provider with 3,000+ endpoints needed to improve their ransomware readiness after a peer organization suffered a significant incident. Mitigence delivered a ransomware readiness assessment, IR plan, playbooks, and tabletop exercise.",
+      "challenge": "The organization had no formal incident response plan. Clinical staff and IT teams had never exercised a response together. Backup recovery had never been tested. The endpoint estate had inconsistent EDR coverage and no centralized monitoring.",
+      "approach": "Mitigence assessed ransomware resilience across backup coverage, EDR deployment, network segmentation, and IR capability. We developed a tailored IR plan and playbooks for ransomware scenarios, ran a full-day tabletop exercise with IT, clinical, and executive stakeholders, and provided a remediation roadmap prioritizing the highest-impact gaps.",
+      "timeline": "8 weeks",
+      "outcomes": [
+        "Full IR plan and playbooks delivered and reviewed by leadership",
+        "Tabletop exercise completed with 14 stakeholders across IT, clinical, and executive functions",
+        "Backup recovery testing completed — average RTO reduced from estimated 96 hours to 12 hours after remediation",
+        "EDR coverage extended from 61% to 94% of managed endpoints"
+      ],
+      "continuousImprovement": "The provider now runs an annual tabletop exercise with Mitigence and maintains a 90-day IR retainer for active incident support."
+    },
+    {
+      "id": "tech-appsec-program",
+      "slug": "tech-appsec-program",
+      "title": "Application Security Engineering for a SaaS Platform",
+      "industry": "Technology",
+      "organizationSize": "Growing Business",
+      "securityObjective": "Application Security",
+      "environment": "Cloud",
+      "deliveryModel": "Dedicated Specialists",
+      "summary": "A fast-growing SaaS company needed to build application security practices before a Series B raise introduced enterprise customer security requirements. Mitigence embedded a security architect to establish the AppSec program.",
+      "challenge": "The engineering team had no security specialist, no SAST tooling, and no formal vulnerability management process. Critical vulnerabilities had been found in a customer-commissioned penetration test but remediation was untracked. The company's roadmap required SOC 2 Type II certification within 12 months.",
+      "approach": "Mitigence embedded a dedicated security architect for 6 months. We implemented SAST in the CI/CD pipeline, set up DAST testing, established a vulnerability management workflow, ran secure code review sessions with engineering leads, and built the security controls required for SOC 2 certification.",
+      "timeline": "6 months",
+      "outcomes": [
+        "SOC 2 Type II certification achieved on schedule",
+        "SAST tooling integrated into CI/CD — 100% of new code reviewed pre-merge",
+        "Vulnerability management workflow established, mean time to remediate critical findings reduced from 47 days to 9 days",
+        "Zero critical vulnerabilities in follow-up penetration test (down from 7)"
+      ],
+      "continuousImprovement": "The company retained Mitigence for quarterly application security reviews and ongoing advisory support as the product scales."
+    }
+  ]
+}

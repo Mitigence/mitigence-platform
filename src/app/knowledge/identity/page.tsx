@@ -1,19 +1,22 @@
-﻿import type { Metadata } from 'next'
-import { PageShell } from '@/components/layout/PageShell'
+import type { Metadata } from 'next'
+import { KnowledgeTopic } from '@/components/knowledge/KnowledgeTopic'
 
 export const metadata: Metadata = {
-  title: 'Identity Security Knowledge',
-  description: 'Understanding identity security — authentication, authorisation, privileged access, and zero-trust principles.',
+  title: "Identity & Access Management",
+  description: "IAM, zero-trust identity, privileged access management, and directory security.",
   alternates: {
-    canonical: '/knowledge/identity',
+    canonical: "/knowledge/identity",
   },
 }
 
 export default function KnowledgeIdentityPage() {
   return (
-    <PageShell
-      title="Identity Security"
-      description="Understanding identity security — authentication, authorisation, privileged access management, directory services, federation, and the principles of zero-trust identity architecture."
-    />
+    <main className="min-h-screen pt-24 bg-black">
+      <div className="max-w-3xl mx-auto px-6 py-16">
+        <div className="w-8 h-0.5 bg-red-600 mb-6" />
+        <h1 className="text-4xl font-bold text-white mb-12">Identity & Access Management</h1>
+        <KnowledgeTopic topicId="Identity & Access Management" />
+      </div>
+    </main>
   )
 }

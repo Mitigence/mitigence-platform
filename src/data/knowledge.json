@@ -1,0 +1,186 @@
+{
+  "topics": [
+    {
+      "id": "cloud",
+      "name": "Cloud Security",
+      "slug": "cloud",
+      "tagline": "Secure the platforms your business runs on.",
+      "overview": "Cloud environments move fast. Security controls need to keep pace — and that starts with understanding the specific risks that cloud infrastructure introduces.",
+      "sections": [
+        {
+          "title": "Why cloud security is different",
+          "content": "Traditional security perimeters no longer exist. In cloud environments, misconfigurations replace malware as a leading attack vector. A single IAM policy with excessive permissions can expose an entire environment. Visibility is harder — logs are scattered, and responsibility is shared between the provider and the customer."
+        },
+        {
+          "title": "What Mitigence assesses",
+          "content": "Identity and access management configurations, storage bucket policies, network security groups, logging coverage, workload protection, and compliance against frameworks like CIS Benchmarks. We look at both current state and architectural posture — not just point-in-time vulnerabilities."
+        },
+        {
+          "title": "How Mitigence engineers cloud security",
+          "content": "We implement guardrails at the account or subscription level, enforce least-privilege IAM, enable and route logs to a central SIEM, configure cloud-native security services (like AWS GuardDuty or Microsoft Defender for Cloud), and establish drift detection. Engineering is not one-time — it's a continuous improvement program."
+        },
+        {
+          "title": "What outcomes you can expect",
+          "content": "A measurably reduced misconfiguration footprint, clear visibility into workload risk, and a security posture that scales as your infrastructure grows. Most organizations reduce their critical finding count significantly within the first 90 days of an engineering engagement."
+        }
+      ],
+      "relatedEngagements": ["Cloud Security Assessment", "Cloud Landing Zone Engineering", "Continuous Cloud Posture Management"]
+    },
+    {
+      "id": "identity",
+      "name": "Identity & Access Management",
+      "slug": "identity",
+      "tagline": "Control who can reach what — and how.",
+      "overview": "Identity is the new perimeter. More breaches today start with compromised credentials than with exploited vulnerabilities. Understanding how to manage access is foundational to any security program.",
+      "sections": [
+        {
+          "title": "Why identity is your primary control plane",
+          "content": "Once an attacker has valid credentials, most network-level controls become ineffective. Identity controls — MFA, conditional access, privilege management, and session policies — are what stop them from escalating and moving laterally. Getting identity right reduces the blast radius of any breach."
+        },
+        {
+          "title": "Common identity risks",
+          "content": "Standing administrative privilege that is never reviewed, legacy accounts from former employees still active in directory, inconsistent MFA enforcement across applications, service accounts with excessive permissions, and fragmented identity stores across SaaS, cloud, and on-premises environments."
+        },
+        {
+          "title": "How Mitigence approaches identity security",
+          "content": "We start with an access review — who has access to what, whether it is appropriate, and whether it is actually in use. Then we design a privilege model, implement MFA and conditional access, reduce standing access in favor of just-in-time elevation, and integrate identity logs into detection workflows."
+        },
+        {
+          "title": "What good looks like",
+          "content": "Zero standing administrative privilege for routine operations. MFA enforced across all user-facing applications. Active directory cleaned of orphaned accounts. Service accounts scoped to their exact required permissions. Identity logs feeding into detection and response processes."
+        }
+      ],
+      "relatedEngagements": ["Identity Security Assessment", "Privileged Access Engineering", "Zero Trust Identity Program"]
+    },
+    {
+      "id": "applications",
+      "name": "Application Security",
+      "slug": "applications",
+      "tagline": "Security built into the software itself.",
+      "overview": "Applications are where business logic lives — and where attackers look first. Modern application security goes beyond a one-time penetration test. It is a continuous engineering discipline.",
+      "sections": [
+        {
+          "title": "What application security covers",
+          "content": "Authentication and authorization logic, injection vulnerabilities, business logic flaws, API security, dependency management, secrets handling, session management, and the security of the software development lifecycle itself."
+        },
+        {
+          "title": "The problem with one-time testing",
+          "content": "A point-in-time penetration test finds what exists on the day of the test. Three days later, a developer ships new code that introduces a new vulnerability. Without continuous security testing and developer security enablement, the gap reopens immediately."
+        },
+        {
+          "title": "How Mitigence approaches application security",
+          "content": "We assess what is in production, identify the highest-risk vulnerabilities, guide remediation, and then help engineering teams implement controls that prevent the same class of issues from recurring — SAST in the CI/CD pipeline, API security testing, secrets scanning, and developer security training."
+        },
+        {
+          "title": "The developer security balance",
+          "content": "Security controls that slow down development get bypassed or ignored. Mitigence works with your engineering teams to find controls that improve security posture without becoming obstacles. The goal is to make secure development the path of least resistance."
+        }
+      ],
+      "relatedEngagements": ["Application Security Assessment", "Secure SDLC Engineering", "API Security Review"]
+    },
+    {
+      "id": "monitoring",
+      "name": "Security Monitoring",
+      "slug": "monitoring",
+      "tagline": "Visibility and detection that actually works.",
+      "overview": "Most organizations have monitoring tools. Few have monitoring programs. There is a significant difference between having a SIEM and having the visibility, detection rules, and response processes to act on what it finds.",
+      "sections": [
+        {
+          "title": "The visibility gap",
+          "content": "Organizations often have logs available but not collected. Detection rules that were configured once and never tuned. Alert volumes so high that analysts cannot triage effectively. The result is a monitoring program that technically exists but does not detect actual attacks."
+        },
+        {
+          "title": "What effective monitoring requires",
+          "content": "Complete log coverage of critical assets. Normalized, enriched data that enables correlation. Detection rules mapped to real attacker techniques (not just generic signatures). Alert quality metrics. Analyst runbooks. And a continuous improvement process that updates detection as threats evolve."
+        },
+        {
+          "title": "How Mitigence engineers monitoring",
+          "content": "We audit current coverage against the MITRE ATT&CK framework, identify log sources not being collected, implement normalized ingestion pipelines, write detection rules calibrated to your environment, reduce false positives through tuning, and build analyst runbooks for each detection type."
+        },
+        {
+          "title": "Measuring detection effectiveness",
+          "content": "Mean time to detect. Detection coverage by MITRE technique. False positive rate. Alert-to-incident ratio. These metrics tell you whether your monitoring program is actually working — not whether tools are running."
+        }
+      ],
+      "relatedEngagements": ["Security Monitoring Assessment", "Detection Engineering", "Managed Security Operations"]
+    },
+    {
+      "id": "network",
+      "name": "Network Security",
+      "slug": "network",
+      "tagline": "Control the paths attackers move through.",
+      "overview": "Network security is about controlling what can talk to what — and detecting when something unexpected does. Flat networks without segmentation give attackers a free path once they get inside.",
+      "sections": [
+        {
+          "title": "Why segmentation matters",
+          "content": "Without network segmentation, a single compromised workstation can reach payroll systems, active directory, and production databases. Segmentation limits lateral movement — so that even if an attacker gains a foothold, their ability to escalate and impact the business is severely constrained."
+        },
+        {
+          "title": "Beyond the firewall",
+          "content": "Traditional perimeter firewalls are not enough for modern environments with hybrid infrastructure, cloud workloads, and SaaS applications. Modern network security includes micro-segmentation, secure DNS, encrypted communications, network detection and response, and zero-trust network access for remote users."
+        },
+        {
+          "title": "How Mitigence approaches network security",
+          "content": "We start with architecture — understanding current topology, trust zones, and data flows. Then we design a segmentation model appropriate to the environment, implement it progressively to avoid disruption, and validate effectiveness through testing. We also review firewall rules for stale or overly permissive entries."
+        },
+        {
+          "title": "Ongoing network security",
+          "content": "Networks change. New systems come online. Firewall rules accumulate. Annual reviews are not enough. Mitigence provides continuous validation of network controls through periodic testing and firewall rule reviews."
+        }
+      ],
+      "relatedEngagements": ["Network Architecture Review", "Segmentation Engineering", "Firewall Configuration Review"]
+    },
+    {
+      "id": "incident-response",
+      "name": "Incident Response",
+      "slug": "incident-response",
+      "tagline": "Prepare before you need it. Respond when you do.",
+      "overview": "An incident will happen. The question is whether you are prepared to contain it, investigate it, and recover from it without losing critical time to confusion and coordination overhead.",
+      "sections": [
+        {
+          "title": "Why preparation matters",
+          "content": "Organizations that have practiced incident response consistently respond faster, contain incidents more effectively, and experience fewer repeat incidents. Those that respond ad hoc lose days to coordination overhead, incomplete containment, and missed evidence preservation."
+        },
+        {
+          "title": "What an IR program covers",
+          "content": "An incident response plan that defines roles and responsibilities. Playbooks for the most likely incident types — ransomware, credential compromise, data exfiltration, insider threats. Tabletop exercises that test the plan before a real incident. And a retainer relationship with specialists who can support active incidents."
+        },
+        {
+          "title": "How Mitigence supports incident response",
+          "content": "We develop your IR plan and playbooks, run tabletop exercises to test them, and provide retainer-based support for active incidents. During live incidents, we lead or support investigation, containment, eradication, and recovery — and produce a post-incident review to prevent recurrence."
+        },
+        {
+          "title": "Post-incident review",
+          "content": "Every incident is an opportunity to improve. Mitigence post-incident reviews identify the root cause, document the timeline, and produce specific recommendations to prevent recurrence — whether through process changes, technical controls, or awareness improvements."
+        }
+      ],
+      "relatedEngagements": ["IR Readiness Assessment", "IR Plan Development", "Tabletop Exercises", "IR Retainer"]
+    },
+    {
+      "id": "architecture",
+      "name": "Security Architecture",
+      "slug": "architecture",
+      "tagline": "Design security into the foundation.",
+      "overview": "Security architecture is the practice of designing systems and environments with security built in — rather than bolted on. It reduces the cost and complexity of maintaining security as environments scale.",
+      "sections": [
+        {
+          "title": "Architecture vs implementation",
+          "content": "Implementation is putting a tool in place. Architecture is designing how all the tools, policies, and processes work together to defend against the threats relevant to your environment. Without architecture, you end up with point solutions that do not integrate, gaps that nobody owns, and complexity that outpaces the security team."
+        },
+        {
+          "title": "What security architecture produces",
+          "content": "A security architecture defines the control landscape, the data flows that need to be protected, the trust boundaries between components, the reference designs for common patterns, and the roadmap for closing gaps. It is the foundation that engineering decisions are made against."
+        },
+        {
+          "title": "How Mitigence approaches architecture",
+          "content": "We develop security architectures grounded in your actual environment — not generic frameworks. We map threat models to control requirements, design control architectures for each domain, produce reference designs for your most common patterns, and build a capability roadmap that prioritizes improvements by risk impact."
+        },
+        {
+          "title": "Architecture for different stages",
+          "content": "Early-stage security programs need a foundational architecture to guide initial investments. Scaling programs need architecture reviews to ensure the original design still fits the current environment. Mature programs need architecture governance to keep pace with organizational change."
+        }
+      ],
+      "relatedEngagements": ["Security Architecture Review", "Zero Trust Architecture Program", "Security Capability Roadmap"]
+    }
+  ]
+}

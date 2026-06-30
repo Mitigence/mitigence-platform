@@ -1,19 +1,20 @@
-﻿import type { Metadata } from 'next'
-import { PageShell } from '@/components/layout/PageShell'
+import type { Metadata } from 'next'
+import { IndustryPage } from '@/components/industries/IndustryPage'
 
 export const metadata: Metadata = {
-  title: 'Manufacturing Security',
-  description: 'OT and IT convergence introduces security risks that traditional approaches weren\'t designed to address.',
-  alternates: {
-    canonical: '/industries/manufacturing',
-  },
+  title: "Manufacturing Cybersecurity",
+  description: "Security challenges, common engagements, and recommended approaches for the Manufacturing sector.",
+  alternates: { canonical: "/industries/manufacturing" },
 }
 
-export default function ManufacturingPage() {
+export default function IndustryManufacturingPage() {
   return (
-    <PageShell
-      title="Manufacturing Security"
-      description="OT and IT convergence introduces security risks that traditional approaches weren't designed to address. Mitigence brings expertise in both environments — securing industrial systems without disrupting operational processes."
-    />
+    <main className='min-h-screen pt-24 bg-black'>
+      <div className='max-w-5xl mx-auto px-6 py-16'>
+        <div className='w-8 h-0.5 bg-red-600 mb-6' />
+        <h1 className='text-4xl font-bold text-white mb-12'>Manufacturing</h1>
+        <IndustryPage industryId="manufacturing" />
+      </div>
+    </main>
   )
 }

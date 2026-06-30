@@ -1,19 +1,22 @@
-﻿import type { Metadata } from 'next'
-import { PageShell } from '@/components/layout/PageShell'
+import type { Metadata } from 'next'
+import { KnowledgeTopic } from '@/components/knowledge/KnowledgeTopic'
 
 export const metadata: Metadata = {
-  title: 'Security Monitoring Knowledge',
-  description: 'Understanding security monitoring — SIEM, log management, detection engineering, and incident response workflows.',
+  title: "Security Monitoring",
+  description: "Detection engineering, SIEM coverage, alert quality, and continuous improvement in monitoring.",
   alternates: {
-    canonical: '/knowledge/monitoring',
+    canonical: "/knowledge/monitoring",
   },
 }
 
 export default function KnowledgeMonitoringPage() {
   return (
-    <PageShell
-      title="Security Monitoring"
-      description="Understanding security monitoring — SIEM platforms, log collection and normalisation, detection engineering, alert correlation, investigation workflows, and the operational discipline of running an effective SOC."
-    />
+    <main className="min-h-screen pt-24 bg-black">
+      <div className="max-w-3xl mx-auto px-6 py-16">
+        <div className="w-8 h-0.5 bg-red-600 mb-6" />
+        <h1 className="text-4xl font-bold text-white mb-12">Security Monitoring</h1>
+        <KnowledgeTopic topicId="Security Monitoring" />
+      </div>
+    </main>
   )
 }

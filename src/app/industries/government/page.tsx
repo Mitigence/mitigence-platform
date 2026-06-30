@@ -1,19 +1,20 @@
-﻿import type { Metadata } from 'next'
-import { PageShell } from '@/components/layout/PageShell'
+import type { Metadata } from 'next'
+import { IndustryPage } from '@/components/industries/IndustryPage'
 
 export const metadata: Metadata = {
-  title: 'Government Security',
-  description: 'Public sector organisations operating under heightened threat conditions and strict data handling requirements.',
-  alternates: {
-    canonical: '/industries/government',
-  },
+  title: "Government Cybersecurity",
+  description: "Security challenges, common engagements, and recommended approaches for the Government sector.",
+  alternates: { canonical: "/industries/government" },
 }
 
-export default function GovernmentPage() {
+export default function IndustryGovernmentPage() {
   return (
-    <PageShell
-      title="Government Security"
-      description="Public sector organisations operate under heightened threat conditions, strict data handling requirements, and complex procurement environments. Mitigence brings structured delivery and engineering depth to government security programmes."
-    />
+    <main className='min-h-screen pt-24 bg-black'>
+      <div className='max-w-5xl mx-auto px-6 py-16'>
+        <div className='w-8 h-0.5 bg-red-600 mb-6' />
+        <h1 className='text-4xl font-bold text-white mb-12'>Government</h1>
+        <IndustryPage industryId="government" />
+      </div>
+    </main>
   )
 }

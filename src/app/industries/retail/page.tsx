@@ -1,19 +1,20 @@
-﻿import type { Metadata } from 'next'
-import { PageShell } from '@/components/layout/PageShell'
+import type { Metadata } from 'next'
+import { IndustryPage } from '@/components/industries/IndustryPage'
 
 export const metadata: Metadata = {
-  title: 'Retail Security',
-  description: 'Payment data, customer information, supply chain systems, and e-commerce platforms — security for retail organisations.',
-  alternates: {
-    canonical: '/industries/retail',
-  },
+  title: "Retail Cybersecurity",
+  description: "Security challenges, common engagements, and recommended approaches for the Retail sector.",
+  alternates: { canonical: "/industries/retail" },
 }
 
-export default function RetailPage() {
+export default function IndustryRetailPage() {
   return (
-    <PageShell
-      title="Retail Security"
-      description="Payment data, customer information, supply chain systems, and e-commerce platforms create a broad attack surface. Retail organisations require security engineering that protects customer trust without disrupting the commercial operation."
-    />
+    <main className='min-h-screen pt-24 bg-black'>
+      <div className='max-w-5xl mx-auto px-6 py-16'>
+        <div className='w-8 h-0.5 bg-red-600 mb-6' />
+        <h1 className='text-4xl font-bold text-white mb-12'>Retail</h1>
+        <IndustryPage industryId="retail" />
+      </div>
+    </main>
   )
 }

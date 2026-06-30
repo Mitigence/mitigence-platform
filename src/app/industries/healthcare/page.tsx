@@ -1,19 +1,20 @@
-﻿import type { Metadata } from 'next'
-import { PageShell } from '@/components/layout/PageShell'
+import type { Metadata } from 'next'
+import { IndustryPage } from '@/components/industries/IndustryPage'
 
 export const metadata: Metadata = {
-  title: 'Healthcare Security',
-  description: 'Patient safety and data protection are inseparable — security for healthcare organisations.',
-  alternates: {
-    canonical: '/industries/healthcare',
-  },
+  title: "Healthcare Cybersecurity",
+  description: "Security challenges, common engagements, and recommended approaches for the Healthcare sector.",
+  alternates: { canonical: "/industries/healthcare" },
 }
 
-export default function HealthcarePage() {
+export default function IndustryHealthcarePage() {
   return (
-    <PageShell
-      title="Healthcare Security"
-      description="Patient safety and data protection are inseparable. Healthcare organisations must secure clinical systems, protect sensitive patient data, meet regulatory obligations, and maintain operational continuity — often with constrained security resources."
-    />
+    <main className='min-h-screen pt-24 bg-black'>
+      <div className='max-w-5xl mx-auto px-6 py-16'>
+        <div className='w-8 h-0.5 bg-red-600 mb-6' />
+        <h1 className='text-4xl font-bold text-white mb-12'>Healthcare</h1>
+        <IndustryPage industryId="healthcare" />
+      </div>
+    </main>
   )
 }

@@ -1,0 +1,88 @@
+{
+  "industries": [
+    {
+      "id": "financial-services",
+      "name": "Financial Services",
+      "description": "Banks, insurers, asset managers, and fintechs operating in one of the most targeted and heavily regulated sectors in cybersecurity.",
+      "challenges": [
+        "High-value targets for financially motivated attackers",
+        "Complex regulatory requirements (PCI DSS, DORA, SOC 2, FCA expectations)",
+        "Legacy systems that cannot easily be patched or replaced",
+        "Third-party and supply chain risk from extensive ecosystem dependencies"
+      ],
+      "commonEngagements": ["Penetration Testing", "Cloud Security Engineering", "Privileged Access Management", "Third-Party Risk Assessment", "Compliance-Aligned Security Program"],
+      "recommendedJourney": ["Assessment", "Architecture Review", "Engineering", "Continuous Monitoring"],
+      "href": "/industries/financial-services"
+    },
+    {
+      "id": "healthcare",
+      "name": "Healthcare",
+      "description": "Hospitals, clinics, medical device manufacturers, and health-tech companies protecting some of the most sensitive personal data in existence.",
+      "challenges": [
+        "Patient data protection under HIPAA and equivalent regulations",
+        "Medical device security and OT/IoT risk",
+        "Clinical system availability requirements",
+        "Ransomware as a leading threat vector for the sector"
+      ],
+      "commonEngagements": ["Medical Device Security Assessment", "Ransomware Readiness Review", "Identity Security Engineering", "Incident Response Planning"],
+      "recommendedJourney": ["Risk Assessment", "Identity Engineering", "Endpoint Protection", "IR Readiness"],
+      "href": "/industries/healthcare"
+    },
+    {
+      "id": "government",
+      "name": "Government",
+      "description": "Public sector organizations managing critical infrastructure, citizen data, and national security requirements.",
+      "challenges": [
+        "Nation-state threat actors with sophisticated capabilities",
+        "Complex procurement and accreditation requirements",
+        "Aging IT infrastructure with limited modernization budgets",
+        "Insider threat risk in sensitive environments"
+      ],
+      "commonEngagements": ["Security Accreditation Support", "Network Segmentation", "Insider Threat Program", "Cloud Security Review"],
+      "recommendedJourney": ["Assessment", "Network Engineering", "Monitoring", "Continuous Improvement"],
+      "href": "/industries/government"
+    },
+    {
+      "id": "education",
+      "name": "Education",
+      "description": "Universities, schools, and ed-tech platforms balancing open academic environments with protection of student and research data.",
+      "challenges": [
+        "Open network environments that conflict with security controls",
+        "Large attack surfaces from diverse student, staff, and research devices",
+        "Research data and intellectual property protection",
+        "Limited security budget relative to complexity"
+      ],
+      "commonEngagements": ["Security Assessment", "Network Segmentation", "Identity Management", "Endpoint Protection"],
+      "recommendedJourney": ["Assessment", "Architecture Review", "Engineering", "Operational Support"],
+      "href": "/industries/education"
+    },
+    {
+      "id": "manufacturing",
+      "name": "Manufacturing",
+      "description": "Industrial manufacturers with operational technology environments that were never designed with cybersecurity in mind.",
+      "challenges": [
+        "OT/IT convergence introducing cyber risk to production environments",
+        "Legacy industrial systems with no patch path",
+        "Supply chain compromise as an entry vector",
+        "Business continuity requirements limiting maintenance windows"
+      ],
+      "commonEngagements": ["OT Security Assessment", "Network Segmentation", "Incident Response Planning", "Third-Party Risk"],
+      "recommendedJourney": ["OT Assessment", "Segmentation Engineering", "Monitoring", "IR Readiness"],
+      "href": "/industries/manufacturing"
+    },
+    {
+      "id": "retail",
+      "name": "Retail",
+      "description": "Retailers and e-commerce businesses protecting payment card data, customer information, and high-availability transaction systems.",
+      "challenges": [
+        "PCI DSS compliance and cardholder data environment scoping",
+        "E-commerce application security and fraud risk",
+        "Seasonal traffic spikes that complicate security operations",
+        "Third-party integrations and supply chain risk"
+      ],
+      "commonEngagements": ["PCI DSS Assessment", "Application Security Testing", "Cloud Security Engineering", "Third-Party Risk Review"],
+      "recommendedJourney": ["Compliance Assessment", "Application Engineering", "Monitoring", "Continuous Validation"],
+      "href": "/industries/retail"
+    }
+  ]
+}
