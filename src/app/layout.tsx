@@ -4,6 +4,7 @@ import { GeistMono } from 'geist/font/mono'
 import { Analytics } from '@vercel/analytics/react'
 import { Navigation } from '@/components/layout/Navigation'
 import { Footer } from '@/components/layout/Footer'
+import { LeadCaptureBot } from '@/components/chatbot/LeadCaptureBot'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -57,6 +58,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <Analytics />
+        <LeadCaptureBot />
       </body>
     </html>
   )
