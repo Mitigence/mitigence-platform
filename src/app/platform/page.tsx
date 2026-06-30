@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import { PageShell } from '@/components/layout/PageShell'
 
 export const metadata: Metadata = {
@@ -10,8 +10,7 @@ export default function PlatformPage() {
   return (
     <PageShell
       title="The Mitigence Platform"
-      description="Three interconnected experiences — Understand, Engineer, and Operate — that guide organizations from discovery to continuous improvement. Each experience is a product in its own right."
-      phase="Phase 2"
+      description="Three interconnected experiences â€” Understand, Engineer, and Operate â€” that guide organizations from discovery to continuous improvement. Each experience is a product in its own right."
     />
   )
 }

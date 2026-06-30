@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import { PageShell } from '@/components/layout/PageShell'
 
 export const metadata: Metadata = {
@@ -11,7 +11,6 @@ export default function EngineerPage() {
     <PageShell
       title="Engineer"
       description="Design your cybersecurity engagement, configure your scope, assemble specialist teams, and understand exactly how Mitigence delivers. The planning experience that replaces the sales brochure."
-      phase="Phase 2"
     />
   )
 }

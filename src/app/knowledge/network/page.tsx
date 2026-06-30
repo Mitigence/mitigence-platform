@@ -1,18 +1,16 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import { PageShell } from '@/components/layout/PageShell'
 
 export const metadata: Metadata = {
   title: 'Network Security Knowledge',
-  description: 'Understanding network security — segmentation, firewalls, traffic analysis, and infrastructure protection.',
+  description: 'Understanding network security â€” segmentation, firewalls, traffic analysis, and infrastructure protection.',
 }
 
 export default function KnowledgeNetworkPage() {
   return (
     <PageShell
       title="Network Security"
-      description="Understanding network security — segmentation strategies, firewall architectures, traffic analysis, intrusion detection, VPN technologies, and the principles of building resilient, defensible network infrastructure."
-      phase="Phase 3"
-      module="Module 11 — Knowledge: Network"
+      description="Understanding network security â€” segmentation strategies, firewall architectures, traffic analysis, intrusion detection, VPN technologies, and the principles of building resilient, defensible network infrastructure."
     />
   )
 }

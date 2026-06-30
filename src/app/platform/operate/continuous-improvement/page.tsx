@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import { PageShell } from '@/components/layout/PageShell'
 
 export const metadata: Metadata = {
@@ -10,8 +10,7 @@ export default function ContinuousImprovementPage() {
   return (
     <PageShell
       title="Continuous Improvement"
-      description="Security isn't a project — it's a continuous discipline. Quarterly reviews, optimization roadmaps, engineering updates, and long-term partnership that evolves as your organization grows."
-      phase="Phase 4"
+      description="Security isn't a project â€” it's a continuous discipline. Quarterly reviews, optimization roadmaps, engineering updates, and long-term partnership that evolves as your organization grows."
     />
   )
 }

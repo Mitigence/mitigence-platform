@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import { PageShell } from '@/components/layout/PageShell'
 
 export const metadata: Metadata = {
@@ -11,8 +11,6 @@ export default function EnterpriseExplorerPage() {
     <PageShell
       title="Enterprise Explorer"
       description="An interactive map of your digital enterprise. Navigate between identity, endpoints, cloud, networks, applications, APIs, data, and remote access to understand common risks and how Mitigence approaches each domain."
-      phase="Phase 1"
-      module="Module 1 — Interactive Enterprise Map"
     />
   )
 }

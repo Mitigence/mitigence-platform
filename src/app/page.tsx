@@ -1,4 +1,7 @@
 import type { Metadata } from 'next'
+import { HomeSections1 } from '@/components/home/HomeSections1'
+import HomeSections2 from '@/components/home/HomeSections2'
+import HomeSections3 from '@/components/home/HomeSections3'
 
 export const metadata: Metadata = {
   title: 'Cybersecurity Delivery & Engineering Platform',
@@ -38,104 +41,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Section 2: Why Modern Security Is Different */}
-      <section id="why-security-is-different" className="border-b border-zinc-900 py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="w-8 h-0.5 bg-red-600 mb-6" />
-          <h2 className="text-3xl font-bold text-white mb-4">Security Has Become More Connected—and More Complex.</h2>
-          <p className="text-zinc-500 text-sm">Phase 1 — Module 14: Security Complexity Timeline</p>
-        </div>
-      </section>
+      {/* Sections 2–5: Why Security, Explore Enterprise, Attack Surface, Security Program */}
+      <HomeSections1 />
 
-      {/* Section 3: Explore Your Digital Enterprise */}
-      <section id="explore-enterprise" className="border-b border-zinc-900 py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="w-8 h-0.5 bg-red-600 mb-6" />
-          <h2 className="text-3xl font-bold text-white mb-4">Every organization is different. Start with what you&apos;re protecting.</h2>
-          <p className="text-zinc-500 text-sm">Phase 1 — Module 4 Preview: Domain Tiles</p>
-        </div>
-      </section>
+      {/* Sections 6–9: Team Builder, Engineering Lifecycle, Delivery Models, Capability Explorer */}
+      <HomeSections2 />
 
-      {/* Section 4: Discover Your Attack Surface */}
-      <section id="attack-surface" className="border-b border-zinc-900 py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="w-8 h-0.5 bg-red-600 mb-6" />
-          <h2 className="text-3xl font-bold text-white mb-4">Discover Your Attack Surface</h2>
-          <p className="text-zinc-500 text-sm">Phase 2 — Module 9: Attack Path Visualization</p>
-        </div>
-      </section>
-
-      {/* Section 5: Build Your Security Program */}
-      <section id="security-program" className="border-b border-zinc-900 py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="w-8 h-0.5 bg-red-600 mb-6" />
-          <h2 className="text-3xl font-bold text-white mb-4">Build Your Security Program</h2>
-          <p className="text-zinc-500 text-sm">Phase 1 — Module 2 + 3: Journey Designer + Engagement Studio</p>
-        </div>
-      </section>
-
-      {/* Section 6: Build Your Cybersecurity Team */}
-      <section id="team-builder" className="border-b border-zinc-900 py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="w-8 h-0.5 bg-red-600 mb-6" />
-          <h2 className="text-3xl font-bold text-white mb-4">Build Your Cybersecurity Team</h2>
-          <p className="text-zinc-500 text-sm">Phase 2 — Module 6: Team Builder</p>
-        </div>
-      </section>
-
-      {/* Section 7: Security Engineering Lifecycle */}
-      <section id="engineering-lifecycle" className="border-b border-zinc-900 py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="w-8 h-0.5 bg-red-600 mb-6" />
-          <h2 className="text-3xl font-bold text-white mb-4">The Engineering Lifecycle</h2>
-          <p className="text-zinc-500 text-sm">Phase 2 — Module 8: Engineering Lifecycle Animation</p>
-        </div>
-      </section>
-
-      {/* Section 8: Delivery Models */}
-      <section id="delivery-models" className="border-b border-zinc-900 py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="w-8 h-0.5 bg-red-600 mb-6" />
-          <h2 className="text-3xl font-bold text-white mb-4">Choose How You&apos;d Like to Work With Us</h2>
-          <p className="text-zinc-500 text-sm">Phase 2 — Module 7: Delivery Model Explorer</p>
-        </div>
-      </section>
-
-      {/* Section 9: Capability Explorer Preview */}
-      <section id="capability-explorer" className="border-b border-zinc-900 py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="w-8 h-0.5 bg-red-600 mb-6" />
-          <h2 className="text-3xl font-bold text-white mb-4">Explore Security Capabilities</h2>
-          <p className="text-zinc-500 text-sm">Phase 2 — Module 4: Capability Explorer</p>
-        </div>
-      </section>
-
-      {/* Section 10: Customer Workspace Preview */}
-      <section id="customer-workspace" className="border-b border-zinc-900 py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="w-8 h-0.5 bg-red-600 mb-6" />
-          <h2 className="text-3xl font-bold text-white mb-4">Your Security Journey, Visible at Every Stage</h2>
-          <p className="text-zinc-500 text-sm">Phase 4 — Module 10: Customer Workspace Preview</p>
-        </div>
-      </section>
-
-      {/* Section 11: Success Stories */}
-      <section id="success-stories" className="border-b border-zinc-900 py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="w-8 h-0.5 bg-red-600 mb-6" />
-          <h2 className="text-3xl font-bold text-white mb-4">Organizations That Chose a Different Path</h2>
-          <p className="text-zinc-500 text-sm">Phase 3 — Module 12: Success Story Explorer</p>
-        </div>
-      </section>
-
-      {/* Section 12: Knowledge Center Preview */}
-      <section id="knowledge-center" className="border-b border-zinc-900 py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="w-8 h-0.5 bg-red-600 mb-6" />
-          <h2 className="text-3xl font-bold text-white mb-4">What Would You Like to Understand?</h2>
-          <p className="text-zinc-500 text-sm">Phase 3 — Module 11: Knowledge Center</p>
-        </div>
-      </section>
+      {/* Sections 10–12: Customer Workspace, Success Stories, Knowledge Center */}
+      <HomeSections3 />
 
       {/* Section 13: Consultation CTA */}
       <section id="consultation" className="py-24">

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import { PageShell } from '@/components/layout/PageShell'
 
 export const metadata: Metadata = {
@@ -10,8 +10,7 @@ export default function CustomerSuccessPage() {
   return (
     <PageShell
       title="Customer Success"
-      description="How Mitigence measures and delivers long-term value — from the first engagement through ongoing partnership, maturity growth, and strategic planning."
-      phase="Phase 4"
+      description="How Mitigence measures and delivers long-term value â€” from the first engagement through ongoing partnership, maturity growth, and strategic planning."
     />
   )
 }

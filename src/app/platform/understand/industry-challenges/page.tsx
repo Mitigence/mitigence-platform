@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import { PageShell } from '@/components/layout/PageShell'
 
 export const metadata: Metadata = {
@@ -10,8 +10,7 @@ export default function IndustryChallengesPage() {
   return (
     <PageShell
       title="Industry Challenges"
-      description="Every industry faces distinct security pressures — regulatory requirements, threat profiles, operational constraints. Explore the specific challenges your sector navigates and how Mitigence addresses them."
-      phase="Phase 3"
+      description="Every industry faces distinct security pressures â€” regulatory requirements, threat profiles, operational constraints. Explore the specific challenges your sector navigates and how Mitigence addresses them."
     />
   )
 }

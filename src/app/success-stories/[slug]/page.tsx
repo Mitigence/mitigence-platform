@@ -22,8 +22,7 @@ export default async function SuccessStoryPage({ params }: Props) {
     <PageShell
       title={title}
       description="This success story will detail the engagement challenge, discovery findings, assessment results, engineering approach, validation outcomes, and the ongoing improvement roadmap — following the Mitigence structured delivery narrative."
-      phase="Phase 3"
-      module="Module 9 — Success Story"
+
     />
   )
 }

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import { PageShell } from '@/components/layout/PageShell'
 
 export const metadata: Metadata = {
@@ -10,8 +10,7 @@ export default function UnderstandPage() {
   return (
     <PageShell
       title="Understand"
-      description="Explore your digital enterprise, discover attack surfaces, identify security priorities, and learn about modern cybersecurity practices — before any sales conversation begins."
-      phase="Phase 2"
+      description="Explore your digital enterprise, discover attack surfaces, identify security priorities, and learn about modern cybersecurity practices â€” before any sales conversation begins."
     />
   )
 }

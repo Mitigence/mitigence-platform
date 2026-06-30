@@ -21,8 +21,7 @@ export default async function KnowledgeArticlePage({ params }: Props) {
     <PageShell
       title={title}
       description="This knowledge article will contain interactive diagrams, methodology explanations, and practical cybersecurity guidance from the Mitigence engineering team."
-      phase="Phase 3"
-      module="Module 11 — Knowledge Article"
+
     />
   )
 }

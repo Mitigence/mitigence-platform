@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import { PageShell } from '@/components/layout/PageShell'
 
 export const metadata: Metadata = {
@@ -10,9 +10,7 @@ export default function CapabilityExplorerPage() {
   return (
     <PageShell
       title="Capability Explorer"
-      description="Eight security domains. Click any domain to explore the engineering lifecycle inside it — from architecture and assessment through deployment, validation, and optimization. Capabilities, not vendor products."
-      phase="Phase 2"
-      module="Module 4 — Capability Explorer"
+      description="Eight security domains. Click any domain to explore the engineering lifecycle inside it â€” from architecture and assessment through deployment, validation, and optimization. Capabilities, not vendor products."
     />
   )
 }

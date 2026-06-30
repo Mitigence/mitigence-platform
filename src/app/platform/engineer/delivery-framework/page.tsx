@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import { PageShell } from '@/components/layout/PageShell'
 
 export const metadata: Metadata = {
@@ -10,8 +10,7 @@ export default function DeliveryFrameworkPage() {
   return (
     <PageShell
       title="Delivery Framework"
-      description="Every Mitigence engagement follows a structured delivery framework — from initial assessment through engineering, validation, operations, and continuous improvement. Understand the process before the first conversation."
-      phase="Phase 2"
+      description="Every Mitigence engagement follows a structured delivery framework â€” from initial assessment through engineering, validation, operations, and continuous improvement. Understand the process before the first conversation."
     />
   )
 }
