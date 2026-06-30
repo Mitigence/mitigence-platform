@@ -19,11 +19,11 @@ const footerLinks = {
     { label: 'Endpoint Protection', href: '/solutions/endpoints' },
   ],
   Company: [
-    { label: 'About Us', href: '/company/about' },
-    { label: 'Our Approach', href: '/company/approach' },
+    { label: 'About Us', href: '/about' },
+    { label: 'Our Approach', href: '/approach' },
     { label: 'Knowledge Center', href: '/knowledge' },
     { label: 'Success Stories', href: '/success-stories' },
-    { label: 'Careers', href: '/company/careers' },
+    { label: 'Careers', href: '/careers' },
   ],
   Contact: [
     { label: 'Contact Us', href: '/contact' },

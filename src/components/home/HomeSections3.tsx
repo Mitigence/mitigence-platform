@@ -225,21 +225,21 @@ const knowledgeResources = [
     title: 'Building a Security Program From Scratch',
     description:
       'A structured approach to understanding your risks, selecting the right controls, and building a continuous improvement cycle.',
-    href: '/knowledge/security-program',
+    href: '/knowledge/architecture',
   },
   {
     label: 'FRAMEWORK',
     title: 'The Mitigence Engineering Lifecycle',
     description:
       'How Mitigence structures security engagements — from discovery through deployment and continuous improvement.',
-    href: '/knowledge/engineering-lifecycle',
+    href: '/knowledge',
   },
   {
     label: 'GUIDE',
     title: 'Vendor-Neutral Security Architecture',
     description:
       'How to evaluate, select, and integrate security platforms based on your requirements — not a vendor relationship.',
-    href: '/knowledge/vendor-neutral-architecture',
+    href: '/knowledge/architecture',
   },
 ]
 

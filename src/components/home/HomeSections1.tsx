@@ -133,35 +133,35 @@ const pillars = [
     title: 'Assess',
     description:
       'Understand your risk surface before committing to controls. Infrastructure assessments, penetration testing, architecture reviews, maturity evaluations, and threat modeling.',
-    href: '/solutions/assess',
+    href: '/solutions',
   },
   {
     number: '02',
     title: 'Engineer',
     description:
       'Design and implement security that fits your actual architecture. Vendor-neutral engineering across cloud, identity, network, application, and data security.',
-    href: '/solutions/engineer',
+    href: '/engineering',
   },
   {
     number: '03',
     title: 'Validate',
     description:
       'Test what was built. Verify what was claimed. Fix what is broken. Configuration validation, control testing, health checks, and deployment verification.',
-    href: '/solutions/validate',
+    href: '/engineering/health-checks',
   },
   {
     number: '04',
     title: 'Operate',
     description:
       'Continuous monitoring, detection engineering, incident readiness, and operational optimization — keeping your program running and improving.',
-    href: '/solutions/operate',
+    href: '/platform/operate',
   },
   {
     number: '05',
     title: 'Evolve',
     description:
       'Strategic roadmaps, maturity improvement programs, vCISO advisory, and long-term partnerships that grow your security posture over time.',
-    href: '/solutions/evolve',
+    href: '/consultation',
   },
 ]
 

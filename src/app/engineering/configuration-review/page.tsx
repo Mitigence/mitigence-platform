@@ -4,6 +4,9 @@ import { PageShell } from '@/components/layout/PageShell'
 export const metadata: Metadata = {
   title: 'Configuration Review',
   description: 'Most security failures stem from misconfiguration, not missing technology.',
+  alternates: {
+    canonical: '/engineering/configuration-review',
+  },
 }
 
 export default function ConfigurationReviewPage() {

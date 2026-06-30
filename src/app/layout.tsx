@@ -8,6 +8,7 @@ import { LeadCaptureBot } from '@/components/chatbot/LeadCaptureBot'
 import './globals.css'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mitigence.com'),
   title: {
     default: 'Mitigence — Cybersecurity Delivery & Engineering Platform',
     template: '%s | Mitigence',
@@ -25,6 +26,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Mitigence' }],
   creator: 'Mitigence',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -43,7 +47,31 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
+}
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Mitigence',
+  url: 'https://mitigence.com',
+  description:
+    'Mitigence helps organizations discover risks, engineer resilient security architectures, strengthen operations, and continuously improve cyber resilience through expert-led engagements and transparent delivery.',
+  email: 'Business@mitigence.com',
+  areaServed: 'Worldwide',
+  serviceType: [
+    'Cybersecurity Consulting',
+    'Penetration Testing',
+    'Security Architecture',
+    'Managed Security Operations',
+    'Incident Response',
+  ],
 }
 
 export default function RootLayout({
@@ -54,6 +82,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body className="font-sans bg-black text-white antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <Navigation />
         {children}
         <Footer />

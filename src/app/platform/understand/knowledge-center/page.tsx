@@ -3,14 +3,17 @@ import { PageShell } from '@/components/layout/PageShell'
 
 export const metadata: Metadata = {
   title: 'Knowledge Center',
-  description: 'Interactive cybersecurity learning â€” not a blog, an encyclopedia.',
+  description: 'Interactive cybersecurity learning — not a blog, an encyclopedia.',
+  alternates: {
+    canonical: '/platform/understand/knowledge-center',
+  },
 }
 
 export default function KnowledgeCenterPage() {
   return (
     <PageShell
       title="Knowledge Center"
-      description="An interactive learning resource covering cybersecurity domains, methodologies, and engineering practices. Choose a topic â€” cloud, identity, applications, monitoring, network, incident response, or architecture â€” and explore through animated explanations and practical guidance."
+      description="An interactive learning resource covering cybersecurity domains, methodologies, and engineering practices. Choose a topic — cloud, identity, applications, monitoring, network, incident response, or architecture — and explore through animated explanations and practical guidance."
     />
   )
 }

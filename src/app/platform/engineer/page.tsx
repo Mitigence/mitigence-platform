@@ -4,6 +4,9 @@ import { PageShell } from '@/components/layout/PageShell'
 export const metadata: Metadata = {
   title: 'Engineer',
   description: 'Design your security engagement, assemble specialists, and build the right program for your organization.',
+  alternates: {
+    canonical: '/platform/engineer',
+  },
 }
 
 export default function EngineerPage() {

@@ -4,6 +4,9 @@ import { PageShell } from '@/components/layout/PageShell'
 export const metadata: Metadata = {
   title: 'Government Security',
   description: 'Public sector organisations operating under heightened threat conditions and strict data handling requirements.',
+  alternates: {
+    canonical: '/industries/government',
+  },
 }
 
 export default function GovernmentPage() {

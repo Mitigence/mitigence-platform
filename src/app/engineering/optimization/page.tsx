@@ -3,7 +3,10 @@ import { PageShell } from '@/components/layout/PageShell'
 
 export const metadata: Metadata = {
   title: 'Security Optimization',
-  description: 'Security engineering doesn\'t end at deployment â€” Mitigence continuously optimises configurations and tunes detection logic.',
+  description: 'Security engineering doesn\'t end at deployment — Mitigence continuously optimises configurations and tunes detection logic.',
+  alternates: {
+    canonical: '/engineering/optimization',
+  },
 }
 
 export default function OptimizationPage() {

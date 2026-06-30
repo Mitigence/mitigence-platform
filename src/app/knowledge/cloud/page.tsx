@@ -3,14 +3,17 @@ import { PageShell } from '@/components/layout/PageShell'
 
 export const metadata: Metadata = {
   title: 'Cloud Security Knowledge',
-  description: 'Understanding cloud security â€” architecture, shared responsibility, configuration, and workload protection.',
+  description: 'Understanding cloud security — architecture, shared responsibility, configuration, and workload protection.',
+  alternates: {
+    canonical: '/knowledge/cloud',
+  },
 }
 
 export default function KnowledgeCloudPage() {
   return (
     <PageShell
       title="Cloud Security"
-      description="Understanding cloud security from the ground up â€” shared responsibility models, architecture patterns, configuration management, identity in the cloud, and workload protection across AWS, Azure, and GCP."
+      description="Understanding cloud security from the ground up — shared responsibility models, architecture patterns, configuration management, identity in the cloud, and workload protection across AWS, Azure, and GCP."
     />
   )
 }

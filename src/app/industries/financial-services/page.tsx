@@ -3,7 +3,10 @@ import { PageShell } from '@/components/layout/PageShell'
 
 export const metadata: Metadata = {
   title: 'Financial Services Security',
-  description: 'Regulated, targeted, and operationally complex â€” security for financial services organisations.',
+  description: 'Regulated, targeted, and operationally complex — security for financial services organisations.',
+  alternates: {
+    canonical: '/industries/financial-services',
+  },
 }
 
 export default function FinancialServicesPage() {

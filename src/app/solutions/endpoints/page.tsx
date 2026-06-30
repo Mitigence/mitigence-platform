@@ -4,6 +4,9 @@ import { PageShell } from '@/components/layout/PageShell'
 export const metadata: Metadata = {
   title: 'Endpoint Protection',
   description: 'Every device is a potential entry point. Mitigence engineers endpoint security controls, validates configurations, and tests detection capabilities.',
+  alternates: {
+    canonical: '/solutions/endpoints',
+  },
 }
 
 export default function EndpointsPage() {

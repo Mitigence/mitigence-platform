@@ -157,10 +157,10 @@ export const navItems: NavItem[] = [
         {
           title: 'About Mitigence',
           items: [
-            { label: 'About Us', href: '/company/about', description: 'Our story and mission' },
-            { label: 'Our Approach', href: '/company/approach', description: 'How we deliver cybersecurity' },
-            { label: 'Leadership', href: '/company/leadership', description: 'Meet our team' },
-            { label: 'Careers', href: '/company/careers', description: 'Join Mitigence' },
+            { label: 'About Us', href: '/about', description: 'Our story and mission' },
+            { label: 'Our Approach', href: '/approach', description: 'How we deliver cybersecurity' },
+            { label: 'Leadership', href: '/leadership', description: 'Meet our team' },
+            { label: 'Careers', href: '/careers', description: 'Join Mitigence' },
           ],
         },
       ],

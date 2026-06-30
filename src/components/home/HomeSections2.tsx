@@ -305,32 +305,32 @@ const capabilities = [
   {
     title: 'Security Assessments',
     description: 'Infrastructure, cloud, application, identity, and endpoint security assessments',
-    href: '/solutions/assess',
+    href: '/solutions',
   },
   {
     title: 'Penetration Testing',
     description: 'External, internal, web, mobile, API, network, and red team exercises',
-    href: '/solutions/assess',
+    href: '/solutions',
   },
   {
     title: 'Security Architecture',
     description: 'Zero Trust design, enterprise security architecture, hybrid infrastructure',
-    href: '/solutions/engineer',
+    href: '/engineering/architecture',
   },
   {
     title: 'Security Operations',
     description: 'SOC build, detection engineering, use case development, threat hunting',
-    href: '/solutions/operate',
+    href: '/platform/operate',
   },
   {
     title: 'Incident Response',
     description: 'IR planning, tabletop exercises, cyber crisis simulation, ransomware readiness',
-    href: '/solutions/operate',
+    href: '/knowledge/incident-response',
   },
   {
     title: 'Security Validation',
     description: 'Control validation, health checks, post-implementation reviews, remediation validation',
-    href: '/solutions/validate',
+    href: '/engineering/health-checks',
   },
 ]
 

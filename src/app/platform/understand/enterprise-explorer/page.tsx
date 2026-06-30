@@ -4,6 +4,9 @@ import { PageShell } from '@/components/layout/PageShell'
 export const metadata: Metadata = {
   title: 'Enterprise Explorer',
   description: 'Navigate your digital enterprise and discover security considerations for every layer.',
+  alternates: {
+    canonical: '/platform/understand/enterprise-explorer',
+  },
 }
 
 export default function EnterpriseExplorerPage() {

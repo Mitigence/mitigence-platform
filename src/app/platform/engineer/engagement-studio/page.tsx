@@ -3,14 +3,17 @@ import { PageShell } from '@/components/layout/PageShell'
 
 export const metadata: Metadata = {
   title: 'Engagement Studio',
-  description: 'Design your cybersecurity engagement â€” objectives, environment, scope, timeline, and recommended journey.',
+  description: 'Design your cybersecurity engagement — objectives, environment, scope, timeline, and recommended journey.',
+  alternates: {
+    canonical: '/platform/engineer/engagement-studio',
+  },
 }
 
 export default function EngagementStudioPage() {
   return (
     <PageShell
       title="Engagement Studio"
-      description="Your digital consultant. Define your business context, security objectives, environment, and scope â€” and receive a structured engagement roadmap with recommended phases, milestones, and deliverables. No PDF. No generic proposal."
+      description="Your digital consultant. Define your business context, security objectives, environment, and scope — and receive a structured engagement roadmap with recommended phases, milestones, and deliverables. No PDF. No generic proposal."
     />
   )
 }

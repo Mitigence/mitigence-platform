@@ -4,6 +4,9 @@ import { PageShell } from '@/components/layout/PageShell'
 export const metadata: Metadata = {
   title: 'Operational Readiness',
   description: 'A security control is only as valuable as the team that operates it.',
+  alternates: {
+    canonical: '/engineering/operational-readiness',
+  },
 }
 
 export default function OperationalReadinessPage() {

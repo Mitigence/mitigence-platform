@@ -3,14 +3,17 @@ import { PageShell } from '@/components/layout/PageShell'
 
 export const metadata: Metadata = {
   title: 'Careers',
-  description: 'Join Mitigence â€” we\'re looking for engineers who want to make cybersecurity clearer and more effective.',
+  description: 'Join Mitigence — we\'re looking for engineers who want to make cybersecurity clearer and more effective.',
+  alternates: {
+    canonical: '/careers',
+  },
 }
 
 export default function CareersPage() {
   return (
     <PageShell
       title="Careers at Mitigence"
-      description="Join Mitigence â€” we're looking for engineers who want to make cybersecurity clearer and more effective. If you're tired of checkbox security and want to do the real work, let's talk."
+      description="Join Mitigence — we're looking for engineers who want to make cybersecurity clearer and more effective. If you're tired of checkbox security and want to do the real work, let's talk."
     />
   )
 }

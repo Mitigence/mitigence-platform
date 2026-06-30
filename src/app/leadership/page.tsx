@@ -3,14 +3,17 @@ import { PageShell } from '@/components/layout/PageShell'
 
 export const metadata: Metadata = {
   title: 'Leadership',
-  description: 'Meet the Mitigence team â€” the people behind the platform and the engineering.',
+  description: 'Meet the Mitigence team — the people behind the platform and the engineering.',
+  alternates: {
+    canonical: '/leadership',
+  },
 }
 
 export default function LeadershipPage() {
   return (
     <PageShell
       title="Leadership"
-      description="Meet the Mitigence team â€” the people behind the platform, the engineering methodology, and the delivery approach. Security practitioners who built this because they saw a better way."
+      description="Meet the Mitigence team — the people behind the platform, the engineering methodology, and the delivery approach. Security practitioners who built this because they saw a better way."
     />
   )
 }
