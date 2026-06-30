@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import Link from 'next/link'
 import { motion, useInView } from 'framer-motion'
 import { staggerContainer, staggerItem, fadeInUp } from '@/lib/animations'
 
@@ -225,14 +226,14 @@ const knowledgeResources = [
     title: 'Building a Security Program From Scratch',
     description:
       'A structured approach to understanding your risks, selecting the right controls, and building a continuous improvement cycle.',
-    href: '/knowledge/architecture',
+    href: '/knowledge/monitoring',
   },
   {
     label: 'FRAMEWORK',
     title: 'The Mitigence Engineering Lifecycle',
     description:
       'How Mitigence structures security engagements — from discovery through deployment and continuous improvement.',
-    href: '/knowledge',
+    href: '/platform/engineer/engineering-studio',
   },
   {
     label: 'GUIDE',
@@ -302,12 +303,12 @@ function KnowledgeCenter() {
           variants={fadeInUp}
           transition={{ duration: 0.4, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <a
+          <Link
             href="/knowledge"
             className="text-zinc-300 hover:text-white text-sm font-medium transition-colors"
           >
             Explore the Knowledge Center →
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

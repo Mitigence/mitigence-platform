@@ -133,7 +133,7 @@ const pillars = [
     title: 'Assess',
     description:
       'Understand your risk surface before committing to controls. Infrastructure assessments, penetration testing, architecture reviews, maturity evaluations, and threat modeling.',
-    href: '/solutions',
+    href: '/platform/understand/security-journey',
   },
   {
     number: '02',
@@ -147,7 +147,7 @@ const pillars = [
     title: 'Validate',
     description:
       'Test what was built. Verify what was claimed. Fix what is broken. Configuration validation, control testing, health checks, and deployment verification.',
-    href: '/engineering/health-checks',
+    href: '/engineering/configuration-review',
   },
   {
     number: '04',
@@ -161,7 +161,7 @@ const pillars = [
     title: 'Evolve',
     description:
       'Strategic roadmaps, maturity improvement programs, vCISO advisory, and long-term partnerships that grow your security posture over time.',
-    href: '/consultation',
+    href: '/approach',
   },
 ]
 
