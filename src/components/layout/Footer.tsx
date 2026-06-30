@@ -58,7 +58,7 @@ export function Footer() {
           {/* Link columns */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <p className="text-white text-sm font-semibold mb-4">{category}</p>
+              <p className="text-red-600 text-sm font-semibold mb-4">{category}</p>
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link.label}>
@@ -83,10 +83,10 @@ export function Footer() {
             © {new Date().getFullYear()} Mitigence. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link href="/contact" className="text-zinc-600 text-sm hover:text-zinc-400 transition-colors">
+            <Link href="/privacy" className="text-zinc-600 text-sm hover:text-zinc-400 transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/contact" className="text-zinc-600 text-sm hover:text-zinc-400 transition-colors">
+            <Link href="/terms" className="text-zinc-600 text-sm hover:text-zinc-400 transition-colors">
               Terms of Service
             </Link>
           </div>
