@@ -1,0 +1,82 @@
+{
+  "businessContexts": [
+    { "id": "rapidly-growing", "label": "Rapidly growing" },
+    { "id": "cloud-first", "label": "Cloud-first" },
+    { "id": "multi-site", "label": "Multi-site" },
+    { "id": "remote-workforce", "label": "Remote workforce" },
+    { "id": "highly-regulated", "label": "Highly regulated" },
+    { "id": "global-operations", "label": "Global operations" }
+  ],
+  "objectives": [
+    { "id": "improve-visibility", "label": "Improve visibility" },
+    { "id": "reduce-operational-risk", "label": "Reduce operational risk" },
+    { "id": "strengthen-architecture", "label": "Strengthen security architecture" },
+    { "id": "improve-response-readiness", "label": "Improve response readiness" },
+    { "id": "support-business-growth", "label": "Support business growth" },
+    { "id": "increase-resilience", "label": "Increase resilience" }
+  ],
+  "environments": [
+    {
+      "id": "cloud",
+      "label": "Cloud",
+      "description": "Workloads run primarily in public cloud — AWS, Azure, or GCP."
+    },
+    {
+      "id": "hybrid",
+      "label": "Hybrid",
+      "description": "A mix of on-premises infrastructure and cloud services."
+    },
+    {
+      "id": "on-premises",
+      "label": "On-Premises",
+      "description": "Infrastructure runs primarily in owned or co-located data centers."
+    },
+    {
+      "id": "multi-cloud",
+      "label": "Multi-Cloud",
+      "description": "Workloads span more than one public cloud provider."
+    }
+  ],
+  "scopeItems": [
+    { "id": "applications", "label": "Applications" },
+    { "id": "cloud", "label": "Cloud" },
+    { "id": "identity", "label": "Identity" },
+    { "id": "network", "label": "Network" },
+    { "id": "endpoints", "label": "Endpoints" },
+    { "id": "data", "label": "Data" }
+  ],
+  "timelines": [
+    { "id": "30-days", "label": "30 Days", "weeks": 4 },
+    { "id": "60-days", "label": "60 Days", "weeks": 8 },
+    { "id": "90-days", "label": "90 Days", "weeks": 13 },
+    { "id": "6-months", "label": "6 Months", "weeks": 26 },
+    { "id": "12-months", "label": "12 Months", "weeks": 52 }
+  ],
+  "specialistRoles": [
+    { "id": "security-architect", "label": "Security Architect" },
+    { "id": "soc-analyst", "label": "SOC Analyst" },
+    { "id": "cloud-engineer", "label": "Cloud Engineer" },
+    { "id": "threat-hunter", "label": "Threat Hunter" },
+    { "id": "incident-responder", "label": "Incident Responder" },
+    { "id": "penetration-tester", "label": "Penetration Tester" }
+  ],
+  "journeyPhases": {
+    "default": ["Discovery", "Assessment", "Engineering", "Validation", "Operational Support"],
+    "byObjective": {
+      "improve-visibility": ["Discovery", "Visibility Assessment", "Monitoring Engineering", "Validation"],
+      "reduce-operational-risk": ["Assessment", "Risk Prioritization", "Engineering", "Validation"],
+      "strengthen-architecture": ["Architecture Review", "Design", "Engineering", "Validation"],
+      "improve-response-readiness": ["Assessment", "Response Engineering", "Tabletop Validation", "Operational Readiness"],
+      "support-business-growth": ["Discovery", "Scalable Architecture", "Engineering", "Operational Support"],
+      "increase-resilience": ["Assessment", "Engineering", "Validation", "Continuous Improvement"]
+    }
+  },
+  "scopeToSpecialists": {
+    "applications": ["penetration-tester", "security-architect"],
+    "cloud": ["cloud-engineer", "security-architect"],
+    "identity": ["security-architect", "soc-analyst"],
+    "network": ["security-architect", "soc-analyst"],
+    "endpoints": ["soc-analyst", "threat-hunter"],
+    "data": ["security-architect", "soc-analyst"]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "solutions": [
+    {
+      "id": "applications",
+      "name": "Application Security",
+      "description": "Securing modern applications from architecture through continuous review.",
+      "href": "/solutions/applications"
+    },
+    {
+      "id": "cloud",
+      "name": "Cloud Security",
+      "description": "Architecture review, configuration validation, and continuous cloud security engineering.",
+      "href": "/solutions/cloud"
+    },
+    {
+      "id": "identity",
+      "name": "Identity Security",
+      "description": "Reducing standing privilege and strengthening identity as the primary control plane.",
+      "href": "/solutions/identity"
+    },
+    {
+      "id": "network",
+      "name": "Network Security",
+      "description": "Segmentation, visibility, and resilient network architecture.",
+      "href": "/solutions/network"
+    },
+    {
+      "id": "endpoints",
+      "name": "Endpoint Protection",
+      "description": "Hardening, detection, and consistent endpoint coverage across the fleet.",
+      "href": "/solutions/endpoints"
+    },
+    {
+      "id": "data",
+      "name": "Data Protection",
+      "description": "Classification, access governance, and protection for your most sensitive asset.",
+      "href": "/solutions/data"
+    },
+    {
+      "id": "remote-access",
+      "name": "Remote Access Security",
+      "description": "Zero-trust pathways for a distributed and hybrid workforce.",
+      "href": "/solutions/remote-access"
+    },
+    {
+      "id": "monitoring",
+      "name": "Security Monitoring",
+      "description": "Visibility, detection, and response built for continuous operations.",
+      "href": "/solutions/monitoring"
+    }
+  ]
+}

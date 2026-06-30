@@ -1,0 +1,132 @@
+{
+  "domains": [
+    {
+      "id": "applications",
+      "name": "Applications",
+      "shortLabel": "Apps",
+      "description": "Web and business applications that hold your most sensitive logic and data.",
+      "challenges": [
+        "Insecure coding patterns shipped to production",
+        "Missing authentication and authorization checks",
+        "Outdated dependencies with known vulnerabilities",
+        "No continuous security testing in the SDLC"
+      ],
+      "businessRisk": "A single application flaw can expose customer data, break compliance posture, or take core revenue systems offline.",
+      "mitigenceApproach": ["Discovery", "Assessment", "Risk Review", "Remediation Guidance", "Validation", "Continuous Review"],
+      "relatedSolutionHref": "/solutions/applications",
+      "relatedCapabilityId": "applications"
+    },
+    {
+      "id": "cloud",
+      "name": "Cloud",
+      "shortLabel": "Cloud",
+      "description": "Cloud infrastructure and platform services running production workloads.",
+      "challenges": [
+        "Misconfigured storage, networking, and IAM policies",
+        "Identity sprawl across multiple cloud accounts",
+        "Limited visibility into workload-level risk",
+        "Inconsistent guardrails across environments"
+      ],
+      "businessRisk": "Cloud misconfiguration remains one of the leading causes of large-scale data exposure incidents.",
+      "mitigenceApproach": ["Architecture Review", "Engineering", "Validation", "Optimization"],
+      "relatedSolutionHref": "/solutions/cloud",
+      "relatedCapabilityId": "cloud"
+    },
+    {
+      "id": "identity",
+      "name": "Identity",
+      "shortLabel": "Identity",
+      "description": "Identity and access services governing who can reach what, and how.",
+      "challenges": [
+        "Excess standing privilege across users and services",
+        "Weak or inconsistent MFA enforcement",
+        "Orphaned accounts and stale access grants",
+        "Fragmented identity across SaaS and on-prem"
+      ],
+      "businessRisk": "Identity compromise is the most common entry point in modern breaches — it bypasses most perimeter controls outright.",
+      "mitigenceApproach": ["Assessment", "Architecture", "Engineering", "Operational Readiness"],
+      "relatedSolutionHref": "/solutions/identity",
+      "relatedCapabilityId": "identity"
+    },
+    {
+      "id": "network",
+      "name": "Network",
+      "shortLabel": "Network",
+      "description": "The connective layer linking users, services, sites, and the internet.",
+      "challenges": [
+        "Flat networks with limited segmentation",
+        "Legacy trust assumptions between zones",
+        "Inconsistent traffic visibility",
+        "Slow detection of lateral movement"
+      ],
+      "businessRisk": "Without segmentation, a single compromised endpoint can become an open path to your entire environment.",
+      "mitigenceApproach": ["Architecture Review", "Deployment", "Configuration Review", "Operational Readiness"],
+      "relatedSolutionHref": "/solutions/network",
+      "relatedCapabilityId": "network"
+    },
+    {
+      "id": "endpoints",
+      "name": "Endpoints",
+      "shortLabel": "Endpoints",
+      "description": "Laptops, servers, and devices where users and workloads actually run.",
+      "challenges": [
+        "Inconsistent hardening baselines",
+        "Delayed patching across the fleet",
+        "Limited detection coverage on managed devices",
+        "Unmanaged or shadow IT devices"
+      ],
+      "businessRisk": "Endpoints are the most common initial foothold for ransomware and commodity malware.",
+      "mitigenceApproach": ["Assessment", "Engineering", "Validation", "Monitoring"],
+      "relatedSolutionHref": "/solutions/endpoints",
+      "relatedCapabilityId": "endpoints"
+    },
+    {
+      "id": "data",
+      "name": "Data",
+      "shortLabel": "Data",
+      "description": "Structured and unstructured data — the asset every other control exists to protect.",
+      "challenges": [
+        "Unclear data classification and ownership",
+        "Overprivileged access to sensitive stores",
+        "Limited visibility into where sensitive data lives",
+        "No consistent encryption or retention policy"
+      ],
+      "businessRisk": "Data exposure is usually the headline outcome of a breach — and the hardest to fully remediate after the fact.",
+      "mitigenceApproach": ["Discovery", "Classification", "Access Review", "Engineering", "Validation"],
+      "relatedSolutionHref": "/solutions/data",
+      "relatedCapabilityId": "data"
+    },
+    {
+      "id": "apis",
+      "name": "APIs",
+      "shortLabel": "APIs",
+      "description": "The interfaces connecting applications, partners, and third-party integrations.",
+      "challenges": [
+        "Missing authentication on internal-facing APIs",
+        "Excessive data exposure in API responses",
+        "No rate limiting or abuse detection",
+        "Shadow APIs outside inventory"
+      ],
+      "businessRisk": "APIs are now a primary attack surface — most breaches in modern stacks touch an API at some stage.",
+      "mitigenceApproach": ["Discovery", "Assessment", "Risk Review", "Remediation Guidance", "Validation"],
+      "relatedSolutionHref": "/solutions/applications",
+      "relatedCapabilityId": "applications"
+    },
+    {
+      "id": "remote-access",
+      "name": "Remote Access",
+      "shortLabel": "Remote",
+      "description": "The pathways remote and hybrid workforces use to reach internal systems.",
+      "challenges": [
+        "Legacy VPN architectures with broad network trust",
+        "Inconsistent device posture checks",
+        "Limited session monitoring",
+        "Third-party and contractor access sprawl"
+      ],
+      "businessRisk": "Remote access is the front door for a distributed workforce — and a frequent target for credential-based attacks.",
+      "mitigenceApproach": ["Architecture Review", "Engineering", "Configuration Review", "Operational Readiness"],
+      "relatedSolutionHref": "/solutions/remote-access",
+      "relatedCapabilityId": "remote-access"
+    }
+  ]
+}

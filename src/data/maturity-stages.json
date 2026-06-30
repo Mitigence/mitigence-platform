@@ -1,0 +1,69 @@
+{
+  "stages": [
+    {
+      "id": "beginning",
+      "order": 1,
+      "name": "Beginning",
+      "summary": "Security is reactive. Controls exist where required, not where risk lives.",
+      "challenges": [
+        "No formal security ownership",
+        "Ad-hoc tooling with no unified visibility",
+        "Manual processes for most security tasks",
+        "Reactive response to incidents, not prevention"
+      ],
+      "recommendedJourney": ["Discovery", "Assessment", "Foundational Engineering"]
+    },
+    {
+      "id": "growing",
+      "order": 2,
+      "name": "Growing",
+      "summary": "Security investment has started, but coverage is inconsistent across the environment.",
+      "challenges": [
+        "More cloud, more users, more applications",
+        "Limited visibility across expanding environment",
+        "Manual processes that don't scale",
+        "Point solutions without an underlying program"
+      ],
+      "recommendedJourney": ["Assessment", "Engineering", "Monitoring", "Optimization"]
+    },
+    {
+      "id": "scaling",
+      "order": 3,
+      "name": "Scaling",
+      "summary": "Core controls are in place. The focus shifts to consistency, automation, and coverage gaps.",
+      "challenges": [
+        "Inconsistent enforcement across business units",
+        "Growing complexity outpacing the security team",
+        "Need for automation to keep pace with scale",
+        "Emerging compliance and audit pressure"
+      ],
+      "recommendedJourney": ["Architecture Review", "Engineering", "Operations", "Validation"]
+    },
+    {
+      "id": "optimizing",
+      "order": 4,
+      "name": "Optimizing",
+      "summary": "Mature controls exist. The focus is tuning, reducing noise, and proving effectiveness.",
+      "challenges": [
+        "Alert fatigue and detection tuning",
+        "Proving control effectiveness to leadership",
+        "Reducing operational overhead",
+        "Closing residual gaps from rapid early growth"
+      ],
+      "recommendedJourney": ["Validation", "Optimization", "Operational Readiness"]
+    },
+    {
+      "id": "continuous-improvement",
+      "order": 5,
+      "name": "Continuous Improvement",
+      "summary": "Security is a continuous discipline, not a project. The program adapts as the business changes.",
+      "challenges": [
+        "Keeping pace with a changing threat landscape",
+        "Sustaining maturity through organizational change",
+        "Quarterly validation and strategic planning",
+        "Demonstrating ongoing ROI on the security program"
+      ],
+      "recommendedJourney": ["Quarterly Validation", "Strategic Advisory", "Continuous Engineering"]
+    }
+  ]
+}
