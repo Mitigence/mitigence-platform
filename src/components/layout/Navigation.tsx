@@ -50,7 +50,7 @@ export function Navigation() {
                 className="object-contain"
                 priority
               />
-              <span className="text-white font-bold text-lg tracking-tight">MITIGENCE</span>
+              <span className="text-white text-xl" style={{ fontFamily: 'var(--font-nunito)', fontWeight: 700, letterSpacing: '0.01em' }}>Mitigence</span>
             </Link>
 
             {/* Desktop Nav Items */}

@@ -1,6 +1,14 @@
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
+import { Nunito } from 'next/font/google'
+
+const nunito = Nunito({
+  weight: ['700'],
+  subsets: ['latin'],
+  variable: '--font-nunito',
+  display: 'swap',
+})
 import { Analytics } from '@vercel/analytics/react'
 import { Navigation } from '@/components/layout/Navigation'
 import { Footer } from '@/components/layout/Footer'
@@ -88,7 +96,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable} ${nunito.variable}`}>
       <body className="font-sans bg-black text-white antialiased">
         <script
           type="application/ld+json"

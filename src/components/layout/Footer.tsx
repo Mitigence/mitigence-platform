@@ -49,7 +49,7 @@ export function Footer() {
                 height={32}
                 className="object-contain"
               />
-              <span className="text-white font-bold text-lg tracking-tight">MITIGENCE</span>
+              <span className="text-white text-xl" style={{ fontFamily: 'var(--font-nunito)', fontWeight: 700, letterSpacing: '0.01em' }}>Mitigence</span>
             </Link>
             <p className="text-zinc-500 text-sm leading-relaxed max-w-xs">
               Cybersecurity Delivery & Engineering Platform. Helping organizations understand, engineer, and operate resilient security programs.
