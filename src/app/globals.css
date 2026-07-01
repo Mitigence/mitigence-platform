@@ -94,6 +94,16 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
+  /* Ensure all page content renders above the matrix canvas (z-1) and logo watermark (z-2) */
+  nav,
+  main,
+  footer,
+  [data-radix-popper-content-wrapper],
+  .chatbot-container {
+    position: relative;
+    z-index: 3;
+  }
+
   ::selection {
     @apply bg-red-600 text-white;
   }

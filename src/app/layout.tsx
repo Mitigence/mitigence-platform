@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { Navigation } from '@/components/layout/Navigation'
 import { Footer } from '@/components/layout/Footer'
 import { LeadCaptureBot } from '@/components/chatbot/LeadCaptureBot'
+import { MatrixBackground } from '@/components/effects/MatrixBackground'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -28,6 +29,13 @@ export const metadata: Metadata = {
   creator: 'Mitigence',
   alternates: {
     canonical: '/',
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/logo-icon.webp', type: 'image/webp' },
+    ],
+    apple: '/logo-icon.webp',
   },
   openGraph: {
     type: 'website',
@@ -86,6 +94,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
+        <MatrixBackground />
         <Navigation />
         {children}
         <Footer />

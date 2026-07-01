@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ChevronRight } from 'lucide-react'
@@ -17,8 +18,11 @@ export function Navigation() {
   const closeTimer = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
-    setMobileOpen(false)
-    setActiveMenu(null)
+    const id = setTimeout(() => {
+      setMobileOpen(false)
+      setActiveMenu(null)
+    }, 0)
+    return () => clearTimeout(id)
   }, [pathname])
 
   const handleMouseEnter = (label: string) => {
@@ -37,18 +41,16 @@ export function Navigation() {
           <div className="flex items-center justify-between h-16">
 
             {/* Logo */}
-            <Link href="/" className="flex items-center flex-shrink-0">
-              <img
-                src="/logo.svg"
+            <Link href="/" className="flex items-center gap-2.5 flex-shrink-0">
+              <Image
+                src="/logo-icon.webp"
                 alt="Mitigence"
-                className="h-8 w-auto"
-                onError={(e) => {
-                  // Fallback if logo not yet provided
-                  const target = e.target as HTMLImageElement
-                  target.style.display = 'none'
-                  target.insertAdjacentHTML('afterend', '<span class="text-white font-bold text-lg tracking-tight">MITIGENCE</span>')
-                }}
+                width={32}
+                height={32}
+                className="object-contain"
+                priority
               />
+              <span className="text-white font-bold text-lg tracking-tight">MITIGENCE</span>
             </Link>
 
             {/* Desktop Nav Items */}

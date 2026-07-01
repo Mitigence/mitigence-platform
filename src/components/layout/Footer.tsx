@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Separator } from '@/components/ui/separator'
 
 const footerLinks = {
@@ -40,17 +41,15 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
-            <Link href="/" className="inline-block mb-4">
-              <img
-                src="/logo.svg"
+            <Link href="/" className="flex items-center gap-2 mb-4">
+              <Image
+                src="/logo-icon.webp"
                 alt="Mitigence"
-                className="h-8 w-auto"
-                onError={(e) => {
-                  const t = e.target as HTMLImageElement
-                  t.style.display = 'none'
-                  t.insertAdjacentHTML('afterend', '<span class="text-white font-bold text-lg">MITIGENCE</span>')
-                }}
+                width={32}
+                height={32}
+                className="object-contain"
               />
+              <span className="text-white font-bold text-lg tracking-tight">MITIGENCE</span>
             </Link>
             <p className="text-zinc-500 text-sm leading-relaxed max-w-xs">
               Cybersecurity Delivery & Engineering Platform. Helping organizations understand, engineer, and operate resilient security programs.
