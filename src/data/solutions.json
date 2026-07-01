@@ -21,7 +21,7 @@
     {
       "id": "network",
       "name": "Network Security",
-      "description": "Segmentation, visibility, and resilient network architecture.",
+      "description": "Segmentation, SWG, and CASB — controlling traffic between users, cloud services, and the internet.",
       "href": "/solutions/network"
     },
     {
@@ -32,14 +32,14 @@
     },
     {
       "id": "data",
-      "name": "Data Protection",
-      "description": "Classification, access governance, and protection for your most sensitive asset.",
+      "name": "Data Security",
+      "description": "Classification, DLP implementation, DSPM, and data flow analysis for your most sensitive asset.",
       "href": "/solutions/data"
     },
     {
       "id": "remote-access",
-      "name": "Remote Access Security",
-      "description": "Zero-trust pathways for a distributed and hybrid workforce.",
+      "name": "Zero Trust Access",
+      "description": "ZTNA replacing legacy VPN — per-application, identity-verified private access for distributed workforces.",
       "href": "/solutions/remote-access"
     },
     {

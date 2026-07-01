@@ -57,12 +57,14 @@
       "name": "Network",
       "tagline": "Control the paths attackers move through.",
       "lifecycle": [
-        { "stage": "Architecture", "description": "Design segmentation model, firewall topology, zero-trust network access." },
-        { "stage": "Assessment", "description": "Identify flat network zones, exposed services, routing anomalies, lateral paths." },
-        { "stage": "Engineering", "description": "Implement micro-segmentation, secure DNS, firewall policy hardening." },
-        { "stage": "Configuration Review", "description": "Validate firewall rules, routing policies, and access control lists." },
-        { "stage": "Operational Readiness", "description": "Enable network monitoring, define anomaly detection thresholds." },
-        { "stage": "Optimization", "description": "Reduce exposure, remove legacy trust paths, automate policy enforcement." }
+        { "stage": "Architecture", "description": "Design segmentation model, firewall topology, and traffic control strategy including SWG and CASB placement." },
+        { "stage": "Assessment", "description": "Identify flat network zones, exposed services, routing anomalies, lateral paths, and uncontrolled cloud app usage." },
+        { "stage": "SWG Deployment", "description": "Implement Secure Web Gateway to filter and inspect outbound internet traffic — URL filtering, TLS inspection, malware detection, and data loss controls." },
+        { "stage": "CASB Implementation", "description": "Deploy Cloud Access Security Broker for visibility and control over cloud and SaaS app usage. Discover shadow IT, enforce access policy, and prevent data leakage to unsanctioned services." },
+        { "stage": "Segmentation Engineering", "description": "Implement micro-segmentation, firewall policy hardening, and secure DNS to restrict lateral movement." },
+        { "stage": "Configuration Review", "description": "Validate firewall rules, routing policies, access control lists, SWG policies, and CASB configurations." },
+        { "stage": "Operational Readiness", "description": "Enable network monitoring, integrate SWG/CASB telemetry into SIEM, define anomaly detection thresholds." },
+        { "stage": "Optimization", "description": "Reduce exposure surface, remove legacy trust paths, tune SWG/CASB policies, automate enforcement." }
       ]
     },
     {
@@ -83,13 +85,14 @@
       "name": "Data",
       "tagline": "Protect the asset everything else exists to guard.",
       "lifecycle": [
-        { "stage": "Discovery", "description": "Identify where sensitive data lives across structured and unstructured stores." },
-        { "stage": "Classification", "description": "Define data classifications, apply labels, establish handling policies." },
-        { "stage": "Data Flow Analysis", "description": "Map how sensitive data moves across systems, processes, and third parties. Identify uncontrolled flows, policy violations, and exposure paths. Powered by DFAnalyzer — Mitigence's tool that automates flow mapping and continuously validates flows against your data security policies." },
-        { "stage": "Access Review", "description": "Identify overprivileged access to sensitive data, reduce exposure." },
-        { "stage": "Engineering", "description": "Implement encryption at rest and in transit, DLP controls, access governance." },
-        { "stage": "Validation", "description": "Test data controls, confirm encryption coverage, validate DLP rule efficacy." },
-        { "stage": "Optimization", "description": "Automate classification, improve data lineage visibility, reduce retention risk." }
+        { "stage": "Discovery", "description": "Identify where sensitive data lives across structured and unstructured stores, cloud and on-prem." },
+        { "stage": "Classification", "description": "Define data classifications, apply labels, establish handling policies and ownership." },
+        { "stage": "Data Flow Analysis", "description": "Map how sensitive data moves across systems, processes, and third parties. Identify uncontrolled flows and policy violations. DFAnalyzer automates continuous flow mapping and validates flows against data security policies." },
+        { "stage": "DLP Implementation", "description": "Deploy Data Loss Prevention across endpoint, network, and cloud channels. Calibrate policies to your classification framework. Fine-tune rules to reduce alert noise and improve precision." },
+        { "stage": "DSPM", "description": "Data Security Posture Management — continuous visibility into where sensitive data lives, how it is protected, who can access it, and where posture has drifted from policy." },
+        { "stage": "Access Review", "description": "Identify overprivileged access to sensitive data, reduce exposure surface." },
+        { "stage": "Policy Fine-Tuning", "description": "Optimise DLP rules, classification accuracy, and DSPM alerting. Reduce false positives, close coverage gaps, and keep enforcement aligned as data environments change." },
+        { "stage": "Validation", "description": "Test data controls, confirm encryption coverage, validate DLP rule efficacy." }
       ]
     },
     {
@@ -97,12 +100,13 @@
       "name": "Remote Access",
       "tagline": "Secure distributed access without sacrificing usability.",
       "lifecycle": [
-        { "stage": "Architecture", "description": "Design zero-trust network access model, replace broad-trust VPN architecture." },
-        { "stage": "Engineering", "description": "Deploy ZTNA, device posture enforcement, session monitoring." },
-        { "stage": "Configuration Review", "description": "Validate access policies, certificate management, split-tunnel configurations." },
-        { "stage": "Operational Readiness", "description": "Define access review cycles, third-party access governance." },
-        { "stage": "Optimization", "description": "Improve user experience, reduce VPN sprawl, enhance session visibility." },
-        { "stage": "Related Engagements", "description": "Remote Access Assessment, ZTNA Engineering, Third-Party Access Governance." }
+        { "stage": "Assessment", "description": "Audit existing VPN architecture, access policies, device posture controls, and trust model." },
+        { "stage": "ZTNA Architecture", "description": "Design per-application access model — application segments, identity policies, device posture requirements — to replace broad-trust VPN." },
+        { "stage": "ZTNA Deployment", "description": "Implement ZTNA for private application access. Migrate users off legacy VPN without disrupting operations. Enforce least-privilege per application, per session." },
+        { "stage": "Device Posture Enforcement", "description": "Configure continuous device health checks — patch level, MDM enrolment, certificate presence — as conditions for access grant." },
+        { "stage": "Configuration Review", "description": "Validate access policies, certificate management, split-tunnel configurations, and third-party access scoping." },
+        { "stage": "Operational Readiness", "description": "Define access review cycles, third-party access governance, and session monitoring workflows." },
+        { "stage": "Optimization", "description": "Reduce VPN sprawl, improve session visibility, tighten access scoping over time." }
       ]
     }
   ]
