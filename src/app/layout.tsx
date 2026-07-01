@@ -38,13 +38,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/logo-icon.webp', type: 'image/webp' },
-    ],
-    apple: '/logo-icon.webp',
-  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
