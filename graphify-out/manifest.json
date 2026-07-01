@@ -1,0 +1,707 @@
+{
+  "E:\\mit\\WEBAPP\\components.json": {
+    "mtime": 1782830388.3736992,
+    "ast_hash": "10d270af5893d78a158caaa624212747",
+    "semantic_hash": "10d270af5893d78a158caaa624212747"
+  },
+  "E:\\mit\\WEBAPP\\eslint.config.mjs": {
+    "mtime": 1781978216.4506764,
+    "ast_hash": "dfa1f5f6a7037bf39dc510f30b180002",
+    "semantic_hash": "dfa1f5f6a7037bf39dc510f30b180002"
+  },
+  "E:\\mit\\WEBAPP\\next-env.d.ts": {
+    "mtime": 1782853749.82311,
+    "ast_hash": "d0f8375ae1199dc7acd3977fc33b78b8",
+    "semantic_hash": "d0f8375ae1199dc7acd3977fc33b78b8"
+  },
+  "E:\\mit\\WEBAPP\\next.config.ts": {
+    "mtime": 1782812946.9249535,
+    "ast_hash": "31d6eadd75b61fd2c77df4b294721517",
+    "semantic_hash": "31d6eadd75b61fd2c77df4b294721517"
+  },
+  "E:\\mit\\WEBAPP\\package.json": {
+    "mtime": 1782834582.4559052,
+    "ast_hash": "38efff39f052c3b48d6e259053a52a37",
+    "semantic_hash": "38efff39f052c3b48d6e259053a52a37"
+  },
+  "E:\\mit\\WEBAPP\\postcss.config.mjs": {
+    "mtime": 1781978216.6695333,
+    "ast_hash": "239f3ebf717465dc636818a1a619398d",
+    "semantic_hash": "239f3ebf717465dc636818a1a619398d"
+  },
+  "E:\\mit\\WEBAPP\\tailwind.config.ts": {
+    "mtime": 1782827939.9884176,
+    "ast_hash": "3fd1175f7d117e51135c76d676d2c8ac",
+    "semantic_hash": "3fd1175f7d117e51135c76d676d2c8ac"
+  },
+  "E:\\mit\\WEBAPP\\tsconfig.json": {
+    "mtime": 1782812698.8203511,
+    "ast_hash": "ee17fd1c97c735e9f3564e3f5251f125",
+    "semantic_hash": "ee17fd1c97c735e9f3564e3f5251f125"
+  },
+  "E:\\mit\\WEBAPP\\.claude\\settings.local.json": {
+    "mtime": 1782886018.1172376,
+    "ast_hash": "b4ce87f6d6a703e88e0184304afde2e0",
+    "semantic_hash": "b4ce87f6d6a703e88e0184304afde2e0"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\layout.tsx": {
+    "mtime": 1782882660.9444337,
+    "ast_hash": "89202107b96c5fd71c48e61e05201973",
+    "semantic_hash": "89202107b96c5fd71c48e61e05201973"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\page.tsx": {
+    "mtime": 1782839601.4369416,
+    "ast_hash": "da4ba1ae3a3508d457e77bda7c83543a",
+    "semantic_hash": "da4ba1ae3a3508d457e77bda7c83543a"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\robots.ts": {
+    "mtime": 1782849618.6251707,
+    "ast_hash": "6faa8eaee7d82aad54f8c15012dacfc1",
+    "semantic_hash": "6faa8eaee7d82aad54f8c15012dacfc1"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\sitemap.ts": {
+    "mtime": 1782849615.9808621,
+    "ast_hash": "0c23ed519fb262130d49dcc9628ab8ad",
+    "semantic_hash": "0c23ed519fb262130d49dcc9628ab8ad"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\about\\page.tsx": {
+    "mtime": 1782852285.4607973,
+    "ast_hash": "190e0717986b306bf7f96ccb2276791d",
+    "semantic_hash": "190e0717986b306bf7f96ccb2276791d"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\api\\contact\\route.ts": {
+    "mtime": 1782839445.0655792,
+    "ast_hash": "d2a7f8bcf1a0ddc55baa90f35b204c95",
+    "semantic_hash": "d2a7f8bcf1a0ddc55baa90f35b204c95"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\api\\lead\\route.ts": {
+    "mtime": 1782839444.6911364,
+    "ast_hash": "1ddd988f3ea7828294be6f144671f140",
+    "semantic_hash": "1ddd988f3ea7828294be6f144671f140"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\approach\\page.tsx": {
+    "mtime": 1782852300.061705,
+    "ast_hash": "a295dcc3d70a8390ea8ca5d2ea11f9df",
+    "semantic_hash": "a295dcc3d70a8390ea8ca5d2ea11f9df"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\careers\\page.tsx": {
+    "mtime": 1782852309.200233,
+    "ast_hash": "0895f9bbafa100ddf976bd8e79852401",
+    "semantic_hash": "0895f9bbafa100ddf976bd8e79852401"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\company\\page.tsx": {
+    "mtime": 1782854918.7779574,
+    "ast_hash": "f52617922e2d54d03b4405e041ed7bb4",
+    "semantic_hash": "f52617922e2d54d03b4405e041ed7bb4"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\consultation\\page.tsx": {
+    "mtime": 1782851037.3732011,
+    "ast_hash": "8beb73988179e24f6596b1051e2910e6",
+    "semantic_hash": "8beb73988179e24f6596b1051e2910e6"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\contact\\page.tsx": {
+    "mtime": 1782851138.1469984,
+    "ast_hash": "e27480d498d35a19c033516f601f325b",
+    "semantic_hash": "e27480d498d35a19c033516f601f325b"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\engineering\\page.tsx": {
+    "mtime": 1782852730.2211246,
+    "ast_hash": "2bbde410a2b30b1cd7deef58c9e0c557",
+    "semantic_hash": "2bbde410a2b30b1cd7deef58c9e0c557"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\engineering\\architecture\\page.tsx": {
+    "mtime": 1782852660.593699,
+    "ast_hash": "dd7a089fc5463cfbcbc657cbebaee0c8",
+    "semantic_hash": "dd7a089fc5463cfbcbc657cbebaee0c8"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\engineering\\configuration-review\\page.tsx": {
+    "mtime": 1782852660.601697,
+    "ast_hash": "1f2d8c29561b699cfd1191fcd48b0479",
+    "semantic_hash": "1f2d8c29561b699cfd1191fcd48b0479"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\engineering\\deployment\\page.tsx": {
+    "mtime": 1782852660.5986984,
+    "ast_hash": "5b1b3f23e7c6a4087e479161ffb08937",
+    "semantic_hash": "5b1b3f23e7c6a4087e479161ffb08937"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\engineering\\health-checks\\page.tsx": {
+    "mtime": 1782852660.6026974,
+    "ast_hash": "64d0db58c59e9d33ef7c9441038fff3d",
+    "semantic_hash": "64d0db58c59e9d33ef7c9441038fff3d"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\engineering\\integration\\page.tsx": {
+    "mtime": 1782852660.599697,
+    "ast_hash": "c7d6daf42ef4704896b10162109c42f9",
+    "semantic_hash": "c7d6daf42ef4704896b10162109c42f9"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\engineering\\operational-readiness\\page.tsx": {
+    "mtime": 1782852660.604207,
+    "ast_hash": "979a958e52968287394edbfba799aaa8",
+    "semantic_hash": "979a958e52968287394edbfba799aaa8"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\engineering\\optimization\\page.tsx": {
+    "mtime": 1782852660.6036959,
+    "ast_hash": "466c47424b659356f29abc8486d2cb29",
+    "semantic_hash": "466c47424b659356f29abc8486d2cb29"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\industries\\page.tsx": {
+    "mtime": 1782852191.1431758,
+    "ast_hash": "63aa22547b146cbcfa5535fe6ddfc15a",
+    "semantic_hash": "63aa22547b146cbcfa5535fe6ddfc15a"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\industries\\education\\page.tsx": {
+    "mtime": 1782852240.1127717,
+    "ast_hash": "a1d90d7c52053d1e1f565403ae0d8a65",
+    "semantic_hash": "a1d90d7c52053d1e1f565403ae0d8a65"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\industries\\financial-services\\page.tsx": {
+    "mtime": 1782852240.103166,
+    "ast_hash": "d246744bb25a48acdeafd618b7e623a5",
+    "semantic_hash": "d246744bb25a48acdeafd618b7e623a5"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\industries\\government\\page.tsx": {
+    "mtime": 1782852240.1117723,
+    "ast_hash": "b28ef630375c1cbcd982ebd9abb2cfac",
+    "semantic_hash": "b28ef630375c1cbcd982ebd9abb2cfac"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\industries\\healthcare\\page.tsx": {
+    "mtime": 1782852240.110768,
+    "ast_hash": "7dfc8da4ba4d84b2b5df59abed7066fe",
+    "semantic_hash": "7dfc8da4ba4d84b2b5df59abed7066fe"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\industries\\manufacturing\\page.tsx": {
+    "mtime": 1782852240.1127717,
+    "ast_hash": "b0db3f760a659130512c437db6edafd4",
+    "semantic_hash": "b0db3f760a659130512c437db6edafd4"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\industries\\retail\\page.tsx": {
+    "mtime": 1782852240.113765,
+    "ast_hash": "b8117ba5baa369387e44ad710b4c9ff2",
+    "semantic_hash": "b8117ba5baa369387e44ad710b4c9ff2"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\knowledge\\page.tsx": {
+    "mtime": 1782851953.6354282,
+    "ast_hash": "69eebac300e68b87ec539b8f65f1decd",
+    "semantic_hash": "69eebac300e68b87ec539b8f65f1decd"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\knowledge\\applications\\page.tsx": {
+    "mtime": 1782852075.7153702,
+    "ast_hash": "abd15725f686f6a018e206a362e9d3f8",
+    "semantic_hash": "abd15725f686f6a018e206a362e9d3f8"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\knowledge\\architecture\\page.tsx": {
+    "mtime": 1782852075.718371,
+    "ast_hash": "0b3c15d8c3fdbc9cbd1f8259a1b05bfc",
+    "semantic_hash": "0b3c15d8c3fdbc9cbd1f8259a1b05bfc"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\knowledge\\cloud\\page.tsx": {
+    "mtime": 1782852075.7063706,
+    "ast_hash": "b5e02c9bc5f87dcf2c63c689c226ae7c",
+    "semantic_hash": "b5e02c9bc5f87dcf2c63c689c226ae7c"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\knowledge\\identity\\page.tsx": {
+    "mtime": 1782852075.7143683,
+    "ast_hash": "4ccc8fe335bcd9b18461f62d6b9c45b0",
+    "semantic_hash": "4ccc8fe335bcd9b18461f62d6b9c45b0"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\knowledge\\incident-response\\page.tsx": {
+    "mtime": 1782852075.7173688,
+    "ast_hash": "6d18c4d04613fde5186d65623292a254",
+    "semantic_hash": "6d18c4d04613fde5186d65623292a254"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\knowledge\\monitoring\\page.tsx": {
+    "mtime": 1782852075.7153702,
+    "ast_hash": "1b4a895d67c65257e517eb23493c35eb",
+    "semantic_hash": "1b4a895d67c65257e517eb23493c35eb"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\knowledge\\network\\page.tsx": {
+    "mtime": 1782852075.7163696,
+    "ast_hash": "322e02fae0b5c4e85c0ac1369baa289f",
+    "semantic_hash": "322e02fae0b5c4e85c0ac1369baa289f"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\knowledge\\[slug]\\page.tsx": {
+    "mtime": 1782848893.86524,
+    "ast_hash": "6899b4965d09b8e7e9cb77d910e39c4f",
+    "semantic_hash": "6899b4965d09b8e7e9cb77d910e39c4f"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\leadership\\page.tsx": {
+    "mtime": 1782849680.0225108,
+    "ast_hash": "f9d751b430fbd3c597d1d05769a42418",
+    "semantic_hash": "f9d751b430fbd3c597d1d05769a42418"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\platform\\page.tsx": {
+    "mtime": 1782854889.9285245,
+    "ast_hash": "ee29b328ab79056d70a01ea872054ad4",
+    "semantic_hash": "ee29b328ab79056d70a01ea872054ad4"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\platform\\engineer\\page.tsx": {
+    "mtime": 1782849680.024514,
+    "ast_hash": "204c1fa9ce7e7cc8b93173d1fe9cac4e",
+    "semantic_hash": "204c1fa9ce7e7cc8b93173d1fe9cac4e"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\platform\\engineer\\capability-explorer\\page.tsx": {
+    "mtime": 1782851602.4003391,
+    "ast_hash": "d8b9036def5cd3383276565daf0737c1",
+    "semantic_hash": "d8b9036def5cd3383276565daf0737c1"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\platform\\engineer\\delivery-framework\\page.tsx": {
+    "mtime": 1782849680.0270257,
+    "ast_hash": "19e234cc6453dcb4621bef90c3b98011",
+    "semantic_hash": "19e234cc6453dcb4621bef90c3b98011"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\platform\\engineer\\delivery-models\\page.tsx": {
+    "mtime": 1782851667.2604654,
+    "ast_hash": "5f0075653ee55d84e40986d3ea4ed338",
+    "semantic_hash": "5f0075653ee55d84e40986d3ea4ed338"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\platform\\engineer\\engagement-studio\\page.tsx": {
+    "mtime": 1782850952.202043,
+    "ast_hash": "54eb3a1402537a13574304972a9dbc5f",
+    "semantic_hash": "54eb3a1402537a13574304972a9dbc5f"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\platform\\engineer\\engineering-studio\\page.tsx": {
+    "mtime": 1782851664.515017,
+    "ast_hash": "b1f509e73f818f6884290c5392cd1a08",
+    "semantic_hash": "b1f509e73f818f6884290c5392cd1a08"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\platform\\engineer\\team-builder\\page.tsx": {
+    "mtime": 1782851525.3169613,
+    "ast_hash": "254fbae751ae380ce3e2ba7247919110",
+    "semantic_hash": "254fbae751ae380ce3e2ba7247919110"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\platform\\operate\\page.tsx": {
+    "mtime": 1782849680.044118,
+    "ast_hash": "a3a5d466d76cc689d68c39f33cee3a6c",
+    "semantic_hash": "a3a5d466d76cc689d68c39f33cee3a6c"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\platform\\operate\\continuous-improvement\\page.tsx": {
+    "mtime": 1782852567.9942195,
+    "ast_hash": "491758cf678c35bdc4d326571151e5bb",
+    "semantic_hash": "491758cf678c35bdc4d326571151e5bb"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\platform\\operate\\customer-success\\page.tsx": {
+    "mtime": 1782852567.9952102,
+    "ast_hash": "71c7a281d4af14eb90400218317e9833",
+    "semantic_hash": "71c7a281d4af14eb90400218317e9833"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\platform\\operate\\customer-workspace\\page.tsx": {
+    "mtime": 1782852479.5816596,
+    "ast_hash": "51ea7fe4b0dc19e634dc80e586dea6e7",
+    "semantic_hash": "51ea7fe4b0dc19e634dc80e586dea6e7"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\platform\\operate\\project-timeline\\page.tsx": {
+    "mtime": 1782852567.976144,
+    "ast_hash": "2d0460468ce0735238b107b2b78e18e5",
+    "semantic_hash": "2d0460468ce0735238b107b2b78e18e5"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\platform\\operate\\reports\\page.tsx": {
+    "mtime": 1782852567.9932222,
+    "ast_hash": "6ab2537484f8806e81221513ebfc6a3d",
+    "semantic_hash": "6ab2537484f8806e81221513ebfc6a3d"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\platform\\understand\\page.tsx": {
+    "mtime": 1782849680.050644,
+    "ast_hash": "5d73416e37ff3cdabbed712e564ee284",
+    "semantic_hash": "5d73416e37ff3cdabbed712e564ee284"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\platform\\understand\\enterprise-explorer\\page.tsx": {
+    "mtime": 1782851192.070346,
+    "ast_hash": "0b05ea6296b57eba86a6e15d8ff30d2a",
+    "semantic_hash": "0b05ea6296b57eba86a6e15d8ff30d2a"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\platform\\understand\\industry-challenges\\page.tsx": {
+    "mtime": 1782854934.6737106,
+    "ast_hash": "a829b9e9817a824578e6ba3c840e6631",
+    "semantic_hash": "a829b9e9817a824578e6ba3c840e6631"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\platform\\understand\\knowledge-center\\page.tsx": {
+    "mtime": 1782854931.6636891,
+    "ast_hash": "e6dc06709f41e907f5442ce4f6fd66b1",
+    "semantic_hash": "e6dc06709f41e907f5442ce4f6fd66b1"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\platform\\understand\\security-journey\\page.tsx": {
+    "mtime": 1782851248.0176387,
+    "ast_hash": "5077838fbc2d66e640f3dd4b86607269",
+    "semantic_hash": "5077838fbc2d66e640f3dd4b86607269"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\platform\\understand\\threat-insights\\page.tsx": {
+    "mtime": 1782854952.6605437,
+    "ast_hash": "7472df4bc588b0d72dc85b3e1bcc41ad",
+    "semantic_hash": "7472df4bc588b0d72dc85b3e1bcc41ad"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\privacy\\page.tsx": {
+    "mtime": 1782849633.2257435,
+    "ast_hash": "4cee2647d23a1c9f75470f33cac4d9c2",
+    "semantic_hash": "4cee2647d23a1c9f75470f33cac4d9c2"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\solutions\\page.tsx": {
+    "mtime": 1782852734.3576517,
+    "ast_hash": "7ee47c684e84409eaccb02a819d6c283",
+    "semantic_hash": "7ee47c684e84409eaccb02a819d6c283"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\solutions\\applications\\page.tsx": {
+    "mtime": 1782852709.172402,
+    "ast_hash": "4f4a96d92f71912335c50d8a63885865",
+    "semantic_hash": "4f4a96d92f71912335c50d8a63885865"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\solutions\\cloud\\page.tsx": {
+    "mtime": 1782852709.1783953,
+    "ast_hash": "5f3d3c2cd6923855588d9563583688d5",
+    "semantic_hash": "5f3d3c2cd6923855588d9563583688d5"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\solutions\\data\\page.tsx": {
+    "mtime": 1782852709.1823995,
+    "ast_hash": "9c8aa025d60c7594ac7cf03fc01fc748",
+    "semantic_hash": "9c8aa025d60c7594ac7cf03fc01fc748"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\solutions\\endpoints\\page.tsx": {
+    "mtime": 1782852709.1813977,
+    "ast_hash": "a3e1a546105edf8bc6c07b38f2d56683",
+    "semantic_hash": "a3e1a546105edf8bc6c07b38f2d56683"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\solutions\\identity\\page.tsx": {
+    "mtime": 1782852709.1793945,
+    "ast_hash": "d94fbee87208ddec855bb4b320112497",
+    "semantic_hash": "d94fbee87208ddec855bb4b320112497"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\solutions\\monitoring\\page.tsx": {
+    "mtime": 1782852709.184397,
+    "ast_hash": "ba9039650973cdf0e2c879bcd7beca92",
+    "semantic_hash": "ba9039650973cdf0e2c879bcd7beca92"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\solutions\\network\\page.tsx": {
+    "mtime": 1782852709.1803968,
+    "ast_hash": "763716a16405768d7a0357810973dcd1",
+    "semantic_hash": "763716a16405768d7a0357810973dcd1"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\solutions\\remote-access\\page.tsx": {
+    "mtime": 1782852709.183397,
+    "ast_hash": "b77bb1d519011333f05a31f872669b3d",
+    "semantic_hash": "b77bb1d519011333f05a31f872669b3d"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\success-stories\\page.tsx": {
+    "mtime": 1782852146.3365855,
+    "ast_hash": "045ee664a7db4ea08f88cae7954098b5",
+    "semantic_hash": "045ee664a7db4ea08f88cae7954098b5"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\success-stories\\[slug]\\page.tsx": {
+    "mtime": 1782854659.222627,
+    "ast_hash": "0b29075ee4aa223788ac3deeded443be",
+    "semantic_hash": "0b29075ee4aa223788ac3deeded443be"
+  },
+  "E:\\mit\\WEBAPP\\src\\app\\terms\\page.tsx": {
+    "mtime": 1782849642.4277234,
+    "ast_hash": "e50519ff674b9695ad508edf7f18cb91",
+    "semantic_hash": "e50519ff674b9695ad508edf7f18cb91"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\capability-explorer\\CapabilityExplorer.tsx": {
+    "mtime": 1782851588.6642265,
+    "ast_hash": "955b6cb49f8f498b07bc882c861c2a9c",
+    "semantic_hash": "955b6cb49f8f498b07bc882c861c2a9c"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\chatbot\\LeadCaptureBot.tsx": {
+    "mtime": 1782838975.3363824,
+    "ast_hash": "32afb1e0b453dd65951ce758db0545af",
+    "semantic_hash": "32afb1e0b453dd65951ce758db0545af"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\consultation\\ConsultationForm.tsx": {
+    "mtime": 1782851077.9307485,
+    "ast_hash": "36ed97d16c1489ded4f4977141681ef7",
+    "semantic_hash": "36ed97d16c1489ded4f4977141681ef7"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\contact\\ContactForm.tsx": {
+    "mtime": 1782851133.276106,
+    "ast_hash": "6e84f42fbde9e8bf5d8aa2ee76fd4e6e",
+    "semantic_hash": "6e84f42fbde9e8bf5d8aa2ee76fd4e6e"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\customer-workspace\\CustomerWorkspacePreview.tsx": {
+    "mtime": 1782852464.381698,
+    "ast_hash": "80879adc60bf2a6d18d2b16cfa22f1dd",
+    "semantic_hash": "80879adc60bf2a6d18d2b16cfa22f1dd"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\delivery-models\\DeliveryModelExplorer.tsx": {
+    "mtime": 1782851641.9499667,
+    "ast_hash": "36914f9a2b68147a6bdf3c43934b8576",
+    "semantic_hash": "36914f9a2b68147a6bdf3c43934b8576"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\effects\\MatrixBackground.tsx": {
+    "mtime": 1782877075.1965232,
+    "ast_hash": "71e6d7a10fca4036bfbf2f6ddb44884b",
+    "semantic_hash": "71e6d7a10fca4036bfbf2f6ddb44884b"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\engagement-studio\\EngagementStudio.tsx": {
+    "mtime": 1782850946.2630982,
+    "ast_hash": "43a22e19b6fb4eb196a2474c7f3de1c9",
+    "semantic_hash": "43a22e19b6fb4eb196a2474c7f3de1c9"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\engineering-studio\\EngineeringStudio.tsx": {
+    "mtime": 1782851628.6886196,
+    "ast_hash": "f34e032b0d50412d1ff56fd8643f5750",
+    "semantic_hash": "f34e032b0d50412d1ff56fd8643f5750"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\enterprise-explorer\\EnterpriseExplorer.tsx": {
+    "mtime": 1782851183.7475393,
+    "ast_hash": "5382075f5e96d2e7d2ffd7927cff6616",
+    "semantic_hash": "5382075f5e96d2e7d2ffd7927cff6616"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\home\\HomeSections1.tsx": {
+    "mtime": 1782854630.3436763,
+    "ast_hash": "4b3d95715795a30036d2b94fe8cc630c",
+    "semantic_hash": "4b3d95715795a30036d2b94fe8cc630c"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\home\\HomeSections2.tsx": {
+    "mtime": 1782848650.1286473,
+    "ast_hash": "90dd54f6af0811187ec0a5369639c1a8",
+    "semantic_hash": "90dd54f6af0811187ec0a5369639c1a8"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\home\\HomeSections3.tsx": {
+    "mtime": 1782855060.6075904,
+    "ast_hash": "59f5500d647aa62b84354087d915cf50",
+    "semantic_hash": "59f5500d647aa62b84354087d915cf50"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\industries\\IndustryPage.tsx": {
+    "mtime": 1782852176.9487953,
+    "ast_hash": "039681b15cedafa4dfb3d4956be99404",
+    "semantic_hash": "039681b15cedafa4dfb3d4956be99404"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\knowledge\\KnowledgeHub.tsx": {
+    "mtime": 1782851931.915231,
+    "ast_hash": "f189cd5f59ac2a26f04d21dfe97d8cf3",
+    "semantic_hash": "f189cd5f59ac2a26f04d21dfe97d8cf3"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\knowledge\\KnowledgeTopic.tsx": {
+    "mtime": 1782851940.0599008,
+    "ast_hash": "8d1c033d25499fe82888c7c93cffec47",
+    "semantic_hash": "8d1c033d25499fe82888c7c93cffec47"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\layout\\Footer.tsx": {
+    "mtime": 1782878970.32051,
+    "ast_hash": "f4e992b0fcdc2a4f8cd15522691faa56",
+    "semantic_hash": "f4e992b0fcdc2a4f8cd15522691faa56"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\layout\\Navigation.tsx": {
+    "mtime": 1782878957.3596163,
+    "ast_hash": "74949bf5d61894b1c05261a483093218",
+    "semantic_hash": "74949bf5d61894b1c05261a483093218"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\layout\\PageShell.tsx": {
+    "mtime": 1782834060.811407,
+    "ast_hash": "beb9998a424f40d0b24c51e4c63d201c",
+    "semantic_hash": "beb9998a424f40d0b24c51e4c63d201c"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\security-journey\\SecurityJourneyDesigner.tsx": {
+    "mtime": 1782851235.839606,
+    "ast_hash": "00e7ffa91ecdab4bbab4b7dffc696252",
+    "semantic_hash": "00e7ffa91ecdab4bbab4b7dffc696252"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\success-stories\\SuccessStoryExplorer.tsx": {
+    "mtime": 1782852133.150996,
+    "ast_hash": "0c8277bb32f3183c8e7e92cd36c3c91c",
+    "semantic_hash": "0c8277bb32f3183c8e7e92cd36c3c91c"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\team-builder\\TeamBuilder.tsx": {
+    "mtime": 1782851506.6908407,
+    "ast_hash": "d40c08b879a093fc60094ab396a82a50",
+    "semantic_hash": "d40c08b879a093fc60094ab396a82a50"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\ui\\accordion.tsx": {
+    "mtime": 1782830607.8059826,
+    "ast_hash": "920ce9582ece6b7dc4ee3d162b8333ad",
+    "semantic_hash": "920ce9582ece6b7dc4ee3d162b8333ad"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\ui\\badge.tsx": {
+    "mtime": 1782830605.8449953,
+    "ast_hash": "633c33997e6137921ae433dd2dd0cb31",
+    "semantic_hash": "633c33997e6137921ae433dd2dd0cb31"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\ui\\button.tsx": {
+    "mtime": 1782830604.7935216,
+    "ast_hash": "37ff09090166aa7d6fae96e0b081e492",
+    "semantic_hash": "37ff09090166aa7d6fae96e0b081e492"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\ui\\card.tsx": {
+    "mtime": 1782830605.2088094,
+    "ast_hash": "baac5330eb05de0cb1da0786f542ba9a",
+    "semantic_hash": "baac5330eb05de0cb1da0786f542ba9a"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\ui\\dialog.tsx": {
+    "mtime": 1782830609.2017963,
+    "ast_hash": "f90fb0e1d56cd50ed487670c88f0e3cb",
+    "semantic_hash": "f90fb0e1d56cd50ed487670c88f0e3cb"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\ui\\separator.tsx": {
+    "mtime": 1782830606.2410083,
+    "ast_hash": "f57449eae78fbd87d99e4edc45ab3c1e",
+    "semantic_hash": "f57449eae78fbd87d99e4edc45ab3c1e"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\ui\\sheet.tsx": {
+    "mtime": 1782830608.482611,
+    "ast_hash": "b5f2bb81d48bb9517303a27488c16c4b",
+    "semantic_hash": "b5f2bb81d48bb9517303a27488c16c4b"
+  },
+  "E:\\mit\\WEBAPP\\src\\components\\ui\\tabs.tsx": {
+    "mtime": 1782830606.9677122,
+    "ast_hash": "485d47f9e6f866e564685e6584e1e747",
+    "semantic_hash": "485d47f9e6f866e564685e6584e1e747"
+  },
+  "E:\\mit\\WEBAPP\\src\\data\\capabilities.json": {
+    "mtime": 1782851419.519333,
+    "ast_hash": "1e7e3653ce75b45ad5e5c7646e1e4e83",
+    "semantic_hash": "1e7e3653ce75b45ad5e5c7646e1e4e83"
+  },
+  "E:\\mit\\WEBAPP\\src\\data\\delivery-models.json": {
+    "mtime": 1782851452.172969,
+    "ast_hash": "137bddcde7dbbf00e3bca76296143fc1",
+    "semantic_hash": "137bddcde7dbbf00e3bca76296143fc1"
+  },
+  "E:\\mit\\WEBAPP\\src\\data\\engagement-studio.json": {
+    "mtime": 1782850865.851243,
+    "ast_hash": "cc8206604e7e36f37897d6addebb5ed7",
+    "semantic_hash": "cc8206604e7e36f37897d6addebb5ed7"
+  },
+  "E:\\mit\\WEBAPP\\src\\data\\engineering-lifecycle.json": {
+    "mtime": 1782851435.3677025,
+    "ast_hash": "3625f4145226aa50a2d9e7466e42b23a",
+    "semantic_hash": "3625f4145226aa50a2d9e7466e42b23a"
+  },
+  "E:\\mit\\WEBAPP\\src\\data\\enterprise-map.json": {
+    "mtime": 1782850847.2693045,
+    "ast_hash": "be0ad77907eafdf0cbb927b3e30e757b",
+    "semantic_hash": "be0ad77907eafdf0cbb927b3e30e757b"
+  },
+  "E:\\mit\\WEBAPP\\src\\data\\industries.json": {
+    "mtime": 1782851860.7293308,
+    "ast_hash": "fa0184f55d2cd121fb258fbd1f8f1803",
+    "semantic_hash": "fa0184f55d2cd121fb258fbd1f8f1803"
+  },
+  "E:\\mit\\WEBAPP\\src\\data\\knowledge.json": {
+    "mtime": 1782851845.0058422,
+    "ast_hash": "bf5ff85042b7f5a70371da55eee7aa1e",
+    "semantic_hash": "bf5ff85042b7f5a70371da55eee7aa1e"
+  },
+  "E:\\mit\\WEBAPP\\src\\data\\maturity-stages.json": {
+    "mtime": 1782850855.6640627,
+    "ast_hash": "a38441dc5c3e1bffd03adeb8f89dd625",
+    "semantic_hash": "a38441dc5c3e1bffd03adeb8f89dd625"
+  },
+  "E:\\mit\\WEBAPP\\src\\data\\navigation.ts": {
+    "mtime": 1782848622.997726,
+    "ast_hash": "a3516984127914d5fdd156a20bf85d3e",
+    "semantic_hash": "a3516984127914d5fdd156a20bf85d3e"
+  },
+  "E:\\mit\\WEBAPP\\src\\data\\solutions.json": {
+    "mtime": 1782850870.159077,
+    "ast_hash": "b6735d886afd5311ce93dbeb416f3fc6",
+    "semantic_hash": "b6735d886afd5311ce93dbeb416f3fc6"
+  },
+  "E:\\mit\\WEBAPP\\src\\data\\success-stories.json": {
+    "mtime": 1782851881.411656,
+    "ast_hash": "bff521d7b3b66267174537f2de54dd49",
+    "semantic_hash": "bff521d7b3b66267174537f2de54dd49"
+  },
+  "E:\\mit\\WEBAPP\\src\\data\\team-builder.json": {
+    "mtime": 1782851394.533555,
+    "ast_hash": "ffae6b65cdaeebb26cc3541ac9a94ea6",
+    "semantic_hash": "ffae6b65cdaeebb26cc3541ac9a94ea6"
+  },
+  "E:\\mit\\WEBAPP\\src\\lib\\animations.ts": {
+    "mtime": 1782831128.6181626,
+    "ast_hash": "a2f4d91b64c12cf22bbd038272239014",
+    "semantic_hash": "a2f4d91b64c12cf22bbd038272239014"
+  },
+  "E:\\mit\\WEBAPP\\src\\lib\\store.ts": {
+    "mtime": 1782831332.307727,
+    "ast_hash": "24f3a69120bc830b875608082cefeddb",
+    "semantic_hash": "24f3a69120bc830b875608082cefeddb"
+  },
+  "E:\\mit\\WEBAPP\\src\\lib\\utils.ts": {
+    "mtime": 1782830506.4648955,
+    "ast_hash": "5a6fd53fdcf2be529e9cc0b718fde352",
+    "semantic_hash": "5a6fd53fdcf2be529e9cc0b718fde352"
+  },
+  "E:\\mit\\WEBAPP\\AGENTS.md": {
+    "mtime": 1782812859.5820665,
+    "ast_hash": "9e09241799026ac05be315a2f0b50055",
+    "semantic_hash": "9e09241799026ac05be315a2f0b50055"
+  },
+  "E:\\mit\\WEBAPP\\BUG_LOG.md": {
+    "mtime": 1782834950.1441994,
+    "ast_hash": "532ebab6420f4ef9aa662d0945e5cb5c",
+    "semantic_hash": "532ebab6420f4ef9aa662d0945e5cb5c"
+  },
+  "E:\\mit\\WEBAPP\\BUILD_LOG.md": {
+    "mtime": 1782852953.536019,
+    "ast_hash": "eafa9725be4eae8f56261bed11ddc498",
+    "semantic_hash": "eafa9725be4eae8f56261bed11ddc498"
+  },
+  "E:\\mit\\WEBAPP\\CLAUDE.md": {
+    "mtime": 1782812859.582661,
+    "ast_hash": "5c27369b226fcf2be8a6cfe52224e767",
+    "semantic_hash": "5c27369b226fcf2be8a6cfe52224e767"
+  },
+  "E:\\mit\\WEBAPP\\CONTENT_LOG.md": {
+    "mtime": 1782834980.8534381,
+    "ast_hash": "4814f465708f1c4b28f04df629121375",
+    "semantic_hash": "4814f465708f1c4b28f04df629121375"
+  },
+  "E:\\mit\\WEBAPP\\PRD.md": {
+    "mtime": 1782808342.149875,
+    "ast_hash": "6763c688797116f2759d3aead3e745e1",
+    "semantic_hash": "6763c688797116f2759d3aead3e745e1"
+  },
+  "E:\\mit\\WEBAPP\\README.md": {
+    "mtime": 1781978216.2893968,
+    "ast_hash": "f15aaa42d5d299d091b1171097ea56ad",
+    "semantic_hash": "f15aaa42d5d299d091b1171097ea56ad"
+  },
+  "E:\\mit\\WEBAPP\\docs\\superpowers\\plans\\2026-06-30-phase-0-foundation.md": {
+    "mtime": 1782812134.3434982,
+    "ast_hash": "ff04e65fedba1e2b9cde0d1fbe903793",
+    "semantic_hash": "ff04e65fedba1e2b9cde0d1fbe903793"
+  },
+  "E:\\mit\\WEBAPP\\docs\\superpowers\\specs\\2026-06-30-mitigence-platform-design.md": {
+    "mtime": 1782811555.8463838,
+    "ast_hash": "48d0119d1f25e954eea6f50d3f859a0e",
+    "semantic_hash": "48d0119d1f25e954eea6f50d3f859a0e"
+  },
+  "E:\\mit\\WEBAPP\\public\\file.svg": {
+    "mtime": 1781978216.7315037,
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71"
+  },
+  "E:\\mit\\WEBAPP\\public\\globe.svg": {
+    "mtime": 1781978216.8842356,
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": "2aaafa6a49b6563925fe440891e32717"
+  },
+  "E:\\mit\\WEBAPP\\public\\logo-icon.jpg": {
+    "mtime": 1782874696.6357956,
+    "ast_hash": "aaeb00b97a8956439ae5e8201d8317d9",
+    "semantic_hash": "aaeb00b97a8956439ae5e8201d8317d9"
+  },
+  "E:\\mit\\WEBAPP\\public\\logo-icon.webp": {
+    "mtime": 1782874694.9922893,
+    "ast_hash": "b139240d23f00aa81dc8f0989aa63180",
+    "semantic_hash": "b139240d23f00aa81dc8f0989aa63180"
+  },
+  "E:\\mit\\WEBAPP\\public\\logo.svg": {
+    "mtime": 1782811741.8880143,
+    "ast_hash": "626b8169e3180a815f87d4cc841639bf",
+    "semantic_hash": "626b8169e3180a815f87d4cc841639bf"
+  },
+  "E:\\mit\\WEBAPP\\public\\next.svg": {
+    "mtime": 1781978217.0675921,
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": "8e061864f388b47f33a1c3780831193e"
+  },
+  "E:\\mit\\WEBAPP\\public\\vercel.svg": {
+    "mtime": 1781978217.2173717,
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": "c0af2f507b369b085b35ef4bbe3bcf1e"
+  },
+  "E:\\mit\\WEBAPP\\public\\window.svg": {
+    "mtime": 1781978217.2888365,
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": "a2760511c65806022ad20adf74370ff3"
+  }
+}

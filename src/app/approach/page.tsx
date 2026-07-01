@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { breadcrumbJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Our Approach',
@@ -92,6 +93,10 @@ export default function ApproachPage() {
           See it in practice — schedule a call →
         </Link>
       </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([
+        { name: 'Home', path: '/' },
+        { name: 'Our Approach', path: '/approach' },
+      ])) }} />
     </main>
   )
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { KnowledgeHub } from '@/components/knowledge/KnowledgeHub'
+import { breadcrumbJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Knowledge Center',
@@ -21,6 +22,10 @@ export default function KnowledgePage() {
         </p>
         <KnowledgeHub />
       </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([
+        { name: 'Home', path: '/' },
+        { name: 'Knowledge Center', path: '/knowledge' },
+      ])) }} />
     </main>
   )
 }

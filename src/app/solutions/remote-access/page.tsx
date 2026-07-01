@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { breadcrumbJsonLd, serviceJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: "Remote Access — Mitigence",
@@ -50,6 +51,23 @@ export default function SolutionsRemoteAccessPage() {
           </Link>
         </div>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'Solutions', path: '/solutions' },
+          { name: 'Remote Access', path: '/solutions/remote-access' },
+        ])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd({
+          name: 'Remote Access Security',
+          description: 'Secure remote access architecture, VPN assessment, and zero trust network access implementation.',
+          url: '/solutions/remote-access',
+          serviceType: 'Remote Access Security',
+        })) }}
+      />
     </main>
   )
 }

@@ -18,6 +18,9 @@ import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://mitigence.com'),
+  verification: {
+    google: 'me-EcLLktCq-uk-rf5i_LXbSb0VX2dRiekan43rS-5M',
+  },
   title: {
     default: 'Mitigence — Cybersecurity Delivery & Engineering Platform',
     template: '%s | Mitigence',
@@ -46,12 +49,14 @@ export const metadata: Metadata = {
     title: 'Mitigence — Cybersecurity Delivery & Engineering Platform',
     description:
       'Expert-led cybersecurity engagements, managed operations, and transparent delivery.',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Mitigence' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Mitigence — Cybersecurity Delivery & Engineering Platform',
     description:
       'Expert-led cybersecurity engagements, managed operations, and transparent delivery.',
+    images: ['/opengraph-image'],
   },
   robots: {
     index: true,

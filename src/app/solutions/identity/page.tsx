@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { breadcrumbJsonLd, serviceJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: "Identity — Mitigence",
@@ -50,6 +51,23 @@ export default function SolutionsIdentityPage() {
           </Link>
         </div>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'Solutions', path: '/solutions' },
+          { name: 'Identity Security', path: '/solutions/identity' },
+        ])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd({
+          name: 'Identity Security',
+          description: 'Identity and access management security engineering, zero trust architecture, and privileged access controls.',
+          url: '/solutions/identity',
+          serviceType: 'Identity Security',
+        })) }}
+      />
     </main>
   )
 }
