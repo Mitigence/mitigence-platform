@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { ConsultationForm } from '@/components/consultation/ConsultationForm'
+import { breadcrumbJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Schedule a Consultation',
@@ -22,6 +23,10 @@ export default function ConsultationPage() {
         </p>
         <ConsultationForm />
       </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([
+        { name: 'Home', path: '/' },
+        { name: 'Consultation', path: '/consultation' },
+      ])) }} />
     </main>
   )
 }

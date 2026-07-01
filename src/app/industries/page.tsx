@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import industriesData from '@/data/industries.json'
+import { breadcrumbJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Industries',
@@ -37,6 +38,10 @@ export default function IndustriesPage() {
           ))}
         </div>
       </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([
+        { name: 'Home', path: '/' },
+        { name: 'Industries', path: '/industries' },
+      ])) }} />
     </main>
   )
 }

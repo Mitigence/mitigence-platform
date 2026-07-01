@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { IndustryPage } from '@/components/industries/IndustryPage'
+import { breadcrumbJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: "Education Cybersecurity",
@@ -15,6 +16,11 @@ export default function IndustryEducationPage() {
         <h1 className='text-4xl font-bold text-white mb-12'>Education</h1>
         <IndustryPage industryId="education" />
       </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([
+        { name: 'Home', path: '/' },
+        { name: 'Industries', path: '/industries' },
+        { name: 'Education', path: '/industries/education' },
+      ])) }} />
     </main>
   )
 }

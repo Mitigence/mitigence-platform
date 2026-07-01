@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { breadcrumbJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
@@ -58,6 +59,10 @@ export default function TermsPage() {
           ))}
         </div>
       </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([
+        { name: 'Home', path: '/' },
+        { name: 'Terms of Service', path: '/terms' },
+      ])) }} />
     </main>
   )
 }

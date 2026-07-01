@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { SuccessStoryExplorer } from '@/components/success-stories/SuccessStoryExplorer'
+import { breadcrumbJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Success Stories',
@@ -22,6 +23,10 @@ export default function SuccessStoriesPage() {
         </p>
         <SuccessStoryExplorer />
       </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([
+        { name: 'Home', path: '/' },
+        { name: 'Success Stories', path: '/success-stories' },
+      ])) }} />
     </main>
   )
 }

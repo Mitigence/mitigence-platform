@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { breadcrumbJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -56,6 +57,10 @@ export default function PrivacyPage() {
           ))}
         </div>
       </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([
+        { name: 'Home', path: '/' },
+        { name: 'Privacy Policy', path: '/privacy' },
+      ])) }} />
     </main>
   )
 }

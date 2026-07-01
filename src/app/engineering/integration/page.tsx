@@ -1,4 +1,5 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
+import { breadcrumbJsonLd } from '@/lib/seo'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -42,6 +43,11 @@ export default function EngineeringIntegrationPage() {
           </Link>
         </div>
       </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([
+        { name: 'Home', path: '/' },
+        { name: 'Security Engineering', path: '/engineering' },
+        { name: 'Integration', path: '/engineering/integration' },
+      ])) }} />
     </main>
   )
 }
