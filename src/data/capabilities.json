@@ -85,6 +85,7 @@
       "lifecycle": [
         { "stage": "Discovery", "description": "Identify where sensitive data lives across structured and unstructured stores." },
         { "stage": "Classification", "description": "Define data classifications, apply labels, establish handling policies." },
+        { "stage": "Data Flow Analysis", "description": "Map how sensitive data moves across systems, processes, and third parties. Identify uncontrolled flows, policy violations, and exposure paths. Powered by DFAnalyzer — Mitigence's tool that automates flow mapping and continuously validates flows against your data security policies." },
         { "stage": "Access Review", "description": "Identify overprivileged access to sensitive data, reduce exposure." },
         { "stage": "Engineering", "description": "Implement encryption at rest and in transit, DLP controls, access governance." },
         { "stage": "Validation", "description": "Test data controls, confirm encryption coverage, validate DLP rule efficacy." },
