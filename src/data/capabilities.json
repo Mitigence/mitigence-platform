@@ -82,8 +82,8 @@
     },
     {
       "id": "data",
-      "name": "Data",
-      "tagline": "Protect the asset everything else exists to guard.",
+      "name": "Data Security",
+      "tagline": "Classify, control, and continuously protect your most sensitive asset.",
       "lifecycle": [
         { "stage": "Discovery", "description": "Identify where sensitive data lives across structured and unstructured stores, cloud and on-prem." },
         { "stage": "Classification", "description": "Define data classifications, apply labels, establish handling policies and ownership." },
@@ -97,8 +97,8 @@
     },
     {
       "id": "remote-access",
-      "name": "Remote Access",
-      "tagline": "Secure distributed access without sacrificing usability.",
+      "name": "Zero Trust Access",
+      "tagline": "Replace VPN with per-application, identity-verified private access.",
       "lifecycle": [
         { "stage": "Assessment", "description": "Audit existing VPN architecture, access policies, device posture controls, and trust model." },
         { "stage": "ZTNA Architecture", "description": "Design per-application access model — application segments, identity policies, device posture requirements — to replace broad-trust VPN." },

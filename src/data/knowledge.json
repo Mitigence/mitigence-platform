@@ -116,19 +116,45 @@
           "content": "Without network segmentation, a single compromised workstation can reach payroll systems, active directory, and production databases. Segmentation limits lateral movement — so that even if an attacker gains a foothold, their ability to escalate and impact the business is severely constrained."
         },
         {
-          "title": "Beyond the firewall",
-          "content": "Traditional perimeter firewalls are not enough for modern environments with hybrid infrastructure, cloud workloads, and SaaS applications. Modern network security includes micro-segmentation, secure DNS, encrypted communications, network detection and response, and zero-trust network access for remote users."
+          "title": "SWG and CASB — controlling outbound and cloud traffic",
+          "content": "Secure Web Gateways (SWG) filter and inspect all outbound internet traffic — blocking malicious destinations, enforcing acceptable-use policy, and providing visibility into what users and systems are reaching. Cloud Access Security Brokers (CASB) sit between users and cloud services, giving visibility into which SaaS applications are in use, who is using them, and preventing sensitive data from moving to unsanctioned services. Together with ZTNA for private access, SWG and CASB form the Security Service Edge (SSE) — the traffic control layer for modern distributed environments."
         },
         {
           "title": "How Mitigence approaches network security",
-          "content": "We start with architecture — understanding current topology, trust zones, and data flows. Then we design a segmentation model appropriate to the environment, implement it progressively to avoid disruption, and validate effectiveness through testing. We also review firewall rules for stale or overly permissive entries."
+          "content": "We start with architecture — understanding current topology, trust zones, and data flows. Then we design a segmentation model and traffic control strategy appropriate to the environment: segmentation for east-west, SWG for internet-bound, CASB for cloud-bound. We implement progressively to avoid disruption and validate effectiveness through testing. Firewall rules are reviewed for stale and overly permissive entries."
         },
         {
           "title": "Ongoing network security",
-          "content": "Networks change. New systems come online. Firewall rules accumulate. Annual reviews are not enough. Mitigence provides continuous validation of network controls through periodic testing and firewall rule reviews."
+          "content": "Networks change. New systems come online. SaaS usage expands. Firewall rules accumulate. Annual reviews are not enough. Mitigence provides continuous validation of network controls — including SWG policy reviews, CASB coverage audits, and periodic firewall rule analysis."
         }
       ],
-      "relatedEngagements": ["Network Architecture Review", "Segmentation Engineering", "Firewall Configuration Review"]
+      "relatedEngagements": ["Network Architecture Review", "Segmentation Engineering", "SWG Deployment", "CASB Implementation", "Firewall Configuration Review"]
+    },
+    {
+      "id": "data",
+      "name": "Data Security",
+      "slug": "data",
+      "tagline": "Classify, control, and continuously protect your most sensitive asset.",
+      "overview": "Data security is not a single tool — it is a program. Discovery, classification, DLP, DSPM, and data flow analysis work together to give you control over what data exists, where it goes, and whether it is protected.",
+      "sections": [
+        {
+          "title": "Why data security programs fail",
+          "content": "Most organisations have some data security controls in place. What they lack is coherence. Classification labels that nobody enforces. DLP policies tuned to vendor defaults that generate thousands of false positives. No visibility into whether cloud storage is correctly permissioned. No map of where sensitive data actually travels. The result is the illusion of control without the substance."
+        },
+        {
+          "title": "DLP — Data Loss Prevention",
+          "content": "DLP controls prevent sensitive data from leaving the organisation through channels it should not — email, USB, web upload, cloud sync, print. The critical word is 'prevent', not 'log'. DLP that only logs exfiltration after the fact is not loss prevention. Effective DLP requires policies calibrated to your actual data classification framework, not generic vendor rulesets. It also requires ongoing fine-tuning — DLP policies that are not maintained accumulate false positives until analysts stop acting on them."
+        },
+        {
+          "title": "DSPM — Data Security Posture Management",
+          "content": "DSPM provides continuous visibility into your data security posture across cloud and on-premises environments. Where is sensitive data stored? Who can access it? Is it encrypted? Has access configuration drifted from policy? DSPM answers these questions continuously — not at the point in time of a manual review. It is the operational layer that makes classification and access governance sustainable at scale."
+        },
+        {
+          "title": "Data Flow Analysis",
+          "content": "Knowing where data is stored is not the same as knowing where it goes. Data flows across internal systems, third-party APIs, SaaS applications, and business processes in ways that are rarely fully mapped. Data Flow Analysis identifies these paths, validates them against policy, and surfaces flows that bypass controls or create unacknowledged regulatory exposure. Mitigence's DFAnalyzer automates this — replacing manual workshops and spreadsheets with continuous, policy-validated flow mapping."
+        }
+      ],
+      "relatedEngagements": ["Data Security Assessment", "DLP Implementation", "DSPM Program", "Data Flow Analysis", "Data Classification Engineering"]
     },
     {
       "id": "incident-response",
