@@ -104,12 +104,12 @@ function LogoWatermark({ dimmed }: { dimmed: boolean }) {
     <div
       style={{
         position: 'fixed',
-        right: dimmed ? '2%' : '6%',
+        left: '50%',
         top: '50%',
-        transform: 'translateY(-50%)',
+        transform: 'translate(-50%, -50%)',
         zIndex: 2,
-        width: dimmed ? 90 : 300,
-        opacity: dimmed ? 0.10 : 0.22,
+        width: dimmed ? 100 : 320,
+        opacity: dimmed ? 0.06 : 0.18,
         transition: 'all 0.6s cubic-bezier(0.25, 1, 0.5, 1)',
         pointerEvents: 'none',
         userSelect: 'none',
