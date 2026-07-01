@@ -3,6 +3,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Separator } from '@/components/ui/separator'
+import { Nunito } from 'next/font/google'
+
+const nunito = Nunito({ weight: ['700'], subsets: ['latin'], display: 'swap' })
 
 const footerLinks = {
   Platform: [
@@ -49,7 +52,7 @@ export function Footer() {
                 height={32}
                 className="object-contain"
               />
-              <span className="text-white text-xl" style={{ fontFamily: 'var(--font-nunito)', fontWeight: 700, letterSpacing: '0.01em' }}>Mitigence</span>
+              <span className={`${nunito.className} text-white text-xl`} style={{ letterSpacing: '0.01em' }}>Mitigence</span>
             </Link>
             <p className="text-zinc-500 text-sm leading-relaxed max-w-xs">
               Cybersecurity Delivery & Engineering Platform. Helping organizations understand, engineer, and operate resilient security programs.
