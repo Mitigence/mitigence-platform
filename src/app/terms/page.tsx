@@ -23,8 +23,8 @@ const sections = [
     body: 'All content on this site — including text, graphics, logos, and design — is the property of Mitigence and may not be reproduced without permission.',
   },
   {
-    heading: 'No Warranty',
-    body: 'This website is provided "as is" without warranties of any kind. Mitigence does not guarantee the accuracy or completeness of information published on this site.',
+    heading: 'Content Accuracy',
+    body: 'The information on this site reflects our current knowledge and is updated as the field evolves. Cybersecurity guidance changes quickly — if you are making decisions based on something you read here, we encourage you to reach out directly so we can give you context specific to your situation.',
   },
   {
     heading: 'Engagements',
