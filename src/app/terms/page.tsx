@@ -36,7 +36,7 @@ const sections = [
   },
   {
     heading: 'Contact',
-    body: 'Questions about these terms can be sent to Business@mitigence.com.',
+    body: 'Questions about these terms can be sent to bussiness@mitigence.com.',
   },
 ]
 

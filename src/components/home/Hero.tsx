@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 const container = {
@@ -43,9 +44,20 @@ export function Hero() {
           variants={item}
           className="text-5xl md:text-7xl font-bold text-white tracking-tight mb-6"
         >
-          Cybersecurity Isn&apos;t One Service.
-          <br />
-          <span className="text-red-600">It&apos;s a Continuously Engineered Journey.</span>
+          <span className="flex items-center gap-4 md:gap-6 mb-3">
+            <Image
+              src="/logo-icon.webp"
+              alt=""
+              width={80}
+              height={80}
+              className="w-14 h-14 md:w-20 md:h-20 object-contain"
+              priority
+            />
+            <span style={{ fontFamily: 'var(--font-nunito), var(--font-geist-sans), sans-serif' }}>
+              Mitigence
+            </span>
+          </span>
+          <span className="text-red-600 block">So Mitigate with Intelligence.</span>
         </motion.h1>
 
         <motion.p variants={item} className="text-zinc-400 text-xl max-w-2xl mb-10">

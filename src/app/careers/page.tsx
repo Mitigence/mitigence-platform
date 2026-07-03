@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { breadcrumbJsonLd } from '@/lib/seo'
+import { CareerForm } from '@/components/careers/CareerForm'
 
 export const metadata: Metadata = {
   title: 'Careers at Mitigence',
@@ -48,12 +48,11 @@ export default function CareersPage() {
         </div>
 
         <div className="border-t border-zinc-900 pt-8">
-          <Link
-            href="/contact"
-            className="inline-block bg-red-600 hover:bg-red-700 text-white font-medium px-5 py-2.5 rounded-lg text-sm transition-colors"
-          >
-            Get in touch →
-          </Link>
+          <h2 className="text-2xl font-bold text-white mb-2">Send a career enquiry</h2>
+          <p className="text-zinc-400 text-sm mb-6 leading-relaxed">
+            Tell us about yourself and attach your resume — it goes straight to our hiring team.
+          </p>
+          <CareerForm />
         </div>
       </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([
