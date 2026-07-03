@@ -89,7 +89,7 @@ export default async function SuccessStoryPage({ params }: Props) {
 
         {/* CTA */}
         <div className="flex flex-wrap gap-4 pt-8 border-t border-zinc-900">
-          <Link href="/platform/engineer/engagement-studio" className="bg-red-600 hover:bg-red-700 text-white font-medium px-5 py-2.5 rounded-lg text-sm transition-colors">
+          <Link href="/platform/engineer/engagement-studio" className="bg-red-600 hover:bg-red-700 text-white font-medium px-5 py-2.5 rounded-lg text-sm transition-colors cyber-glow-hover">
             Design a similar engagement →
           </Link>
           <Link href="/consultation" className="border border-zinc-800 hover:border-zinc-700 text-zinc-300 hover:text-white font-medium px-5 py-2.5 rounded-lg text-sm transition-colors">

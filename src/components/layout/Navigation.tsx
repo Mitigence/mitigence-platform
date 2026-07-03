@@ -3,9 +3,6 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Nunito } from 'next/font/google'
-
-const nunito = Nunito({ weight: ['700'], subsets: ['latin'], display: 'swap' })
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ChevronRight } from 'lucide-react'
@@ -53,7 +50,7 @@ export function Navigation() {
                 className="object-contain"
                 priority
               />
-              <span className={`${nunito.className} text-white text-xl`} style={{ letterSpacing: '0.01em' }}>Mitigence</span>
+              <span className="text-white text-xl font-bold" style={{ fontFamily: 'var(--font-nunito), var(--font-geist-sans), sans-serif', letterSpacing: '0.01em' }}>Mitigence</span>
             </Link>
 
             {/* Desktop Nav Items */}

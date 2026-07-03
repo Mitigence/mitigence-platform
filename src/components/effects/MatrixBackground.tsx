@@ -14,6 +14,9 @@ function MatrixRain({ dimmed }: { dimmed: boolean }) {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
+    // Respect user motion preferences — skip the rain entirely
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
     const resize = () => {
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
@@ -63,6 +66,16 @@ function MatrixRain({ dimmed }: { dimmed: boolean }) {
 
     draw()
 
+    // Pause rendering while the tab is hidden
+    const onVisibility = () => {
+      if (document.hidden) {
+        cancelAnimationFrame(animId)
+      } else {
+        animId = requestAnimationFrame(draw)
+      }
+    }
+    document.addEventListener('visibilitychange', onVisibility)
+
     const resizeHandler = () => {
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
@@ -75,6 +88,7 @@ function MatrixRain({ dimmed }: { dimmed: boolean }) {
 
     return () => {
       cancelAnimationFrame(animId)
+      document.removeEventListener('visibilitychange', onVisibility)
       window.removeEventListener('resize', resizeHandler)
     }
   }, [])

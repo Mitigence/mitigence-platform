@@ -23,6 +23,10 @@ const MAX_LENS: Record<string, number> = {
 const ipMap = new Map<string, { n: number; reset: number }>()
 function rateLimited(ip: string): boolean {
   const now = Date.now()
+  // prune expired entries so the map cannot grow unbounded
+  if (ipMap.size > 5000) {
+    for (const [k, v] of ipMap) if (now > v.reset) ipMap.delete(k)
+  }
   const e = ipMap.get(ip)
   if (!e || now > e.reset) { ipMap.set(ip, { n: 1, reset: now + 60_000 }); return false }
   if (e.n >= 5) return true
@@ -36,8 +40,13 @@ function esc(s: string): string {
 }
 
 function cap(val: string | undefined, key: string): string {
-  if (!val) return ''
+  if (typeof val !== 'string') return ''
   return val.trim().slice(0, MAX_LENS[key] ?? 500)
+}
+
+// collapse newlines/control chars for values used in the email subject line
+function line(val: string): string {
+  return val.replace(/[\x00-\x1f\x7f]+/g, ' ').trim()
 }
 
 function row(label: string, value: string | undefined) {
@@ -84,7 +93,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid email address.' }, { status: 400 })
     }
 
-    const subject = `New Lead: ${name} from ${company_role || 'Unknown'} — ${challenge || 'General Enquiry'}`
+    const subject = `New Lead: ${line(name)} from ${line(company_role) || 'Unknown'} — ${line(challenge) || 'General Enquiry'}`
     const submittedAt = new Date().toLocaleString('en-US', {
       timeZone: 'UTC', dateStyle: 'full', timeStyle: 'short',
     }) + ' UTC'

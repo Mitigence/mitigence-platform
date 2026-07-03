@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next'
+import storiesData from '@/data/success-stories.json'
 
 const baseUrl = 'https://mitigence.com'
 
@@ -31,6 +32,7 @@ const staticRoutes = [
   '/knowledge/applications',
   '/knowledge/architecture',
   '/knowledge/cloud',
+  '/knowledge/data',
   '/knowledge/identity',
   '/knowledge/incident-response',
   '/knowledge/monitoring',
@@ -69,7 +71,8 @@ const staticRoutes = [
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return staticRoutes.map((route) => ({
+  const storyRoutes = storiesData.stories.map((s) => `/success-stories/${s.slug}`)
+  return [...staticRoutes, ...storyRoutes].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: route === '/' ? 'weekly' : 'monthly',

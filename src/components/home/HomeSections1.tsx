@@ -12,25 +12,6 @@ import {
 } from '@/lib/animations'
 
 // ---------------------------------------------------------------------------
-// Reusable scroll-trigger wrapper
-// ---------------------------------------------------------------------------
-function InViewSection({ children, className }: { children: React.ReactNode; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { once: true, margin: '-80px' })
-  return (
-    <motion.div
-      ref={ref}
-      className={className}
-      variants={staggerContainer}
-      initial="initial"
-      animate={inView ? 'animate' : 'initial'}
-    >
-      {children}
-    </motion.div>
-  )
-}
-
-// ---------------------------------------------------------------------------
 // Section 2 — Why Security Is Different
 // ---------------------------------------------------------------------------
 const stats = [

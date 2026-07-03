@@ -7,6 +7,10 @@ const ALLOWED_SOURCES = new Set(['contact', 'consultation'])
 const ipMap = new Map<string, { n: number; reset: number }>()
 function rateLimited(ip: string): boolean {
   const now = Date.now()
+  // prune expired entries so the map cannot grow unbounded
+  if (ipMap.size > 5000) {
+    for (const [k, v] of ipMap) if (now > v.reset) ipMap.delete(k)
+  }
   const e = ipMap.get(ip)
   if (!e || now > e.reset) { ipMap.set(ip, { n: 1, reset: now + 60_000 }); return false }
   if (e.n >= 5) return true
@@ -17,6 +21,11 @@ function rateLimited(ip: string): boolean {
 function cap(val: unknown, max: number): string {
   if (typeof val !== 'string') return ''
   return val.trim().slice(0, max)
+}
+
+// collapse newlines/control chars for values used in the email subject line
+function line(val: string): string {
+  return val.replace(/[\x00-\x1f\x7f]+/g, ' ').trim()
 }
 
 export async function POST(request: NextRequest) {
@@ -54,8 +63,8 @@ export async function POST(request: NextRequest) {
       to: ['Business@mitigence.com'],
       replyTo: email,
       subject: source === 'consultation'
-        ? `Consultation Request — ${organization || name}`
-        : `Contact Form — ${name}`,
+        ? `Consultation Request — ${line(organization) || line(name)}`
+        : `Contact Form — ${line(name)}`,
       text: [
         `Name: ${name}`,
         `Email: ${email}`,
