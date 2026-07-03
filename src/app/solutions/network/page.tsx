@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { breadcrumbJsonLd, serviceJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: "Network Security — Mitigence",
+  title: "Network Security",
   description: "Segmentation, SWG, CASB, and traffic control. The connective layer between users, cloud services, and the internet — engineered for visibility and least-privilege access.",
   alternates: { canonical: "/solutions/network" },
 }

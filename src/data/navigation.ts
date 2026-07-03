@@ -73,8 +73,8 @@ export const navItems: NavItem[] = [
           title: 'More Domains',
           items: [
             { label: 'Endpoint Protection', href: '/solutions/endpoints', description: 'Secure every device and system' },
-            { label: 'Data Protection', href: '/solutions/data', description: 'Protect sensitive data everywhere' },
-            { label: 'Remote Access', href: '/solutions/remote-access', description: 'Secure connectivity for remote teams' },
+            { label: 'Data Security', href: '/solutions/data', description: 'Protect sensitive data everywhere' },
+            { label: 'Zero Trust Access', href: '/solutions/remote-access', description: 'Identity-verified access for remote teams' },
             { label: 'Security Monitoring', href: '/solutions/monitoring', description: 'Visibility, detection, and response' },
           ],
         },
@@ -136,6 +136,7 @@ export const navItems: NavItem[] = [
             { label: 'Cloud Security', href: '/knowledge/cloud', description: 'Cloud architecture and controls' },
             { label: 'Identity & Access', href: '/knowledge/identity', description: 'Identity-centric security' },
             { label: 'Application Security', href: '/knowledge/applications', description: 'Securing modern applications' },
+            { label: 'Data Security', href: '/knowledge/data', description: 'Protecting sensitive data' },
             { label: 'Security Monitoring', href: '/knowledge/monitoring', description: 'Detection and response' },
             { label: 'Network Security', href: '/knowledge/network', description: 'Infrastructure protection' },
             { label: 'Incident Response', href: '/knowledge/incident-response', description: 'Preparation and recovery' },

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { breadcrumbJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: 'Company | Mitigence',
+  title: 'Company',
   description: 'Mitigence is a Cybersecurity Delivery and Engineering Platform — built for organizations that want security done properly.',
   alternates: { canonical: '/company' },
 }

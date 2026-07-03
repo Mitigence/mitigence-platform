@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { breadcrumbJsonLd, serviceJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: "Data Security — Mitigence",
+  title: "Data Security",
   description: "Data classification, DLP implementation, DSPM, data flow analysis, and policy fine-tuning. Protect your most sensitive asset across cloud and on-prem environments.",
   alternates: { canonical: "/solutions/data" },
 }

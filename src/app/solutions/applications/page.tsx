@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { breadcrumbJsonLd, serviceJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: "Applications — Mitigence",
+  title: "Application Security",
   description: "Web and business applications that hold your most sensitive logic and data. Discovery, assessment, engineering, and continuous improvement.",
   alternates: { canonical: "/solutions/applications" },
 }
@@ -13,7 +13,7 @@ export default function SolutionsApplicationsPage() {
     <main className="min-h-screen pt-24 bg-black">
       <div className="max-w-3xl mx-auto px-6 py-16">
         <div className="w-8 h-0.5 bg-red-600 mb-6" />
-        <h1 className="text-4xl font-bold text-white mb-4">Applications</h1>
+        <h1 className="text-4xl font-bold text-white mb-4">Application Security</h1>
         <p className="text-zinc-400 text-lg mb-12 leading-relaxed">Web and business applications that hold your most sensitive logic and data.</p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
@@ -58,7 +58,7 @@ export default function SolutionsApplicationsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([
           { name: 'Home', path: '/' },
           { name: 'Solutions', path: '/solutions' },
-          { name: 'Applications', path: '/solutions/applications' },
+          { name: 'Application Security', path: '/solutions/applications' },
         ])) }}
       />
       <script

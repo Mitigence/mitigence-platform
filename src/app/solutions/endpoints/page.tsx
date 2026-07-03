@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { breadcrumbJsonLd, serviceJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: "Endpoints — Mitigence",
+  title: "Endpoint Protection",
   description: "Laptops, servers, and devices where users and workloads actually run. Discovery, assessment, engineering, and continuous improvement.",
   alternates: { canonical: "/solutions/endpoints" },
 }
@@ -13,7 +13,7 @@ export default function SolutionsEndpointsPage() {
     <main className="min-h-screen pt-24 bg-black">
       <div className="max-w-3xl mx-auto px-6 py-16">
         <div className="w-8 h-0.5 bg-red-600 mb-6" />
-        <h1 className="text-4xl font-bold text-white mb-4">Endpoints</h1>
+        <h1 className="text-4xl font-bold text-white mb-4">Endpoint Protection</h1>
         <p className="text-zinc-400 text-lg mb-12 leading-relaxed">Laptops, servers, and devices where users and workloads actually run.</p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">

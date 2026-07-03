@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const story = storiesData.stories.find((s) => s.slug === slug)
   if (!story) return { title: 'Story Not Found' }
   return {
-    title: `${story.title} | Mitigence`,
+    title: `${story.title}`,
     description: story.summary,
     alternates: { canonical: `/success-stories/${slug}` },
   }

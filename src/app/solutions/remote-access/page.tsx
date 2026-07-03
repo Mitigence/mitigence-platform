@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { breadcrumbJsonLd, serviceJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: "Zero Trust Access — Mitigence",
+  title: "Zero Trust Access",
   description: "ZTNA for private application access, replacing legacy VPN with identity-verified, least-privilege connectivity for remote and hybrid workforces.",
   alternates: { canonical: "/solutions/remote-access" },
 }

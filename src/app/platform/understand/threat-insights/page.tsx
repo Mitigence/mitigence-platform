@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Threat Insights | Mitigence',
+  title: 'Threat Insights',
   description: 'A clear view of the modern threat landscape — attack paths, common vectors, evolving techniques, and how they map to your environment.',
   alternates: { canonical: '/platform/understand/threat-insights' },
 }
