@@ -1,8 +1,9 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const container = {
   initial: {},
@@ -12,6 +13,70 @@ const container = {
 const item = {
   initial: { opacity: 0, y: 28 },
   animate: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.25, 0.1, 0.25, 1] as const } },
+}
+
+const HEADLINE_SLIDES = 3
+const HEADLINE_INTERVAL_MS = 2000
+
+function HeroHeadline() {
+  const [slide, setSlide] = useState(0)
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const id = setInterval(() => setSlide((s) => (s + 1) % HEADLINE_SLIDES), HEADLINE_INTERVAL_MS)
+    return () => clearInterval(id)
+  }, [])
+
+  return (
+    <div className="min-h-[172px] md:min-h-[224px] flex items-center mb-6">
+      <AnimatePresence mode="wait">
+        {slide === 0 && (
+          <motion.h1
+            key="slide-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.35 }}
+            className="text-5xl md:text-7xl font-bold text-white tracking-tight"
+          >
+            Cybersecurity Isn&apos;t One Service.
+            <br />
+            <span className="text-red-600">It&apos;s a Continuously Engineered Journey.</span>
+          </motion.h1>
+        )}
+        {slide === 1 && (
+          <motion.h1
+            key="slide-1"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.35 }}
+            className="text-5xl md:text-7xl font-bold tracking-tight"
+          >
+            <span className="text-red-600">So Mitigate with Intelligence.</span>
+          </motion.h1>
+        )}
+        {slide === 2 && (
+          <motion.div
+            key="slide-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.35 }}
+          >
+            <Image
+              src="/logo-icon.webp"
+              alt="Mitigence"
+              width={160}
+              height={160}
+              className="w-24 h-24 md:w-36 md:h-36 object-contain"
+              priority
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  )
 }
 
 export function Hero() {
@@ -40,25 +105,9 @@ export function Hero() {
           </span>
         </motion.div>
 
-        <motion.h1
-          variants={item}
-          className="text-5xl md:text-7xl font-bold text-white tracking-tight mb-6"
-        >
-          <span className="flex items-center gap-4 md:gap-6 mb-3">
-            <Image
-              src="/logo-icon.webp"
-              alt=""
-              width={80}
-              height={80}
-              className="w-14 h-14 md:w-20 md:h-20 object-contain"
-              priority
-            />
-            <span style={{ fontFamily: 'var(--font-nunito), var(--font-geist-sans), sans-serif' }}>
-              Mitigence
-            </span>
-          </span>
-          <span className="text-red-600 block">So Mitigate with Intelligence.</span>
-        </motion.h1>
+        <motion.div variants={item}>
+          <HeroHeadline />
+        </motion.div>
 
         <motion.p variants={item} className="text-zinc-400 text-xl max-w-2xl mb-10">
           Mitigence helps organizations discover risks, engineer resilient security
