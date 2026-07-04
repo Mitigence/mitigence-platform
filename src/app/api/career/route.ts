@@ -88,7 +88,7 @@ export async function POST(request: NextRequest) {
     await resend.emails.send({
       from: 'Mitigence Platform <noreply@mitigence.com>',
       to: ['hr@mitigence.com'],
-      cc: ['bussiness@mitigence.com'],
+      cc: ['business@mitigence.com'],
       replyTo: email,
       subject: `Career Enquiry — ${line(name)}${role ? ` (${line(role)})` : ''}`,
       text: [

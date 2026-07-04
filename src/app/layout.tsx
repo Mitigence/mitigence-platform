@@ -77,7 +77,7 @@ const organizationJsonLd = {
   url: 'https://mitigence.com',
   description:
     'Mitigence helps organizations discover risks, engineer resilient security architectures, strengthen operations, and continuously improve cyber resilience through expert-led engagements and transparent delivery.',
-  email: 'bussiness@mitigence.com',
+  email: 'business@mitigence.com',
   areaServed: 'Worldwide',
   serviceType: [
     'Cybersecurity Consulting',

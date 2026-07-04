@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
 
     await resend.emails.send({
       from: 'Mitigence Platform <noreply@mitigence.com>',
-      to: ['bussiness@mitigence.com'],
+      to: ['business@mitigence.com'],
       replyTo: email,
       subject: source === 'consultation'
         ? `Consultation Request — ${line(organization) || line(name)}`
