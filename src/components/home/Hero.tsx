@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const container = {
@@ -15,17 +14,21 @@ const item = {
   animate: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.25, 0.1, 0.25, 1] as const } },
 }
 
-const HEADLINE_SLIDES = 3
-const HEADLINE_INTERVAL_MS = 2000
+// how long each headline slide stays on screen before dissolving to the next
+const SLIDE_DURATIONS_MS = [4000, 3000, 3000]
+const DISSOLVE_TRANSITION = { duration: 1.1, ease: [0.4, 0, 0.2, 1] as const }
 
 function HeroHeadline() {
   const [slide, setSlide] = useState(0)
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    const id = setInterval(() => setSlide((s) => (s + 1) % HEADLINE_SLIDES), HEADLINE_INTERVAL_MS)
-    return () => clearInterval(id)
-  }, [])
+    const id = setTimeout(
+      () => setSlide((s) => (s + 1) % SLIDE_DURATIONS_MS.length),
+      SLIDE_DURATIONS_MS[slide]
+    )
+    return () => clearTimeout(id)
+  }, [slide])
 
   return (
     <div className="min-h-[172px] md:min-h-[224px] flex items-center mb-6">
@@ -36,7 +39,7 @@ function HeroHeadline() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.35 }}
+            transition={DISSOLVE_TRANSITION}
             className="text-5xl md:text-7xl font-bold text-white tracking-tight"
           >
             Cybersecurity Isn&apos;t One Service.
@@ -50,29 +53,27 @@ function HeroHeadline() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.35 }}
+            transition={DISSOLVE_TRANSITION}
             className="text-5xl md:text-7xl font-bold tracking-tight"
           >
-            <span className="text-red-600">So Mitigate with Intelligence.</span>
+            <span className="text-red-600 text-2xl md:text-4xl align-middle">So</span>{' '}
+            <span className="text-white">Mitigate</span>{' '}
+            <span className="text-red-600 text-2xl md:text-4xl align-middle">with</span>{' '}
+            <span className="text-white">Intelligence.</span>
           </motion.h1>
         )}
         {slide === 2 && (
-          <motion.div
+          <motion.h1
             key="slide-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.35 }}
+            transition={DISSOLVE_TRANSITION}
+            className="text-5xl md:text-7xl font-bold text-white tracking-tight"
+            style={{ fontFamily: 'var(--font-nunito), var(--font-geist-sans), sans-serif' }}
           >
-            <Image
-              src="/logo-icon.webp"
-              alt="Mitigence"
-              width={160}
-              height={160}
-              className="w-24 h-24 md:w-36 md:h-36 object-contain"
-              priority
-            />
-          </motion.div>
+            Mitigence
+          </motion.h1>
         )}
       </AnimatePresence>
     </div>
