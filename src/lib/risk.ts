@@ -21,11 +21,27 @@ interface MeetingForRisk {
 
 const DAY_MS = 24 * 60 * 60 * 1000
 
+function todayDateString(): string {
+  return new Date().toISOString().slice(0, 10)
+}
+
+function daysBetweenDates(fromDateOnly: string, toDateOnly: string): number {
+  const from = Date.parse(`${fromDateOnly}T00:00:00Z`)
+  const to = Date.parse(`${toDateOnly}T00:00:00Z`)
+  return Math.round((to - from) / DAY_MS)
+}
+
+/** True once `dateOnly`'s calendar day has fully passed (not merely begun). */
+export function isPastCalendarDate(dateOnly: string): boolean {
+  return dateOnly < todayDateString()
+}
+
 export function computeProjectRisk(
   deliverables: DeliverableForRisk[],
   meetings: MeetingForRisk[]
 ): RiskResult {
   const now = Date.now()
+  const today = todayDateString()
   const reasons: string[] = []
   let missedCount = 0
   let maxDaysOverdue = 0
@@ -33,14 +49,12 @@ export function computeProjectRisk(
 
   for (const d of deliverables) {
     if (d.status === 'complete' || !d.due_date) continue
-    const due = new Date(d.due_date).getTime()
-    const daysOverdue = (now - due) / DAY_MS
+    const daysOverdue = daysBetweenDates(d.due_date, today)
 
-    if (daysOverdue > 0) {
+    if (isPastCalendarDate(d.due_date)) {
       missedCount++
       maxDaysOverdue = Math.max(maxDaysOverdue, daysOverdue)
-      const rounded = Math.ceil(daysOverdue)
-      reasons.push(`${d.item} is ${rounded} day${rounded === 1 ? '' : 's'} overdue`)
+      reasons.push(`${d.item} is ${daysOverdue} day${daysOverdue === 1 ? '' : 's'} overdue`)
     } else if (daysOverdue > -3) {
       dueSoon = true
       reasons.push(`${d.item} is due soon`)
