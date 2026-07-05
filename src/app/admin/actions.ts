@@ -62,7 +62,11 @@ export async function createClientAction(
     return { error: `Could not create login: ${userError?.message ?? 'unknown error'}` }
   }
 
-  const { error: profileError } = await supabase.from('profiles').insert({
+  // Phase 1's RLS only grants PMs SELECT on profiles (no INSERT policy —
+  // profile creation is intentionally a privileged, admin-only operation),
+  // so this insert must go through the service-role client, not the PM's
+  // own session.
+  const { error: profileError } = await admin.from('profiles').insert({
     id: userData.user.id,
     role: 'client',
     client_id: clientRow.id,
