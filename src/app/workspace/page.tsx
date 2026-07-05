@@ -17,18 +17,34 @@ export default async function WorkspacePage() {
     .select('id, name, phase')
     .order('created_at')
 
-  const projectsWithRisk = await Promise.all(
-    (projects ?? []).map(async (project) => {
-      const [{ data: deliverables }, { data: meetings }] = await Promise.all([
-        supabase.from('deliverables').select('item, status, due_date').eq('project_id', project.id),
-        supabase.from('meetings').select('title, status, scheduled_at').eq('project_id', project.id),
-      ])
-      return {
-        ...project,
-        risk: computeProjectRisk(deliverables ?? [], meetings ?? []),
-      }
-    })
-  )
+  const projectIds = (projects ?? []).map((p) => p.id)
+
+  const [{ data: allDeliverables }, { data: allMeetings }] = await Promise.all([
+    supabase.from('deliverables').select('project_id, item, status, due_date').in('project_id', projectIds),
+    supabase.from('meetings').select('project_id, title, status, scheduled_at').in('project_id', projectIds),
+  ])
+
+  const deliverablesByProject = new Map<string, typeof allDeliverables>()
+  for (const d of allDeliverables ?? []) {
+    const list = deliverablesByProject.get(d.project_id) ?? []
+    list.push(d)
+    deliverablesByProject.set(d.project_id, list)
+  }
+
+  const meetingsByProject = new Map<string, typeof allMeetings>()
+  for (const m of allMeetings ?? []) {
+    const list = meetingsByProject.get(m.project_id) ?? []
+    list.push(m)
+    meetingsByProject.set(m.project_id, list)
+  }
+
+  const projectsWithRisk = (projects ?? []).map((project) => ({
+    ...project,
+    risk: computeProjectRisk(
+      deliverablesByProject.get(project.id) ?? [],
+      meetingsByProject.get(project.id) ?? []
+    ),
+  }))
 
   return (
     <main className="min-h-screen bg-black px-6 py-12">
