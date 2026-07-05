@@ -21,17 +21,33 @@ interface Meeting {
   mom_file_path: string | null
 }
 
+function formatScheduledAt(scheduledAt: string): string {
+  return new Date(scheduledAt).toLocaleString(undefined, {
+    dateStyle: 'medium',
+    timeStyle: 'short',
+  })
+}
+
+function isOverdue(meeting: Meeting): boolean {
+  if (meeting.status === 'completed') return false
+  return new Date(meeting.scheduled_at).getTime() < Date.now()
+}
+
 function MeetingRow({ projectId, meeting }: { projectId: string; meeting: Meeting }) {
   const boundAction = completeMeetingAction.bind(null, projectId, meeting.id)
   const [state, formAction, isPending] = useActionState(boundAction, completeInitialState)
+  const overdue = isOverdue(meeting)
 
   return (
-    <div className="rounded-lg border border-zinc-800 bg-zinc-950 p-3">
+    <div
+      className={`rounded-lg border p-3 ${overdue ? 'border-red-600/40 bg-red-600/5' : 'border-zinc-800 bg-zinc-950'}`}
+    >
       <div className="flex items-start justify-between gap-3">
         <div>
           <p className="text-white text-sm">{meeting.title}</p>
-          <p className="text-zinc-500 text-xs mt-0.5">
-            {meeting.meeting_type} &middot; {meeting.scheduled_at} &middot; {meeting.status}
+          <p className={`text-xs mt-0.5 ${overdue ? 'text-red-500' : 'text-zinc-500'}`}>
+            {meeting.meeting_type} &middot; {formatScheduledAt(meeting.scheduled_at)} &middot; {meeting.status}
+            {overdue ? ' (overdue)' : ''}
             {meeting.mom_file_path ? ' · MoM attached' : ''}
           </p>
         </div>
@@ -101,8 +117,7 @@ export function MeetingsSection({ projectId, meetings }: { projectId: string; me
             <input
               id="scheduledAt"
               name="scheduledAt"
-              type="text"
-              placeholder="Thursday 10:00"
+              type="datetime-local"
               required
               className="w-full bg-zinc-900 border border-zinc-800 rounded-lg text-white text-sm px-4 py-2.5 outline-none focus:border-red-600 transition-colors"
             />
