@@ -70,11 +70,11 @@ export function MeetingsSection({ projectId, meetings }: { projectId: string; me
 
       <form action={addFormAction} className="rounded-lg border border-zinc-800 bg-zinc-950 p-4 space-y-3">
         <div>
-          <label htmlFor="title" className="block text-zinc-400 text-xs mb-1.5">
+          <label htmlFor="meetingTitle" className="block text-zinc-400 text-xs mb-1.5">
             Title
           </label>
           <input
-            id="title"
+            id="meetingTitle"
             name="title"
             type="text"
             required
