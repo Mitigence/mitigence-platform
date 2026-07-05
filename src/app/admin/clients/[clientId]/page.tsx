@@ -25,7 +25,7 @@ export default async function ClientDetailPage({ params }: Props) {
 
   const { data: projects } = await supabase
     .from('projects')
-    .select('id, name, phase, status')
+    .select('id, name, phase')
     .eq('client_id', clientId)
     .order('created_at')
 
@@ -48,9 +48,7 @@ export default async function ClientDetailPage({ params }: Props) {
               className="block rounded-lg border border-zinc-800 bg-zinc-950 hover:border-zinc-700 p-4 transition-colors"
             >
               <p className="text-white text-sm font-medium">{project.name}</p>
-              <p className="text-zinc-500 text-xs mt-0.5">
-                {project.phase || 'No phase set'} &middot; {project.status}
-              </p>
+              <p className="text-zinc-500 text-xs mt-0.5">{project.phase || 'No phase set'}</p>
             </Link>
           ))}
           {(projects ?? []).length === 0 && (

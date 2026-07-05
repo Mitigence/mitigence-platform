@@ -10,7 +10,6 @@ interface Project {
   name: string
   phase: string
   progress: number
-  status: string
 }
 
 export function ProjectStatusForm({ project }: { project: Project }) {
@@ -18,7 +17,7 @@ export function ProjectStatusForm({ project }: { project: Project }) {
   const [state, formAction, isPending] = useActionState(boundAction, initialState)
 
   return (
-    <form action={formAction} className="rounded-lg border border-zinc-800 bg-zinc-950 p-4 mb-8 space-y-3">
+    <form action={formAction} className="rounded-lg border border-zinc-800 bg-zinc-950 p-4 mb-4 space-y-3">
       <p className="text-white text-sm font-medium mb-1">Project status</p>
       <div>
         <label htmlFor="phase" className="block text-zinc-400 text-xs mb-1.5">
@@ -43,18 +42,6 @@ export function ProjectStatusForm({ project }: { project: Project }) {
           min={0}
           max={100}
           defaultValue={project.progress}
-          className="w-full bg-zinc-900 border border-zinc-800 rounded-lg text-white text-sm px-4 py-2.5 outline-none focus:border-red-600 transition-colors"
-        />
-      </div>
-      <div>
-        <label htmlFor="status" className="block text-zinc-400 text-xs mb-1.5">
-          Status
-        </label>
-        <input
-          id="status"
-          name="status"
-          type="text"
-          defaultValue={project.status}
           className="w-full bg-zinc-900 border border-zinc-800 rounded-lg text-white text-sm px-4 py-2.5 outline-none focus:border-red-600 transition-colors"
         />
       </div>

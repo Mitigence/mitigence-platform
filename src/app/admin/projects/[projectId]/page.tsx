@@ -1,7 +1,9 @@
 import { redirect, notFound } from 'next/navigation'
 import Link from 'next/link'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
+import { computeProjectRisk } from '@/lib/risk'
 import { ProjectStatusForm } from './project-status-form'
+import { RiskBadge } from './risk-badge'
 import { ReportsSection } from './reports-section'
 import { DeliverablesSection } from './deliverables-section'
 import { MeetingsSection } from './meetings-section'
@@ -21,7 +23,7 @@ export default async function ProjectPage({ params }: Props) {
 
   const { data: project } = await supabase
     .from('projects')
-    .select('id, client_id, name, phase, progress, status')
+    .select('id, client_id, name, phase, progress')
     .eq('id', projectId)
     .single<{
       id: string
@@ -29,7 +31,6 @@ export default async function ProjectPage({ params }: Props) {
       name: string
       phase: string
       progress: number
-      status: string
     }>()
 
   if (!project) notFound()
@@ -43,7 +44,7 @@ export default async function ProjectPage({ params }: Props) {
         .order('created_at', { ascending: false }),
       supabase
         .from('deliverables')
-        .select('id, item, status, week_label, file_path')
+        .select('id, item, status, week_label, due_date, delay_explanation, file_path')
         .eq('project_id', projectId)
         .order('updated_at'),
       supabase
@@ -58,6 +59,8 @@ export default async function ProjectPage({ params }: Props) {
         .order('created_at'),
     ])
 
+  const risk = computeProjectRisk(deliverables ?? [], meetings ?? [])
+
   return (
     <main className="min-h-screen bg-black px-6 py-12">
       <div className="max-w-2xl mx-auto">
@@ -70,6 +73,7 @@ export default async function ProjectPage({ params }: Props) {
         <h1 className="text-2xl font-bold text-white mt-2 mb-8">{project.name}</h1>
 
         <ProjectStatusForm project={project} />
+        <RiskBadge risk={risk} />
         <ReportsSection projectId={project.id} reports={reports ?? []} />
         <DeliverablesSection projectId={project.id} deliverables={deliverables ?? []} />
         <MeetingsSection projectId={project.id} meetings={meetings ?? []} />
