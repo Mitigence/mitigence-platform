@@ -121,6 +121,8 @@ export interface Database {
           item: string
           status: DeliverableStatus
           week_label: string
+          due_date: string | null
+          delay_explanation: string | null
           file_path: string | null
           updated_by: string | null
           updated_at: string
@@ -131,6 +133,8 @@ export interface Database {
           item: string
           status?: DeliverableStatus
           week_label?: string
+          due_date?: string | null
+          delay_explanation?: string | null
           file_path?: string | null
           updated_by?: string | null
           updated_at?: string
@@ -139,6 +143,8 @@ export interface Database {
           item: string
           status: DeliverableStatus
           week_label: string
+          due_date: string | null
+          delay_explanation: string | null
           file_path: string | null
           updated_by: string | null
           updated_at: string
