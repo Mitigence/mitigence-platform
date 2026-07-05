@@ -1,8 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { defaultTransition } from '@/lib/animations'
+import { WorkspaceHeader } from '@/components/workspace/WorkspaceHeader'
+import { WorkspaceTabNav } from '@/components/workspace/WorkspaceTabNav'
+import { WorkspaceTabTransition } from '@/components/workspace/WorkspaceTabTransition'
+import { OverviewStatCard } from '@/components/workspace/OverviewStatCard'
 
 const TABS = ['Overview', 'Reports', 'Deliverables', 'Meetings', 'Recommendations'] as const
 type Tab = (typeof TABS)[number]
@@ -48,21 +50,7 @@ export function CustomerWorkspacePreview() {
 
   return (
     <div className="rounded-xl border border-zinc-800 bg-zinc-950 overflow-hidden">
-      {/* Workspace header */}
-      <div className="bg-zinc-900 px-6 py-4 flex items-center justify-between border-b border-zinc-800">
-        <div className="flex items-center gap-3">
-          <div className="flex gap-1.5">
-            <div className="w-3 h-3 rounded-full bg-zinc-700" />
-            <div className="w-3 h-3 rounded-full bg-zinc-700" />
-            <div className="w-3 h-3 rounded-full bg-zinc-700" />
-          </div>
-          <span className="text-zinc-400 text-xs">Mitigence Workspace</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-green-500" />
-          <span className="text-zinc-500 text-xs">Live session</span>
-        </div>
-      </div>
+      <WorkspaceHeader />
 
       {/* Project header */}
       <div className="px-6 py-4 border-b border-zinc-800">
@@ -86,126 +74,96 @@ export function CustomerWorkspacePreview() {
         </div>
       </div>
 
-      {/* Tab nav */}
-      <div className="flex border-b border-zinc-800 overflow-x-auto">
-        {TABS.map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`flex-shrink-0 px-5 py-3 text-xs font-medium border-b-2 transition-colors cursor-pointer ${
-              activeTab === tab
-                ? 'border-red-600 text-white bg-red-600/5'
-                : 'border-transparent text-zinc-500 hover:text-zinc-300'
-            }`}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
+      <WorkspaceTabNav tabs={TABS} activeTab={activeTab} onTabChange={(tab) => setActiveTab(tab as Tab)} />
 
-      {/* Tab content */}
-      <div className="p-6 min-h-64">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={defaultTransition}
-          >
-            {activeTab === 'Overview' && (
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-4">
-                  <p className="text-zinc-500 text-xs mb-1">Deliverables completed</p>
-                  <p className="text-2xl font-bold text-white">3 / 7</p>
+      <WorkspaceTabTransition tabKey={activeTab}>
+        {activeTab === 'Overview' && (
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <OverviewStatCard label="Deliverables completed">
+              <p className="text-2xl font-bold text-white">3 / 7</p>
+            </OverviewStatCard>
+            <OverviewStatCard label="Open recommendations">
+              <p className="text-2xl font-bold text-white">4</p>
+            </OverviewStatCard>
+            <OverviewStatCard label="Next meeting">
+              <p className="text-white font-semibold text-sm">Thursday 10:00</p>
+            </OverviewStatCard>
+            <OverviewStatCard label="This week's activity" wide>
+              <ul className="space-y-2 mt-3">
+                <li className="flex items-center gap-2 text-zinc-300 text-xs"><span className="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0" />IAM Policy Framework — engineering in progress</li>
+                <li className="flex items-center gap-2 text-zinc-300 text-xs"><span className="w-1.5 h-1.5 rounded-full bg-zinc-600 flex-shrink-0" />IAM Architecture Walkthrough scheduled for tomorrow</li>
+                <li className="flex items-center gap-2 text-zinc-300 text-xs"><span className="w-1.5 h-1.5 rounded-full bg-zinc-600 flex-shrink-0" />Mid-point executive briefing prepared for next week</li>
+              </ul>
+            </OverviewStatCard>
+          </div>
+        )}
+
+        {activeTab === 'Reports' && (
+          <div className="space-y-3">
+            {mockReports.map((r) => (
+              <div key={r.title} className="flex items-center justify-between rounded-lg border border-zinc-800 bg-zinc-900 p-4">
+                <div>
+                  <p className="text-white text-sm font-medium">{r.title}</p>
+                  <p className="text-zinc-500 text-xs mt-0.5">{r.type} · {r.date}</p>
                 </div>
-                <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-4">
-                  <p className="text-zinc-500 text-xs mb-1">Open recommendations</p>
-                  <p className="text-2xl font-bold text-white">4</p>
+                <span className="text-xs text-green-500 bg-green-500/10 border border-green-500/20 rounded-full px-2.5 py-1">{r.status}</span>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {activeTab === 'Deliverables' && (
+          <div className="space-y-2">
+            {mockDeliverables.map((d) => (
+              <div key={d.item} className="flex items-center justify-between py-2">
+                <div className="flex items-center gap-3">
+                  <span className={`w-4 h-4 rounded border flex items-center justify-center flex-shrink-0 text-xs ${
+                    d.status === 'complete' ? 'border-green-600 bg-green-600 text-white' :
+                    d.status === 'in-progress' ? 'border-red-600 bg-red-600/20 text-red-500' :
+                    'border-zinc-700'
+                  }`}>
+                    {d.status === 'complete' ? '✓' : d.status === 'in-progress' ? '·' : ''}
+                  </span>
+                  <span className={`text-sm ${d.status === 'complete' ? 'text-zinc-500 line-through' : 'text-zinc-300'}`}>{d.item}</span>
                 </div>
-                <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-4">
-                  <p className="text-zinc-500 text-xs mb-1">Next meeting</p>
-                  <p className="text-white font-semibold text-sm">Thursday 10:00</p>
+                <span className="text-zinc-600 text-xs">{d.week}</span>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {activeTab === 'Meetings' && (
+          <div className="space-y-3">
+            {mockMeetings.map((m) => (
+              <div key={m.title} className="rounded-lg border border-zinc-800 bg-zinc-900 p-4">
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <p className="text-white text-sm font-medium">{m.title}</p>
+                    <p className="text-zinc-500 text-xs mt-0.5">{m.date}</p>
+                  </div>
+                  <span className="text-xs text-zinc-500 bg-zinc-800 border border-zinc-700 rounded-full px-2.5 py-1 flex-shrink-0">{m.type}</span>
                 </div>
-                <div className="sm:col-span-3 rounded-lg border border-zinc-800 bg-zinc-900 p-4">
-                  <p className="text-zinc-500 text-xs mb-3">This week&apos;s activity</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2 text-zinc-300 text-xs"><span className="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0" />IAM Policy Framework — engineering in progress</li>
-                    <li className="flex items-center gap-2 text-zinc-300 text-xs"><span className="w-1.5 h-1.5 rounded-full bg-zinc-600 flex-shrink-0" />IAM Architecture Walkthrough scheduled for tomorrow</li>
-                    <li className="flex items-center gap-2 text-zinc-300 text-xs"><span className="w-1.5 h-1.5 rounded-full bg-zinc-600 flex-shrink-0" />Mid-point executive briefing prepared for next week</li>
-                  </ul>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {activeTab === 'Recommendations' && (
+          <div className="space-y-3">
+            {mockRecommendations.map((r) => (
+              <div key={r.finding} className="flex items-center justify-between rounded-lg border border-zinc-800 bg-zinc-900 p-4 gap-4">
+                <div className="flex items-center gap-3 min-w-0">
+                  <span className={`text-xs font-semibold rounded-full px-2.5 py-1 flex-shrink-0 ${
+                    r.priority === 'High' ? 'bg-red-600/10 text-red-500 border border-red-600/20' : 'bg-yellow-600/10 text-yellow-500 border border-yellow-600/20'
+                  }`}>{r.priority}</span>
+                  <p className="text-zinc-300 text-sm">{r.finding}</p>
                 </div>
+                <span className="text-zinc-500 text-xs flex-shrink-0">Effort: {r.effort}</span>
               </div>
-            )}
-
-            {activeTab === 'Reports' && (
-              <div className="space-y-3">
-                {mockReports.map((r) => (
-                  <div key={r.title} className="flex items-center justify-between rounded-lg border border-zinc-800 bg-zinc-900 p-4">
-                    <div>
-                      <p className="text-white text-sm font-medium">{r.title}</p>
-                      <p className="text-zinc-500 text-xs mt-0.5">{r.type} · {r.date}</p>
-                    </div>
-                    <span className="text-xs text-green-500 bg-green-500/10 border border-green-500/20 rounded-full px-2.5 py-1">{r.status}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {activeTab === 'Deliverables' && (
-              <div className="space-y-2">
-                {mockDeliverables.map((d) => (
-                  <div key={d.item} className="flex items-center justify-between py-2">
-                    <div className="flex items-center gap-3">
-                      <span className={`w-4 h-4 rounded border flex items-center justify-center flex-shrink-0 text-xs ${
-                        d.status === 'complete' ? 'border-green-600 bg-green-600 text-white' :
-                        d.status === 'in-progress' ? 'border-red-600 bg-red-600/20 text-red-500' :
-                        'border-zinc-700'
-                      }`}>
-                        {d.status === 'complete' ? '✓' : d.status === 'in-progress' ? '·' : ''}
-                      </span>
-                      <span className={`text-sm ${d.status === 'complete' ? 'text-zinc-500 line-through' : 'text-zinc-300'}`}>{d.item}</span>
-                    </div>
-                    <span className="text-zinc-600 text-xs">{d.week}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {activeTab === 'Meetings' && (
-              <div className="space-y-3">
-                {mockMeetings.map((m) => (
-                  <div key={m.title} className="rounded-lg border border-zinc-800 bg-zinc-900 p-4">
-                    <div className="flex items-start justify-between gap-3">
-                      <div>
-                        <p className="text-white text-sm font-medium">{m.title}</p>
-                        <p className="text-zinc-500 text-xs mt-0.5">{m.date}</p>
-                      </div>
-                      <span className="text-xs text-zinc-500 bg-zinc-800 border border-zinc-700 rounded-full px-2.5 py-1 flex-shrink-0">{m.type}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {activeTab === 'Recommendations' && (
-              <div className="space-y-3">
-                {mockRecommendations.map((r) => (
-                  <div key={r.finding} className="flex items-center justify-between rounded-lg border border-zinc-800 bg-zinc-900 p-4 gap-4">
-                    <div className="flex items-center gap-3 min-w-0">
-                      <span className={`text-xs font-semibold rounded-full px-2.5 py-1 flex-shrink-0 ${
-                        r.priority === 'High' ? 'bg-red-600/10 text-red-500 border border-red-600/20' : 'bg-yellow-600/10 text-yellow-500 border border-yellow-600/20'
-                      }`}>{r.priority}</span>
-                      <p className="text-zinc-300 text-sm">{r.finding}</p>
-                    </div>
-                    <span className="text-zinc-500 text-xs flex-shrink-0">Effort: {r.effort}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-          </motion.div>
-        </AnimatePresence>
-      </div>
+            ))}
+          </div>
+        )}
+      </WorkspaceTabTransition>
 
       <div className="px-6 pb-6 border-t border-zinc-900 pt-4">
         <p className="text-zinc-600 text-xs">

@@ -1,8 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { defaultTransition } from '@/lib/animations'
+import { WorkspaceHeader } from '@/components/workspace/WorkspaceHeader'
+import { WorkspaceTabNav } from '@/components/workspace/WorkspaceTabNav'
+import { WorkspaceTabTransition } from '@/components/workspace/WorkspaceTabTransition'
+import { OverviewStatCard } from '@/components/workspace/OverviewStatCard'
 import type { RiskResult } from '@/lib/risk'
 import { RISK_STYLES, isDeliverableOverdue, isMeetingOverdue, formatScheduledAt } from '@/lib/risk-styles'
 import type { DeliverableStatus, MeetingStatus, Priority, Effort } from '@/lib/supabase/types'
@@ -82,21 +84,7 @@ export function ClientWorkspace({
 
   return (
     <div className="rounded-xl border border-zinc-800 bg-zinc-950 overflow-hidden">
-      {/* Workspace header */}
-      <div className="bg-zinc-900 px-6 py-4 flex items-center justify-between border-b border-zinc-800">
-        <div className="flex items-center gap-3">
-          <div className="flex gap-1.5">
-            <div className="w-3 h-3 rounded-full bg-zinc-700" />
-            <div className="w-3 h-3 rounded-full bg-zinc-700" />
-            <div className="w-3 h-3 rounded-full bg-zinc-700" />
-          </div>
-          <span className="text-zinc-400 text-xs">Mitigence Workspace</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-green-500" />
-          <span className="text-zinc-500 text-xs">Live session</span>
-        </div>
-      </div>
+      <WorkspaceHeader />
 
       {/* Project header */}
       <div className="px-6 py-4 border-b border-zinc-800">
@@ -117,55 +105,27 @@ export function ClientWorkspace({
         </div>
       </div>
 
-      {/* Tab nav */}
-      <div className="flex border-b border-zinc-800 overflow-x-auto">
-        {TABS.map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`flex-shrink-0 px-5 py-3 text-xs font-medium border-b-2 transition-colors cursor-pointer ${
-              activeTab === tab
-                ? 'border-red-600 text-white bg-red-600/5'
-                : 'border-transparent text-zinc-500 hover:text-zinc-300'
-            }`}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
+      <WorkspaceTabNav tabs={TABS} activeTab={activeTab} onTabChange={(tab) => setActiveTab(tab as Tab)} />
 
-      {/* Tab content */}
-      <div className="p-6 min-h-64">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={defaultTransition}
-          >
+      <WorkspaceTabTransition tabKey={activeTab}>
             {activeTab === 'Overview' && (
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-4">
-                  <p className="text-zinc-500 text-xs mb-1">Deliverables completed</p>
+                <OverviewStatCard label="Deliverables completed">
                   <p className="text-2xl font-bold text-white">
                     {completedCount} / {deliverables.length}
                   </p>
-                </div>
-                <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-4">
-                  <p className="text-zinc-500 text-xs mb-1">Open recommendations</p>
+                </OverviewStatCard>
+                <OverviewStatCard label="Open recommendations">
                   <p className="text-2xl font-bold text-white">{recommendations.length}</p>
-                </div>
-                <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-4">
-                  <p className="text-zinc-500 text-xs mb-1">Next meeting</p>
+                </OverviewStatCard>
+                <OverviewStatCard label="Next meeting">
                   <p className="text-white font-semibold text-sm">
                     {nextMeeting ? formatScheduledAt(nextMeeting.scheduled_at) : 'No meetings scheduled'}
                   </p>
-                </div>
-                <div className="sm:col-span-3 rounded-lg border border-zinc-800 bg-zinc-900 p-4">
-                  <p className="text-zinc-500 text-xs mb-3">This week&apos;s activity</p>
+                </OverviewStatCard>
+                <OverviewStatCard label="This week's activity" wide>
                   {recentActivity.length > 0 ? (
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 mt-3">
                       {recentActivity.map((entry) => (
                         <li key={entry} className="flex items-center gap-2 text-zinc-300 text-xs">
                           <span className="w-1.5 h-1.5 rounded-full bg-zinc-600 flex-shrink-0" />
@@ -174,9 +134,9 @@ export function ClientWorkspace({
                       ))}
                     </ul>
                   ) : (
-                    <p className="text-zinc-600 text-xs">No recent activity.</p>
+                    <p className="text-zinc-600 text-xs mt-3">No recent activity.</p>
                   )}
-                </div>
+                </OverviewStatCard>
               </div>
             )}
 
@@ -334,9 +294,7 @@ export function ClientWorkspace({
                 )}
               </div>
             )}
-          </motion.div>
-        </AnimatePresence>
-      </div>
+      </WorkspaceTabTransition>
     </div>
   )
 }
