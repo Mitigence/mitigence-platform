@@ -9,11 +9,17 @@ export async function getSignedFileUrls(
 
   const { data, error } = await supabase.storage.from('workspace-files').createSignedUrls(paths, 3600)
 
-  if (error || !data) return {}
+  if (error) {
+    console.error('getSignedFileUrls: createSignedUrls failed', error)
+    return {}
+  }
+  if (!data) return {}
 
   const urls: Record<string, string> = {}
   for (const entry of data) {
-    if (entry.path && entry.signedUrl && !entry.error) {
+    if (entry.error) {
+      console.error('getSignedFileUrls: entry failed', entry.path, entry.error)
+    } else if (entry.path && entry.signedUrl) {
       urls[entry.path] = entry.signedUrl
     }
   }
