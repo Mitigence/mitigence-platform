@@ -5,6 +5,7 @@ import { ProjectStatusForm } from './project-status-form'
 import { ReportsSection } from './reports-section'
 import { DeliverablesSection } from './deliverables-section'
 import { MeetingsSection } from './meetings-section'
+import { RecommendationsSection } from './recommendations-section'
 
 interface Props {
   params: Promise<{ projectId: string }>
@@ -33,23 +34,29 @@ export default async function ProjectPage({ params }: Props) {
 
   if (!project) notFound()
 
-  const [{ data: reports }, { data: deliverables }, { data: meetings }] = await Promise.all([
-    supabase
-      .from('reports')
-      .select('id, title, report_type, report_date, status, file_path')
-      .eq('project_id', projectId)
-      .order('created_at', { ascending: false }),
-    supabase
-      .from('deliverables')
-      .select('id, item, status, week_label, file_path')
-      .eq('project_id', projectId)
-      .order('updated_at'),
-    supabase
-      .from('meetings')
-      .select('id, title, meeting_type, scheduled_at, status, mom_file_path')
-      .eq('project_id', projectId)
-      .order('created_at'),
-  ])
+  const [{ data: reports }, { data: deliverables }, { data: meetings }, { data: recommendations }] =
+    await Promise.all([
+      supabase
+        .from('reports')
+        .select('id, title, report_type, report_date, status, file_path')
+        .eq('project_id', projectId)
+        .order('created_at', { ascending: false }),
+      supabase
+        .from('deliverables')
+        .select('id, item, status, week_label, file_path')
+        .eq('project_id', projectId)
+        .order('updated_at'),
+      supabase
+        .from('meetings')
+        .select('id, title, meeting_type, scheduled_at, status, mom_file_path')
+        .eq('project_id', projectId)
+        .order('created_at'),
+      supabase
+        .from('recommendations')
+        .select('id, finding, priority, effort')
+        .eq('project_id', projectId)
+        .order('created_at'),
+    ])
 
   return (
     <main className="min-h-screen bg-black px-6 py-12">
@@ -66,6 +73,7 @@ export default async function ProjectPage({ params }: Props) {
         <ReportsSection projectId={project.id} reports={reports ?? []} />
         <DeliverablesSection projectId={project.id} deliverables={deliverables ?? []} />
         <MeetingsSection projectId={project.id} meetings={meetings ?? []} />
+        <RecommendationsSection projectId={project.id} recommendations={recommendations ?? []} />
       </div>
     </main>
   )
