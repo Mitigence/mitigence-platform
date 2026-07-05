@@ -50,7 +50,15 @@ export interface Database {
           client_id: string | null
           full_name: string | null
         }>
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: 'profiles_client_id_fkey'
+            columns: ['client_id']
+            isOneToOne: false
+            referencedRelation: 'clients'
+            referencedColumns: ['id']
+          },
+        ]
       }
       projects: {
         Row: {
@@ -80,7 +88,15 @@ export interface Database {
           status: string
           updated_at: string
         }>
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: 'projects_client_id_fkey'
+            columns: ['client_id']
+            isOneToOne: false
+            referencedRelation: 'clients'
+            referencedColumns: ['id']
+          },
+        ]
       }
       reports: {
         Row: {
@@ -112,7 +128,22 @@ export interface Database {
           status: string
           file_path: string | null
         }>
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: 'reports_project_id_fkey'
+            columns: ['project_id']
+            isOneToOne: false
+            referencedRelation: 'projects'
+            referencedColumns: ['id']
+          },
+          {
+            foreignKeyName: 'reports_uploaded_by_fkey'
+            columns: ['uploaded_by']
+            isOneToOne: false
+            referencedRelation: 'profiles'
+            referencedColumns: ['id']
+          },
+        ]
       }
       deliverables: {
         Row: {
@@ -149,7 +180,22 @@ export interface Database {
           updated_by: string | null
           updated_at: string
         }>
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: 'deliverables_project_id_fkey'
+            columns: ['project_id']
+            isOneToOne: false
+            referencedRelation: 'projects'
+            referencedColumns: ['id']
+          },
+          {
+            foreignKeyName: 'deliverables_updated_by_fkey'
+            columns: ['updated_by']
+            isOneToOne: false
+            referencedRelation: 'profiles'
+            referencedColumns: ['id']
+          },
+        ]
       }
       meetings: {
         Row: {
@@ -179,7 +225,15 @@ export interface Database {
           status: MeetingStatus
           mom_file_path: string | null
         }>
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: 'meetings_project_id_fkey'
+            columns: ['project_id']
+            isOneToOne: false
+            referencedRelation: 'projects'
+            referencedColumns: ['id']
+          },
+        ]
       }
       recommendations: {
         Row: {
@@ -203,7 +257,15 @@ export interface Database {
           priority: Priority
           effort: Effort
         }>
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: 'recommendations_project_id_fkey'
+            columns: ['project_id']
+            isOneToOne: false
+            referencedRelation: 'projects'
+            referencedColumns: ['id']
+          },
+        ]
       }
     }
   }
