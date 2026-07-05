@@ -16,6 +16,7 @@ export async function addDeliverableAction(
 ): Promise<AddDeliverableState> {
   const item = String(formData.get('item') ?? '').trim()
   const weekLabel = String(formData.get('weekLabel') ?? '').trim()
+  const dueDate = String(formData.get('dueDate') ?? '').trim()
 
   if (!item) {
     return { error: 'Item is required.' }
@@ -26,6 +27,7 @@ export async function addDeliverableAction(
     project_id: projectId,
     item,
     week_label: weekLabel,
+    due_date: dueDate || null,
   })
 
   if (error) {
@@ -47,6 +49,7 @@ export async function updateDeliverableStatusAction(
   formData: FormData
 ): Promise<UpdateDeliverableStatusState> {
   const status = String(formData.get('status') ?? '') as DeliverableStatus
+  const explanation = String(formData.get('explanation') ?? '').trim()
   const file = formData.get('file')
 
   const supabase = await createServerSupabaseClient()
@@ -64,9 +67,15 @@ export async function updateDeliverableStatusAction(
     data: { user },
   } = await supabase.auth.getUser()
 
-  const update: { status: DeliverableStatus; updated_by: string | null; file_path?: string } = {
+  const update: {
+    status: DeliverableStatus
+    updated_by: string | null
+    delay_explanation: string | null
+    file_path?: string
+  } = {
     status,
     updated_by: user?.id ?? null,
+    delay_explanation: explanation || null,
   }
   if (filePath) update.file_path = filePath
 

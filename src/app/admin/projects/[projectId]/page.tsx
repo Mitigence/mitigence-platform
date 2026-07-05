@@ -46,6 +46,7 @@ export default async function ProjectPage({ params }: Props) {
         .from('deliverables')
         .select('id, item, status, week_label, due_date, delay_explanation, file_path')
         .eq('project_id', projectId)
+        .order('due_date', { ascending: true, nullsFirst: false })
         .order('updated_at'),
       supabase
         .from('meetings')
