@@ -6,6 +6,8 @@ export type Effort = 'Low' | 'Medium' | 'High'
 
 export interface Database {
   public: {
+    Views: Record<string, never>
+    Functions: Record<string, never>
     Tables: {
       clients: {
         Row: {
@@ -26,6 +28,7 @@ export interface Database {
           slug: string
           created_at: string
         }>
+        Relationships: []
       }
       profiles: {
         Row: {
@@ -47,6 +50,7 @@ export interface Database {
           client_id: string | null
           full_name: string | null
         }>
+        Relationships: []
       }
       projects: {
         Row: {
@@ -76,6 +80,7 @@ export interface Database {
           status: string
           updated_at: string
         }>
+        Relationships: []
       }
       reports: {
         Row: {
@@ -107,6 +112,7 @@ export interface Database {
           status: string
           file_path: string | null
         }>
+        Relationships: []
       }
       deliverables: {
         Row: {
@@ -137,6 +143,7 @@ export interface Database {
           updated_by: string | null
           updated_at: string
         }>
+        Relationships: []
       }
       meetings: {
         Row: {
@@ -166,6 +173,7 @@ export interface Database {
           status: MeetingStatus
           mom_file_path: string | null
         }>
+        Relationships: []
       }
       recommendations: {
         Row: {
@@ -189,6 +197,7 @@ export interface Database {
           priority: Priority
           effort: Effort
         }>
+        Relationships: []
       }
     }
   }

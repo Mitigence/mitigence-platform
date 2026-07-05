@@ -1,11 +1,14 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
+import type { SupabaseClient } from '@supabase/supabase-js'
 import type { Database } from './types'
 import { getCurrentUserRole } from './profile'
 
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request })
 
+  // See src/lib/supabase/server.ts for why this is cast — @supabase/ssr's
+  // return type doesn't line up with the installed supabase-js version.
   const supabase = createServerClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -23,7 +26,7 @@ export async function updateSession(request: NextRequest) {
         },
       },
     }
-  )
+  ) as unknown as SupabaseClient<Database>
 
   const {
     data: { user },
