@@ -4,16 +4,11 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { defaultTransition } from '@/lib/animations'
 import type { RiskResult } from '@/lib/risk'
+import { RISK_STYLES, isDeliverableOverdue, isMeetingOverdue, formatScheduledAt } from '@/lib/risk-styles'
 import type { DeliverableStatus, MeetingStatus, Priority, Effort } from '@/lib/supabase/types'
 
 const TABS = ['Overview', 'Reports', 'Deliverables', 'Meetings', 'Recommendations'] as const
 type Tab = (typeof TABS)[number]
-
-const RISK_STYLES: Record<RiskResult['level'], string> = {
-  'On track': 'bg-green-500/10 text-green-500 border-green-500/20',
-  'At risk': 'bg-amber-500/10 text-amber-500 border-amber-500/20',
-  Delayed: 'bg-red-600/10 text-red-500 border-red-600/20',
-}
 
 interface Project {
   id: string
@@ -66,23 +61,6 @@ interface ClientWorkspaceProps {
   meetings: Meeting[]
   recommendations: Recommendation[]
   fileUrls: Record<string, string>
-}
-
-function isDeliverableOverdue(deliverable: Deliverable): boolean {
-  if (deliverable.status === 'complete' || !deliverable.due_date) return false
-  return new Date(deliverable.due_date).getTime() < Date.now()
-}
-
-function isMeetingOverdue(meeting: Meeting): boolean {
-  if (meeting.status === 'completed') return false
-  return new Date(meeting.scheduled_at).getTime() < Date.now()
-}
-
-function formatScheduledAt(scheduledAt: string): string {
-  return new Date(scheduledAt).toLocaleString(undefined, {
-    dateStyle: 'medium',
-    timeStyle: 'short',
-  })
 }
 
 export function ClientWorkspace({

@@ -8,6 +8,7 @@ import {
   type UpdateDeliverableStatusState,
 } from './deliverables-actions'
 import type { DeliverableStatus } from '@/lib/supabase/types'
+import { isDeliverableOverdue as isOverdue } from '@/lib/risk-styles'
 
 const addInitialState: AddDeliverableState = {}
 const updateInitialState: UpdateDeliverableStatusState = {}
@@ -20,11 +21,6 @@ interface Deliverable {
   due_date: string | null
   delay_explanation: string | null
   file_path: string | null
-}
-
-function isOverdue(deliverable: Deliverable): boolean {
-  if (deliverable.status === 'complete' || !deliverable.due_date) return false
-  return new Date(deliverable.due_date).getTime() < Date.now()
 }
 
 function DeliverableRow({ projectId, deliverable }: { projectId: string; deliverable: Deliverable }) {

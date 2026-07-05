@@ -8,6 +8,7 @@ import {
   type CompleteMeetingState,
 } from './meetings-actions'
 import type { MeetingStatus } from '@/lib/supabase/types'
+import { formatScheduledAt, isMeetingOverdue as isOverdue } from '@/lib/risk-styles'
 
 const addInitialState: AddMeetingState = {}
 const completeInitialState: CompleteMeetingState = {}
@@ -19,18 +20,6 @@ interface Meeting {
   scheduled_at: string
   status: MeetingStatus
   mom_file_path: string | null
-}
-
-function formatScheduledAt(scheduledAt: string): string {
-  return new Date(scheduledAt).toLocaleString(undefined, {
-    dateStyle: 'medium',
-    timeStyle: 'short',
-  })
-}
-
-function isOverdue(meeting: Meeting): boolean {
-  if (meeting.status === 'completed') return false
-  return new Date(meeting.scheduled_at).getTime() < Date.now()
 }
 
 function MeetingRow({ projectId, meeting }: { projectId: string; meeting: Meeting }) {

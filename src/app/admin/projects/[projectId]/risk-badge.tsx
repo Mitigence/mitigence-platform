@@ -1,10 +1,5 @@
 import type { RiskResult } from '@/lib/risk'
-
-const RISK_STYLES: Record<RiskResult['level'], string> = {
-  'On track': 'bg-green-500/10 text-green-500 border-green-500/20',
-  'At risk': 'bg-amber-500/10 text-amber-500 border-amber-500/20',
-  Delayed: 'bg-red-600/10 text-red-500 border-red-600/20',
-}
+import { RISK_STYLES } from '@/lib/risk-styles'
 
 export function RiskBadge({ risk }: { risk: RiskResult }) {
   return (
