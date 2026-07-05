@@ -1,4 +1,4 @@
-const BASE = 'https://mitigence.com'
+import { SITE_URL as BASE } from './site-config'
 
 export function breadcrumbJsonLd(crumbs: { name: string; path: string }[]) {
   return {

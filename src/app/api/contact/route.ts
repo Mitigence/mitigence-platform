@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { NOREPLY_EMAIL, BUSINESS_EMAIL } from '@/lib/site-config'
 
 const ALLOWED_SOURCES = new Set(['contact', 'consultation'])
 
@@ -59,8 +60,8 @@ export async function POST(request: NextRequest) {
     }
 
     await resend.emails.send({
-      from: 'Mitigence Platform <noreply@mitigence.com>',
-      to: ['business@mitigence.com'],
+      from: `Mitigence Platform <${NOREPLY_EMAIL}>`,
+      to: [BUSINESS_EMAIL],
       replyTo: email,
       subject: source === 'consultation'
         ? `Consultation Request — ${line(organization) || line(name)}`

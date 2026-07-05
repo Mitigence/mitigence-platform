@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { signOutAction } from '@/app/actions/auth'
 import { NewClientForm } from './new-client-form'
+import { clientEmailForSlug } from '@/lib/site-config'
 
 export default async function AdminPage() {
   const supabase = await createServerSupabaseClient()
@@ -41,7 +42,7 @@ export default async function AdminPage() {
               className="block rounded-lg border border-zinc-800 bg-zinc-950 hover:border-zinc-700 p-4 transition-colors"
             >
               <p className="text-white text-sm font-medium">{client.name}</p>
-              <p className="text-zinc-500 text-xs mt-0.5">{client.slug}@mitigence.com</p>
+              <p className="text-zinc-500 text-xs mt-0.5">{clientEmailForSlug(client.slug)}</p>
             </Link>
           ))}
           {(clients ?? []).length === 0 && (

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { breadcrumbJsonLd } from '@/lib/seo'
+import { SITE_DOMAIN, BUSINESS_EMAIL } from '@/lib/site-config'
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 const sections = [
   {
     heading: 'Acceptance of Terms',
-    body: 'By accessing mitigence.com, you agree to these terms of service. If you do not agree, please do not use this site.',
+    body: `By accessing ${SITE_DOMAIN}, you agree to these terms of service. If you do not agree, please do not use this site.`,
   },
   {
     heading: 'Website Use',
@@ -36,7 +37,7 @@ const sections = [
   },
   {
     heading: 'Contact',
-    body: 'Questions about these terms can be sent to business@mitigence.com.',
+    body: `Questions about these terms can be sent to ${BUSINESS_EMAIL}.`,
   },
 ]
 
@@ -47,7 +48,7 @@ export default function TermsPage() {
         <div className="w-8 h-0.5 bg-red-600 mb-6" />
         <h1 className="text-4xl font-bold text-white mb-4">Terms of Service</h1>
         <p className="text-zinc-400 text-lg mb-12">
-          Last updated: January 2026. These terms govern your use of mitigence.com.
+          Last updated: January 2026. These terms govern your use of {SITE_DOMAIN}.
         </p>
 
         <div className="space-y-10">

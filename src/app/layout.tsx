@@ -15,9 +15,10 @@ import { Footer } from '@/components/layout/Footer'
 import { LeadCaptureBot } from '@/components/chatbot/LeadCaptureBot'
 import { MatrixBackground } from '@/components/effects/MatrixBackground'
 import './globals.css'
+import { SITE_URL, BUSINESS_EMAIL } from '@/lib/site-config'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://mitigence.com'),
+  metadataBase: new URL(SITE_URL),
   verification: {
     google: 'me-EcLLktCq-uk-rf5i_LXbSb0VX2dRiekan43rS-5M',
   },
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://mitigence.com',
+    url: SITE_URL,
     siteName: 'Mitigence',
     title: 'Mitigence — Cybersecurity Delivery & Engineering Platform',
     description:
@@ -74,10 +75,10 @@ const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
   name: 'Mitigence',
-  url: 'https://mitigence.com',
+  url: SITE_URL,
   description:
     'Mitigence helps organizations discover risks, engineer resilient security architectures, strengthen operations, and continuously improve cyber resilience through expert-led engagements and transparent delivery.',
-  email: 'business@mitigence.com',
+  email: BUSINESS_EMAIL,
   areaServed: 'Worldwide',
   serviceType: [
     'Cybersecurity Consulting',

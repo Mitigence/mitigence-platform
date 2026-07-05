@@ -1,7 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server'
 import { updateSession } from '@/lib/supabase/middleware'
-
-const WORKSPACE_SUBDOMAIN = 'workspace.mitigence.com'
+import { WORKSPACE_SUBDOMAIN } from '@/lib/site-config'
 
 export function proxy(request: NextRequest) {
   const host = request.headers.get('host') ?? ''

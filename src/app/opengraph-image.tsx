@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og'
+import { SITE_DOMAIN } from '@/lib/site-config'
 
 export const runtime = 'edge'
 export const size = { width: 1200, height: 630 }
@@ -72,7 +73,7 @@ export default function OGImage() {
               </div>
             ))}
           </div>
-          <div style={{ color: '#3f3f46', fontSize: 14 }}>mitigence.com</div>
+          <div style={{ color: '#3f3f46', fontSize: 14 }}>{SITE_DOMAIN}</div>
         </div>
       </div>
     ),

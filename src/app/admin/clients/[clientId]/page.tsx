@@ -2,6 +2,7 @@ import { redirect, notFound } from 'next/navigation'
 import Link from 'next/link'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { NewProjectForm } from './new-project-form'
+import { clientEmailForSlug } from '@/lib/site-config'
 
 interface Props {
   params: Promise<{ clientId: string }>
@@ -36,7 +37,7 @@ export default async function ClientDetailPage({ params }: Props) {
           &larr; All clients
         </Link>
         <h1 className="text-2xl font-bold text-white mt-2 mb-1">{client.name}</h1>
-        <p className="text-zinc-500 text-xs mb-8">{client.slug}@mitigence.com</p>
+        <p className="text-zinc-500 text-xs mb-8">{clientEmailForSlug(client.slug)}</p>
 
         <NewProjectForm clientId={client.id} />
 

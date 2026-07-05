@@ -4,6 +4,7 @@ import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { createAdminSupabaseClient } from '@/lib/supabase/admin'
 import { slugify } from '@/lib/slugify'
 import { generatePassword } from '@/lib/generate-password'
+import { clientEmailForSlug } from '@/lib/site-config'
 
 export interface CreateClientState {
   error?: string
@@ -47,7 +48,7 @@ export async function createClientAction(
     return { error: `Could not create project: ${projectError.message}` }
   }
 
-  const email = `${slug}@mitigence.com`
+  const email = clientEmailForSlug(slug)
   const password = generatePassword()
   const admin = createAdminSupabaseClient()
 

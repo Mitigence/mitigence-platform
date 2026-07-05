@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { NOREPLY_EMAIL, HR_EMAIL, BUSINESS_EMAIL } from '@/lib/site-config'
 
 // 3 req / 60s per IP (attachments are heavier than plain enquiries)
 const ipMap = new Map<string, { n: number; reset: number }>()
@@ -86,9 +87,9 @@ export async function POST(request: NextRequest) {
     }
 
     await resend.emails.send({
-      from: 'Mitigence Platform <noreply@mitigence.com>',
-      to: ['hr@mitigence.com'],
-      cc: ['business@mitigence.com'],
+      from: `Mitigence Platform <${NOREPLY_EMAIL}>`,
+      to: [HR_EMAIL],
+      cc: [BUSINESS_EMAIL],
       replyTo: email,
       subject: `Career Enquiry — ${line(name)}${role ? ` (${line(role)})` : ''}`,
       text: [

@@ -1,7 +1,8 @@
 import type { MetadataRoute } from 'next'
 import storiesData from '@/data/success-stories.json'
+import { SITE_URL } from '@/lib/site-config'
 
-const baseUrl = 'https://mitigence.com'
+const baseUrl = SITE_URL
 
 const staticRoutes = [
   '/',

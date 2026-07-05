@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { NOREPLY_EMAIL, BUSINESS_EMAIL } from '@/lib/site-config'
 
 interface LeadData {
   name?: string
@@ -138,8 +139,8 @@ export async function POST(request: NextRequest) {
 </html>`
 
     await resend.emails.send({
-      from: 'Mitigence Platform <noreply@mitigence.com>',
-      to: ['business@mitigence.com'],
+      from: `Mitigence Platform <${NOREPLY_EMAIL}>`,
+      to: [BUSINESS_EMAIL],
       replyTo: email,
       subject,
       html,

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { breadcrumbJsonLd } from '@/lib/seo'
+import { SITE_DOMAIN, BUSINESS_EMAIL } from '@/lib/site-config'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -33,7 +34,7 @@ const sections = [
   },
   {
     heading: 'Contact',
-    body: 'Questions about this privacy policy can be sent to business@mitigence.com.',
+    body: `Questions about this privacy policy can be sent to ${BUSINESS_EMAIL}.`,
   },
 ]
 
@@ -45,7 +46,7 @@ export default function PrivacyPage() {
         <h1 className="text-4xl font-bold text-white mb-4">Privacy Policy</h1>
         <p className="text-zinc-400 text-lg mb-12">
           Last updated: January 2026. This policy describes how Mitigence handles information
-          submitted through mitigence.com.
+          submitted through {SITE_DOMAIN}.
         </p>
 
         <div className="space-y-10">
