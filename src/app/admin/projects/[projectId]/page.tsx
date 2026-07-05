@@ -4,6 +4,7 @@ import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { ProjectStatusForm } from './project-status-form'
 import { ReportsSection } from './reports-section'
 import { DeliverablesSection } from './deliverables-section'
+import { MeetingsSection } from './meetings-section'
 
 interface Props {
   params: Promise<{ projectId: string }>
@@ -32,7 +33,7 @@ export default async function ProjectPage({ params }: Props) {
 
   if (!project) notFound()
 
-  const [{ data: reports }, { data: deliverables }] = await Promise.all([
+  const [{ data: reports }, { data: deliverables }, { data: meetings }] = await Promise.all([
     supabase
       .from('reports')
       .select('id, title, report_type, report_date, status, file_path')
@@ -43,6 +44,11 @@ export default async function ProjectPage({ params }: Props) {
       .select('id, item, status, week_label, file_path')
       .eq('project_id', projectId)
       .order('updated_at'),
+    supabase
+      .from('meetings')
+      .select('id, title, meeting_type, scheduled_at, status, mom_file_path')
+      .eq('project_id', projectId)
+      .order('created_at'),
   ])
 
   return (
@@ -59,6 +65,7 @@ export default async function ProjectPage({ params }: Props) {
         <ProjectStatusForm project={project} />
         <ReportsSection projectId={project.id} reports={reports ?? []} />
         <DeliverablesSection projectId={project.id} deliverables={deliverables ?? []} />
+        <MeetingsSection projectId={project.id} meetings={meetings ?? []} />
       </div>
     </main>
   )
