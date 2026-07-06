@@ -125,27 +125,6 @@ export const navItems: NavItem[] = [
     },
   },
   {
-    label: 'Knowledge',
-    href: '/knowledge',
-    megaMenu: {
-      columns: [
-        {
-          title: 'Security Topics',
-          items: [
-            { label: 'Cloud Security', href: '/knowledge/cloud', description: 'Cloud architecture and controls' },
-            { label: 'Identity & Access', href: '/knowledge/identity', description: 'Identity-centric security' },
-            { label: 'Application Security', href: '/knowledge/applications', description: 'Securing modern applications' },
-            { label: 'Data Security', href: '/knowledge/data', description: 'Protecting sensitive data' },
-            { label: 'Security Monitoring', href: '/knowledge/monitoring', description: 'Detection and response' },
-            { label: 'Network Security', href: '/knowledge/network', description: 'Infrastructure protection' },
-            { label: 'Incident Response', href: '/knowledge/incident-response', description: 'Preparation and recovery' },
-            { label: 'Architecture', href: '/knowledge/architecture', description: 'Security design principles' },
-          ],
-        },
-      ],
-    },
-  },
-  {
     label: 'Success Stories',
     href: '/success-stories',
   },
