@@ -56,7 +56,6 @@ const staticRoutes = [
   '/platform/understand',
   '/platform/understand/enterprise-explorer',
   '/platform/understand/industry-challenges',
-  '/platform/understand/knowledge-center',
   '/platform/understand/security-journey',
   '/platform/understand/threat-insights',
   '/solutions',

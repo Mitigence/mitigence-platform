@@ -30,7 +30,6 @@ export const navItems: NavItem[] = [
             { label: 'Security Journey', href: '/platform/understand/security-journey', description: 'Discover your maturity level' },
             { label: 'Threat Insights', href: '/platform/understand/threat-insights', description: 'Learn about modern threats' },
             { label: 'Industry Challenges', href: '/platform/understand/industry-challenges', description: 'Sector-specific security context' },
-            { label: 'Knowledge Center', href: '/platform/understand/knowledge-center', description: 'Cybersecurity learning hub' },
           ],
         },
         {
@@ -92,7 +91,7 @@ export const navItems: NavItem[] = [
             { label: 'Architecture', href: '/engineering/architecture', description: 'Security architecture design' },
             { label: 'Deployment', href: '/engineering/deployment', description: 'Structured deployment methodology' },
             { label: 'Integration', href: '/engineering/integration', description: 'Connecting security controls' },
-            { label: 'Configuration Review', href: '/engineering/configuration-review', description: 'Validate and optimise configurations' },
+            { label: 'Configuration Review', href: '/engineering/configuration-review', description: 'Validate and optimize configurations' },
           ],
         },
         {
