@@ -40,6 +40,7 @@ export const navItems: NavItem[] = [
             { label: 'Engineering Studio', href: '/platform/engineer/engineering-studio', description: 'See how we deliver' },
             { label: 'Team Builder', href: '/platform/engineer/team-builder', description: 'Build your delivery team' },
             { label: 'Delivery Models', href: '/platform/engineer/delivery-models', description: 'How we work together' },
+            { label: 'Delivery Framework', href: '/platform/engineer/delivery-framework', description: 'Our structured delivery process' },
           ],
         },
         {
@@ -49,6 +50,7 @@ export const navItems: NavItem[] = [
             { label: 'Project Timeline', href: '/platform/operate/project-timeline', description: 'Track your security journey' },
             { label: 'Reports', href: '/platform/operate/reports', description: 'Interactive reporting' },
             { label: 'Continuous Improvement', href: '/platform/operate/continuous-improvement', description: 'Evolve continuously' },
+            { label: 'Customer Success', href: '/platform/operate/customer-success', description: 'Long-term partnership beyond delivery' },
           ],
         },
       ],
