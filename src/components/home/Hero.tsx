@@ -72,9 +72,9 @@ function HeroHeadline() {
             className="text-6xl md:text-[9rem] font-bold text-white tracking-tight leading-none"
           >
             {'M'}
-            <span style={{ background: 'linear-gradient(to bottom, #dc2626 0%, #dc2626 40%, #ffffff 40%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>i</span>
+            <span style={{ background: 'linear-gradient(to bottom, #dc2626 0%, #dc2626 38%, #ffffff 38%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>i</span>
             {'t'}
-            <span style={{ background: 'linear-gradient(to bottom, #dc2626 0%, #dc2626 40%, #ffffff 40%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>i</span>
+            <span style={{ background: 'linear-gradient(to bottom, #dc2626 0%, #dc2626 38%, #ffffff 38%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>i</span>
             {'gence'}
           </motion.h1>
         )}
