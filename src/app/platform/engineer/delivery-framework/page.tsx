@@ -9,23 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/platform/engineer/delivery-framework' },
 }
 
-const TYPE_COLORS: Record<string, string> = {
-  'Offensive Security': 'text-red-400 border-red-600/30 bg-red-600/5',
-  'Engineering / Architecture': 'text-blue-400 border-blue-600/30 bg-blue-600/5',
-  'Identity Engineering': 'text-purple-400 border-purple-600/30 bg-purple-600/5',
-  'Risk & Compliance': 'text-amber-400 border-amber-600/30 bg-amber-600/5',
-  'GRC / Compliance': 'text-amber-400 border-amber-600/30 bg-amber-600/5',
-  'Specialist Assessment': 'text-teal-400 border-teal-600/30 bg-teal-600/5',
-  'Risk Assessment': 'text-orange-400 border-orange-600/30 bg-orange-600/5',
-  'Preparedness': 'text-green-400 border-green-600/30 bg-green-600/5',
-  'Compliance / GRC': 'text-amber-400 border-amber-600/30 bg-amber-600/5',
-  'Network Engineering': 'text-cyan-400 border-cyan-600/30 bg-cyan-600/5',
-  'Risk Programme': 'text-orange-400 border-orange-600/30 bg-orange-600/5',
-  'Assessment': 'text-zinc-300 border-zinc-600/30 bg-zinc-600/5',
-  'Engineering / Operations': 'text-blue-400 border-blue-600/30 bg-blue-600/5',
-  'Compliance Assessment': 'text-amber-400 border-amber-600/30 bg-amber-600/5',
-  'Offensive Security / DevSecOps': 'text-red-400 border-red-600/30 bg-red-600/5',
-}
+const BADGE_CLASS = 'text-zinc-400 border-zinc-700 bg-zinc-900'
 
 export default function DeliveryFrameworkPage() {
   return (
@@ -43,7 +27,6 @@ export default function DeliveryFrameworkPage() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {engagementsData.engagements.map((eng) => {
-            const typeClass = TYPE_COLORS[eng.activityType] ?? 'text-zinc-400 border-zinc-600/30 bg-zinc-600/5'
             return (
               <Link
                 key={eng.id}
@@ -51,7 +34,7 @@ export default function DeliveryFrameworkPage() {
                 className="group block bg-zinc-950 border border-zinc-800 hover:border-red-600/50 rounded-xl p-6 transition-all hover:bg-zinc-900/60"
               >
                 <div className="flex items-start justify-between gap-3 mb-4">
-                  <span className={`inline-block text-xs font-medium px-2.5 py-1 rounded-md border ${typeClass}`}>
+                  <span className={`inline-block text-xs font-medium px-2.5 py-1 rounded-md border ${BADGE_CLASS}`}>
                     {eng.activityType}
                   </span>
                   <span className="text-zinc-600 text-xs whitespace-nowrap mt-0.5">{eng.timeline}</span>
