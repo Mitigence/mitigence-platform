@@ -18,9 +18,43 @@ export function TeamBuilder() {
     [selectedPods]
   )
 
-  const deliveryModel = activePods[0]?.engagementImpact?.deliveryModel ?? null
-  const estimatedDuration = activePods[0]?.engagementImpact?.estimatedDuration ?? null
-  const collaborationPattern = activePods[0]?.engagementImpact?.collaborationPattern ?? null
+  const deliveryModel = useMemo(() => {
+    const models = [...new Set(activePods.map((p) => p.engagementImpact.deliveryModel))]
+    return models.length ? models.join(' + ') : null
+  }, [activePods])
+
+  const estimatedDuration = useMemo(() => {
+    if (activePods.length === 0) return null
+    const durations = activePods.map((p) => p.engagementImpact.estimatedDuration)
+    const hasOngoing = durations.some((d) =>
+      /ongoing|retainer/i.test(d)
+    )
+    const weekRanges = durations
+      .map((d) => {
+        const m = d.match(/(\d+)[–-](\d+)\s*week/i)
+        if (m) return { min: parseInt(m[1]), max: parseInt(m[2]) }
+        const s = d.match(/(\d+)\s*week/i)
+        if (s) return { min: parseInt(s[1]), max: parseInt(s[1]) }
+        return null
+      })
+      .filter(Boolean) as { min: number; max: number }[]
+    if (hasOngoing && weekRanges.length > 0) {
+      const minW = Math.min(...weekRanges.map((r) => r.min))
+      return `${minW}+ weeks, with ongoing components`
+    }
+    if (hasOngoing) return 'Ongoing / Retainer'
+    if (weekRanges.length > 0) {
+      const minW = Math.min(...weekRanges.map((r) => r.min))
+      const maxW = Math.max(...weekRanges.map((r) => r.max))
+      return minW === maxW ? `${minW} weeks` : `${minW}–${maxW} weeks`
+    }
+    return durations[0]
+  }, [activePods])
+
+  const collaborationPattern = useMemo(() => {
+    const patterns = [...new Set(activePods.map((p) => p.engagementImpact.collaborationPattern))]
+    return patterns.length ? patterns.join('; ') : null
+  }, [activePods])
 
   const allDeliverables = useMemo(() => {
     const set = new Set<string>()
