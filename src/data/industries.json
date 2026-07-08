@@ -10,7 +10,7 @@
         "Legacy systems that cannot easily be patched or replaced",
         "Third-party and supply chain risk from extensive ecosystem dependencies"
       ],
-      "commonEngagements": ["Penetration Testing", "Cloud Security Engineering", "Privileged Access Management", "Third-Party Risk Assessment", "Compliance-Aligned Security Program"],
+      "commonEngagements": ["Penetration Testing", "Cloud Security Engineering", "Privileged Access Management", "Third-Party Risk Assessment", "Compliance Program"],
       "recommendedJourney": ["Assessment", "Architecture Review", "Engineering", "Continuous Monitoring"],
       "href": "/industries/financial-services"
     },
@@ -38,7 +38,7 @@
         "Aging IT infrastructure with limited modernization budgets",
         "Insider threat risk in sensitive environments"
       ],
-      "commonEngagements": ["Security Accreditation Support", "Network Segmentation", "Insider Threat Program", "Cloud Security Review"],
+      "commonEngagements": ["Security Accreditation Support", "Network Segmentation", "Insider Threat Program", "Cloud Security Engineering"],
       "recommendedJourney": ["Assessment", "Network Engineering", "Monitoring", "Continuous Improvement"],
       "href": "/industries/government"
     },
@@ -52,7 +52,7 @@
         "Research data and intellectual property protection",
         "Limited security budget relative to complexity"
       ],
-      "commonEngagements": ["Security Assessment", "Network Segmentation", "Identity Management", "Endpoint Protection"],
+      "commonEngagements": ["Security Assessment", "Network Segmentation", "Identity Security Engineering", "Endpoint Protection"],
       "recommendedJourney": ["Assessment", "Architecture Review", "Engineering", "Operational Support"],
       "href": "/industries/education"
     },
@@ -66,7 +66,7 @@
         "Supply chain compromise as an entry vector",
         "Business continuity requirements limiting maintenance windows"
       ],
-      "commonEngagements": ["OT Security Assessment", "Network Segmentation", "Incident Response Planning", "Third-Party Risk"],
+      "commonEngagements": ["OT Security Assessment", "Network Segmentation", "Incident Response Planning", "Third-Party Risk Assessment"],
       "recommendedJourney": ["OT Assessment", "Segmentation Engineering", "Monitoring", "IR Readiness"],
       "href": "/industries/manufacturing"
     },
@@ -80,7 +80,7 @@
         "Seasonal traffic spikes that complicate security operations",
         "Third-party integrations and supply chain risk"
       ],
-      "commonEngagements": ["PCI DSS Assessment", "Application Security Testing", "Cloud Security Engineering", "Third-Party Risk Review"],
+      "commonEngagements": ["PCI DSS Assessment", "Application Security Testing", "Cloud Security Engineering", "Third-Party Risk Assessment"],
       "recommendedJourney": ["Compliance Assessment", "Application Engineering", "Monitoring", "Continuous Validation"],
       "href": "/industries/retail"
     }

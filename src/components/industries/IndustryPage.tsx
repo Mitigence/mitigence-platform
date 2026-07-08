@@ -1,7 +1,12 @@
 import Link from 'next/link'
 import industriesData from '@/data/industries.json'
+import engagementsData from '@/data/engagements.json'
 
 interface Props { industryId: string }
+
+const nameToSlug = Object.fromEntries(
+  engagementsData.engagements.map((e) => [e.name, e.id])
+)
 
 export function IndustryPage({ industryId }: Props) {
   const industry = industriesData.industries.find((i) => i.id === industryId)
@@ -23,10 +28,22 @@ export function IndustryPage({ industryId }: Props) {
         <div>
           <h2 className='text-white font-semibold text-xs uppercase tracking-wide mb-4'>Common Engagements</h2>
           <div className='flex flex-wrap gap-2'>
-            {industry.commonEngagements.map((e) => (
-              <span key={e} className='text-xs text-zinc-300 bg-zinc-900 border border-zinc-800 rounded-full px-3 py-1.5'>{e}</span>
-            ))}
+            {industry.commonEngagements.map((e) => {
+              const slug = nameToSlug[e]
+              return slug ? (
+                <Link
+                  key={e}
+                  href={`/platform/engineer/delivery-framework/${slug}`}
+                  className='text-xs text-zinc-300 bg-zinc-900 border border-zinc-800 hover:border-red-600/60 hover:text-red-400 hover:bg-zinc-900/80 rounded-full px-3 py-1.5 transition-colors'
+                >
+                  {e} →
+                </Link>
+              ) : (
+                <span key={e} className='text-xs text-zinc-300 bg-zinc-900 border border-zinc-800 rounded-full px-3 py-1.5'>{e}</span>
+              )
+            })}
           </div>
+          <p className='text-zinc-600 text-xs mt-3'>Click any engagement to see timeline, phases, and deliverables.</p>
         </div>
       </div>
       <div className='rounded-lg border border-red-600/30 bg-red-600/5 p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4'>
