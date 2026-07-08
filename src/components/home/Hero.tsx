@@ -69,7 +69,7 @@ function HeroHeadline() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={DISSOLVE_TRANSITION}
-            className="text-6xl md:text-[9rem] font-bold text-white tracking-tight leading-none italic"
+            className="text-6xl md:text-[9rem] font-bold text-white tracking-tight leading-none"
           >
             {'M'}
             <span style={{ background: 'linear-gradient(to bottom, #dc2626 0%, #dc2626 28%, #ffffff 28%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>i</span>
