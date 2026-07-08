@@ -37,8 +37,8 @@ function initBubbles(w: number, h: number): Bubble[] {
       vx:       Math.cos(angle) * rand(0.15, 0.35),
       vy:       Math.sin(angle) * rand(0.15, 0.35),
       r:        rand(25, 65),
-      alpha:    rand(0.07, 0.16),
-      blurR:    rand(1.8, 2.8),
+      alpha:    rand(0.09, 0.20),
+      blurR:    rand(1.1, 1.5),
       colorIdx: Math.floor(rand(0, COLORS.length)),
     }
   })
