@@ -1,0 +1,493 @@
+{
+  "domains": [
+    {
+      "id": "identity",
+      "name": "Identity & Access",
+      "description": "Credential theft and identity abuse are the dominant attack path. Once an attacker holds valid credentials, most network-level controls become ineffective.",
+      "threats": [
+        {
+          "id": "credential-theft",
+          "name": "Credential Theft",
+          "tagline": "Stolen credentials are the most common breach starting point.",
+          "description": "Attackers obtain valid credentials through phishing, password spraying, credential stuffing from leaked databases, or keyloggers. Over 77% of breaches in the Verizon DBIR 2024 involved the use of stolen credentials. Unlike malware, credential-based intrusion produces no malware signatures and blends into normal authentication logs.",
+          "techniques": ["Phishing (T1566)", "Credential Stuffing (T1110.004)", "Password Spraying (T1110.003)", "Adversary-in-the-Middle phishing kits (T1557)", "Keylogging (T1056.001)", "LSASS Memory Dumping (T1003.001)"],
+          "impact": "An attacker with valid credentials can authenticate to any system that account has access to — bypassing firewalls, VPNs, and most monitoring that looks for malware rather than authenticated sessions.",
+          "references": [
+            { "label": "MITRE ATT&CK — Credential Access (TA0006)", "url": "https://attack.mitre.org/tactics/TA0006/" },
+            { "label": "Verizon DBIR 2024", "url": "https://www.verizon.com/business/resources/reports/dbir/" },
+            { "label": "CISA — Phishing Guidance", "url": "https://www.cisa.gov/phishing" },
+            { "label": "NIST SP 800-63B — Authentication Guidelines", "url": "https://pages.nist.gov/800-63-3/sp800-63b.html" }
+          ]
+        },
+        {
+          "id": "mfa-fatigue",
+          "name": "MFA Fatigue & Bypass",
+          "tagline": "Modern attacks bypass or exhaust MFA rather than crack passwords.",
+          "description": "MFA fatigue (push bombing) floods a user with authentication requests until they approve one out of frustration or confusion. Adversary-in-the-Middle (AiTM) phishing kits proxy real authentication sessions in real time, capturing session cookies after MFA is completed. SIM swapping hijacks SMS-based MFA by porting the victim's phone number to an attacker-controlled SIM.",
+          "techniques": ["MFA Push Bombing (T1621)", "AiTM Phishing (T1557.002)", "SIM Swapping (T1078)", "Pass-the-Cookie (T1550.004)", "Bypass via legacy auth protocols (T1078.004)"],
+          "impact": "Even organisations with MFA enforced are vulnerable. A bypassed MFA session gives attacker-controlled access that appears fully legitimate, with no password compromise involved.",
+          "references": [
+            { "label": "MITRE ATT&CK — Multi-Factor Authentication Request Generation (T1621)", "url": "https://attack.mitre.org/techniques/T1621/" },
+            { "label": "CISA — Implementing Phishing-Resistant MFA", "url": "https://www.cisa.gov/sites/default/files/publications/fact-sheet-implementing-phishing-resistant-mfa-508c.pdf" },
+            { "label": "NIST SP 800-63B — Authenticator Types", "url": "https://pages.nist.gov/800-63-3/sp800-63b.html" }
+          ]
+        },
+        {
+          "id": "privilege-escalation",
+          "name": "Privilege Escalation",
+          "tagline": "Low-privilege access becomes administrative control through misconfigured roles and credentials in memory.",
+          "description": "Once inside, attackers escalate from a standard user account to administrative or domain-level privilege. This occurs through Kerberoasting (extracting and cracking service account password hashes), pass-the-hash, exploiting over-permissioned local accounts, or abusing group policy and ACL misconfigurations in Active Directory.",
+          "techniques": ["Kerberoasting (T1558.003)", "Pass-the-Hash (T1550.002)", "AS-REP Roasting (T1558.004)", "Token Impersonation (T1134)", "Abuse of GPO/ACL (T1484)", "Local Privilege Escalation via unpatched CVEs"],
+          "impact": "Administrative or domain-level privilege gives an attacker the ability to create accounts, disable logging, deploy ransomware, or extract the entire Active Directory credential database.",
+          "references": [
+            { "label": "MITRE ATT&CK — Privilege Escalation (TA0004)", "url": "https://attack.mitre.org/tactics/TA0004/" },
+            { "label": "MITRE ATT&CK — Kerberoasting (T1558.003)", "url": "https://attack.mitre.org/techniques/T1558/003/" },
+            { "label": "CIS Controls — Privileged Access Management", "url": "https://www.cisecurity.org/controls/privileged-access-management" },
+            { "label": "NSA — Detecting Abuse of Authentication Mechanisms", "url": "https://media.defense.gov/2020/Dec/17/2002554125/-1/-1/0/AUTHENTICATION_MECHANISMS_CSA_U_OO_198854_20.PDF" }
+          ]
+        },
+        {
+          "id": "lateral-movement",
+          "name": "Lateral Movement via Identity",
+          "tagline": "Valid credentials are used to hop from system to system inside the network.",
+          "description": "After gaining initial access, attackers use stolen credentials or session tokens to authenticate to additional systems. Remote services (SMB, RDP, WinRM, SSH) are accessed with harvested credentials. Pass-the-ticket reuses Kerberos tickets without needing plaintext passwords. In cloud environments, SAML token forgery and OAuth token theft enable movement across federated services.",
+          "techniques": ["Remote Services — SMB (T1021.002)", "Remote Services — RDP (T1021.001)", "Pass-the-Ticket (T1550.003)", "WMI Execution (T1047)", "SAML Token Forgery (T1606.002)", "Internal Spearphishing (T1534)"],
+          "impact": "Lateral movement turns a single compromised endpoint into full domain compromise. Without segmentation and identity controls, there is no natural barrier stopping an attacker from reaching any system the original account could reach.",
+          "references": [
+            { "label": "MITRE ATT&CK — Lateral Movement (TA0008)", "url": "https://attack.mitre.org/tactics/TA0008/" },
+            { "label": "CISA — Protecting Against Lateral Movement", "url": "https://www.cisa.gov/news-events/cybersecurity-advisories" },
+            { "label": "NIST SP 800-207 — Zero Trust Architecture", "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" }
+          ]
+        },
+        {
+          "id": "oauth-abuse",
+          "name": "OAuth & Token Abuse",
+          "tagline": "Third-party app integrations grant persistent cloud access without requiring passwords.",
+          "description": "Consent phishing tricks users into granting OAuth permissions to malicious applications registered in legitimate cloud tenants. Once granted, the attacker has persistent access to mailboxes, files, and calendars without needing credentials and without triggering MFA. Refresh tokens persist indefinitely unless explicitly revoked.",
+          "techniques": ["OAuth Application Consent Phishing", "Steal Application Access Token (T1528)", "Forge Web Credentials — OAuth Token (T1606.001)", "Abuse of registered Azure AD / Entra app permissions"],
+          "impact": "OAuth abuse produces no failed login events and no password compromise. Standard monitoring for credential theft misses it entirely. Access persists until the token or application registration is revoked.",
+          "references": [
+            { "label": "MITRE ATT&CK — Steal Application Access Token (T1528)", "url": "https://attack.mitre.org/techniques/T1528/" },
+            { "label": "Microsoft — OAuth Consent Phishing", "url": "https://www.microsoft.com/en-us/security/blog/2021/07/14/microsoft-delivers-comprehensive-solution-to-battle-rise-in-consent-phishing-emails/" },
+            { "label": "CISA — Securing OAuth Implementations", "url": "https://www.cisa.gov/news-events/cybersecurity-advisories" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cloud",
+      "name": "Cloud Infrastructure",
+      "description": "Cloud attack surface is defined by configuration and identity, not perimeter. Misconfiguration and overpermissioned roles are the two leading root causes of cloud breaches.",
+      "threats": [
+        {
+          "id": "iam-misconfiguration",
+          "name": "IAM Misconfiguration",
+          "tagline": "Overpermissioned roles are a direct path to full environment compromise.",
+          "description": "Cloud IAM roles and service accounts accumulate permissions over time. AdministratorAccess attached to developer roles, wildcard resource policies in S3, and cross-account trust relationships with excessive permissions are consistently among the most critical cloud findings. Least-privilege IAM is not a one-time setup — it requires continuous review and automated enforcement.",
+          "techniques": ["Abuse of overpermissioned IAM roles", "Privilege escalation via iam:PassRole (T1078.004)", "AssumeRole chaining", "Cross-account trust exploitation", "Service account key theft"],
+          "impact": "An attacker who compromises any workload or service account with excessive permissions can escalate to full administrative access over the entire cloud environment.",
+          "references": [
+            { "label": "MITRE ATT&CK Cloud Matrix — Valid Accounts (T1078)", "url": "https://attack.mitre.org/techniques/T1078/" },
+            { "label": "CIS Benchmarks — AWS / Azure / GCP", "url": "https://www.cisecurity.org/cis-benchmarks" },
+            { "label": "CSA Top Threats 2024", "url": "https://cloudsecurityalliance.org/research/topics/top-threats" }
+          ]
+        },
+        {
+          "id": "storage-exposure",
+          "name": "Storage Bucket Exposure",
+          "tagline": "Public cloud storage buckets remain one of the most common causes of data breaches.",
+          "description": "Misconfigured S3 buckets, Azure Blob containers, and GCS buckets set to public access expose sensitive data — backups, credentials, PII, internal configuration files — to anyone with the URL. Even 'private' storage can be exposed through overly permissive bucket policies, pre-signed URL abuse, or cross-account access misconfigurations.",
+          "techniques": ["Public bucket access misconfiguration", "Overly permissive bucket policies", "Pre-signed URL abuse", "Cross-account bucket access", "Unsecured object ACLs"],
+          "impact": "Exposed storage is often discovered by attackers through automated enumeration tools before the organisation is aware. Data loss and regulatory penalty follow, with no malware involved.",
+          "references": [
+            { "label": "OWASP Cloud Native Security — Misconfiguration", "url": "https://owasp.org/www-project-cloud-native-application-security-top-10/" },
+            { "label": "CIS Benchmark — AWS S3", "url": "https://www.cisecurity.org/cis-benchmarks" },
+            { "label": "CISA Cloud Security Technical Reference Architecture", "url": "https://www.cisa.gov/resources-tools/resources/cloud-security-technical-reference-architecture" }
+          ]
+        },
+        {
+          "id": "secrets-in-code",
+          "name": "Secrets & API Keys in Code",
+          "tagline": "Hard-coded credentials in source code are scraped by automated tools within minutes of being pushed.",
+          "description": "API keys, cloud credentials, database connection strings, and private keys committed to source repositories are discovered by automated scanning tools that continuously monitor public repositories. GitHub's secret scanning found over 12 million exposed secrets in public repos in 2023. Internal repositories are not safe either — build pipelines, CI/CD logs, and container images frequently contain credentials in plaintext.",
+          "techniques": ["Repository secrets scanning by attackers", "CI/CD pipeline secrets exposure", "Container image inspection for secrets (T1552.007)", "Environment variable leakage", "Hard-coded credentials (T1552.001)"],
+          "impact": "A leaked cloud API key gives immediate, authenticated access to cloud infrastructure — often with the same permissions as the developer who committed it.",
+          "references": [
+            { "label": "MITRE ATT&CK — Unsecured Credentials (T1552)", "url": "https://attack.mitre.org/techniques/T1552/" },
+            { "label": "GitHub — Secret Scanning", "url": "https://docs.github.com/en/code-security/secret-scanning/about-secret-scanning" },
+            { "label": "OWASP — Secrets Management Cheat Sheet", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html" }
+          ]
+        },
+        {
+          "id": "metadata-ssrf",
+          "name": "Metadata Service Abuse (SSRF)",
+          "tagline": "Server-side request forgery turns a web vulnerability into cloud credential theft.",
+          "description": "Cloud instance metadata services (AWS IMDSv1, Azure IMDS) return IAM credentials when queried from the instance. A server-side request forgery (SSRF) vulnerability in any application running on the instance can be used to query the metadata service from an external request — retrieving temporary credentials without authentication. IMDSv2 mitigates this for AWS but is not enforced by default.",
+          "techniques": ["SSRF to cloud metadata service (T1552.005)", "IMDSv1 credential extraction", "Azure IMDS token theft", "GCP metadata server abuse"],
+          "impact": "Credentials retrieved from the metadata service have the same permissions as the instance role. This turns any SSRF in a web application into cloud infrastructure access.",
+          "references": [
+            { "label": "MITRE ATT&CK — Cloud Instance Metadata API (T1552.005)", "url": "https://attack.mitre.org/techniques/T1552/005/" },
+            { "label": "AWS — IMDSv2 Migration Guide", "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html" },
+            { "label": "OWASP — SSRF Prevention Cheat Sheet", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "applications",
+      "name": "Applications",
+      "description": "Applications are where business logic lives — and where attackers look first. The OWASP Top 10 categories have remained consistent for over a decade because these vulnerabilities are genuinely hard to eliminate at scale.",
+      "threats": [
+        {
+          "id": "broken-access-control",
+          "name": "Broken Access Control",
+          "tagline": "The #1 OWASP category — missing or incorrectly implemented authorisation logic.",
+          "description": "Broken access control occurs when an application does not correctly enforce what authenticated users are allowed to do. This includes horizontal privilege escalation (accessing another user's data by modifying an ID in the URL), missing function-level authorization (accessing admin endpoints without admin role), and insecure direct object references (IDOR). These vulnerabilities are introduced through business logic, not libraries — automated scanners miss most of them.",
+          "techniques": ["IDOR — Insecure Direct Object Reference", "Horizontal privilege escalation", "Forced browsing to unauthorised endpoints", "CORS misconfiguration", "JWT algorithm confusion", "Missing function-level access control"],
+          "impact": "An attacker can access, modify, or delete other users' data, escalate to administrative functions, or exfiltrate the entire dataset accessible to any user in the application.",
+          "references": [
+            { "label": "OWASP Top 10 — A01 Broken Access Control", "url": "https://owasp.org/Top10/A01_2021-Broken_Access_Control/" },
+            { "label": "OWASP — Access Control Cheat Sheet", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Access_Control_Cheat_Sheet.html" },
+            { "label": "CWE-284 — Improper Access Control", "url": "https://cwe.mitre.org/data/definitions/284.html" }
+          ]
+        },
+        {
+          "id": "injection",
+          "name": "Injection Attacks",
+          "tagline": "Untrusted input executed as code or commands — still exploitable 25 years on.",
+          "description": "SQL injection, command injection, LDAP injection, and NoSQL injection remain exploitable in production applications despite being well-documented since the late 1990s. Server-side template injection (SSTI) and XML injection are increasingly targeted in modern stacks. The root cause is user-controlled input being interpreted as code or structure, rather than data.",
+          "techniques": ["SQL Injection (T1190)", "Command Injection (T1059)", "Server-Side Template Injection (SSTI)", "NoSQL Injection", "LDAP Injection", "XML/XPath Injection"],
+          "impact": "SQL injection gives direct database access — reading, modifying, or deleting data. Command injection gives OS-level code execution on the server. Both are consistently rated critical severity.",
+          "references": [
+            { "label": "OWASP Top 10 — A03 Injection", "url": "https://owasp.org/Top10/A03_2021-Injection/" },
+            { "label": "OWASP — SQL Injection Prevention Cheat Sheet", "url": "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html" },
+            { "label": "CWE Top 25 — CWE-89 SQL Injection", "url": "https://cwe.mitre.org/data/definitions/89.html" },
+            { "label": "CISA KEV Catalog — Injection CVEs", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog" }
+          ]
+        },
+        {
+          "id": "api-vulnerabilities",
+          "name": "API Security Flaws",
+          "tagline": "APIs expose business logic directly — and are routinely deployed with weaker security than web UIs.",
+          "description": "The OWASP API Security Top 10 identifies the most exploited API vulnerabilities: Broken Object Level Authorization (BOLA/IDOR), broken authentication, excessive data exposure, and lack of rate limiting. APIs are frequently deployed with implicit trust assumptions that do not hold when consumed by third parties or mobile clients. Undocumented and shadow APIs accumulate as products evolve.",
+          "techniques": ["BOLA — Broken Object Level Authorization", "Broken Function Level Authorization", "Mass Assignment", "Excessive Data Exposure", "Lack of Rate Limiting", "Unauthenticated API endpoints"],
+          "impact": "API vulnerabilities are responsible for significant data breaches. BOLA alone accounts for a majority of API-related incidents — a single parameter change in a request returns another user's complete record.",
+          "references": [
+            { "label": "OWASP API Security Top 10", "url": "https://owasp.org/www-project-api-security/" },
+            { "label": "OWASP — API Security Cheat Sheet", "url": "https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html" },
+            { "label": "MITRE ATT&CK — Exploit Public-Facing Application (T1190)", "url": "https://attack.mitre.org/techniques/T1190/" }
+          ]
+        },
+        {
+          "id": "vulnerable-dependencies",
+          "name": "Vulnerable Dependencies",
+          "tagline": "Third-party libraries introduce vulnerabilities that the application owner did not write and may not know about.",
+          "description": "Modern applications depend on hundreds of open-source libraries. Each library is a potential vulnerability source. Log4Shell (CVE-2021-44228) affected thousands of organisations through a logging library. Supply chain attacks — where a malicious package is substituted for a legitimate one — have increased significantly. Dependency confusion attacks exploit package manager resolution behaviour to inject malicious packages.",
+          "techniques": ["Exploit of known CVE in dependency (T1190)", "Dependency confusion attack", "Typosquatting malicious packages", "Compromised upstream package (supply chain)", "Transitive dependency vulnerabilities"],
+          "impact": "A critical vulnerability in a widely-used library can affect all applications using it simultaneously. Time to exploit after public disclosure is now measured in hours, not days.",
+          "references": [
+            { "label": "OWASP Top 10 — A06 Vulnerable and Outdated Components", "url": "https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/" },
+            { "label": "CISA KEV Catalog", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog" },
+            { "label": "NIST National Vulnerability Database (NVD)", "url": "https://nvd.nist.gov/" },
+            { "label": "OpenSSF — Securing Open Source Software", "url": "https://openssf.org/" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ransomware",
+      "name": "Ransomware & Incident Response",
+      "description": "Ransomware operations are professional, patient, and systematic. Recovery outcome is almost entirely determined by preparation — segmentation, backup hygiene, and a tested incident response plan.",
+      "threats": [
+        {
+          "id": "initial-access",
+          "name": "Ransomware Initial Access",
+          "tagline": "Most ransomware intrusions begin with phishing or exposed remote access services.",
+          "description": "Ransomware groups gain initial access through phishing emails delivering malware loaders, exploitation of public-facing vulnerabilities in VPN appliances and RDP servers, or purchase of access from Initial Access Brokers (IABs) who sell pre-compromised environments. CISA's Known Exploited Vulnerabilities catalog tracks dozens of perimeter device CVEs actively exploited by ransomware groups.",
+          "techniques": ["Phishing with malware attachment (T1566.001)", "Exploit of VPN/RDP vulnerability (T1190)", "Purchased initial access via IABs", "Valid account abuse (T1078)", "Drive-by compromise (T1189)"],
+          "impact": "Initial access is the start of a multi-day intrusion that culminates in encryption. The window between access and encryption averages 5–10 days — detection during this phase prevents the ransomware event entirely.",
+          "references": [
+            { "label": "CISA — #StopRansomware Advisories", "url": "https://www.cisa.gov/stopransomware" },
+            { "label": "CISA KEV Catalog — Ransomware-Exploited CVEs", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog" },
+            { "label": "FBI IC3 — Annual Internet Crime Report", "url": "https://www.ic3.gov/Home/AnnualReports" }
+          ]
+        },
+        {
+          "id": "double-extortion",
+          "name": "Double Extortion",
+          "tagline": "Data is exfiltrated before encryption — paying the ransom no longer restores confidentiality.",
+          "description": "Modern ransomware groups exfiltrate data during the dwell period before deploying encryption. This creates a second extortion lever: even organisations with clean backups face the threat of public data release. Ransomware leak sites operated by groups like LockBit, ALPHV/BlackCat, and Cl0p have published data from thousands of victims.",
+          "techniques": ["Data exfiltration via Rclone / cloud sync (T1537)", "Exfiltration over C2 channel (T1041)", "Staged data collection (T1074)", "Use of legitimate cloud storage for staging"],
+          "impact": "Organisations that recover from backups still face regulatory notification obligations if data was exfiltrated. Clean backups do not prevent data breach consequences.",
+          "references": [
+            { "label": "CISA Ransomware Guide — Data Exfiltration", "url": "https://www.cisa.gov/resources-tools/resources/ransomware-guide" },
+            { "label": "MITRE ATT&CK — Exfiltration (TA0010)", "url": "https://attack.mitre.org/tactics/TA0010/" },
+            { "label": "Verizon DBIR 2024 — Ransomware Trends", "url": "https://www.verizon.com/business/resources/reports/dbir/" }
+          ]
+        },
+        {
+          "id": "backup-destruction",
+          "name": "Backup Targeting & Destruction",
+          "tagline": "Ransomware groups specifically hunt for and destroy backups before encrypting.",
+          "description": "Before deploying encryption, attackers identify and destroy or encrypt backup infrastructure. Shadow copies are deleted via vssadmin. Network-attached backup appliances are accessed with stolen credentials and wiped. Cloud backup policies are modified to reduce retention. Organisations with backups on the same network as production systems have no effective recovery option.",
+          "techniques": ["Volume Shadow Copy deletion (T1490)", "Inhibit System Recovery (T1490)", "Backup credential theft and destruction", "Modification of cloud backup retention policies", "Network storage wipe"],
+          "impact": "Without viable backups, organisations face a binary choice: pay the ransom or rebuild from scratch. Rebuilding typically takes weeks to months and costs significantly more than prevention.",
+          "references": [
+            { "label": "MITRE ATT&CK — Inhibit System Recovery (T1490)", "url": "https://attack.mitre.org/techniques/T1490/" },
+            { "label": "CISA — Data Backup Options", "url": "https://www.cisa.gov/stopransomware/ive-been-hit-ransomware" },
+            { "label": "NIST SP 800-184 — Guide for Cybersecurity Event Recovery", "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-184.pdf" }
+          ]
+        },
+        {
+          "id": "ir-readiness",
+          "name": "IR Readiness Failures",
+          "tagline": "Organisations without tested IR plans lose days to coordination during active incidents.",
+          "description": "Incident response without preparation devolves into ad hoc coordination under pressure. Roles are unclear. Decision authority is undefined. Evidence is destroyed during containment. External counsel and insurers are contacted late. Organisations with tested IR plans and communication runbooks consistently achieve faster detection, containment, and recovery — and produce better documentation for insurance and regulatory purposes.",
+          "techniques": ["Unclear escalation paths during containment", "Evidence destruction through hasty remediation", "No pre-established legal and forensic contacts", "Missing network isolation procedures", "Undocumented asset inventory slowing investigation"],
+          "impact": "IR failures extend incident duration by days to weeks, increase the probability of re-compromise, and produce inadequate forensic evidence for insurance claims and regulatory investigations.",
+          "references": [
+            { "label": "NIST SP 800-61r2 — Computer Security Incident Handling", "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf" },
+            { "label": "CISA — Incident Response Recommendations", "url": "https://www.cisa.gov/resources-tools/resources/cisa-incident-response-recommendations-and-best-practices-software-manufacturers" },
+            { "label": "FBI — Ransomware Prevention & Response", "url": "https://www.fbi.gov/how-we-can-help-you/safety-resources/scams-and-safety/common-scams-and-crimes/ransomware" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "network",
+      "name": "Network Perimeter",
+      "description": "The traditional network perimeter has dissolved. Segmentation, SWG, and CASB controls are what limit attacker movement and data exfiltration in modern distributed environments.",
+      "threats": [
+        {
+          "id": "flat-network",
+          "name": "Flat Network Lateral Movement",
+          "tagline": "Without segmentation, a single compromised endpoint reaches everything.",
+          "description": "A flat network — where all systems can communicate with all other systems — gives attackers unrestricted lateral movement after initial compromise. One compromised workstation becomes a path to domain controllers, backup systems, financial applications, and production databases. Micro-segmentation limits this blast radius to a defined zone, requiring attackers to cross additional trust boundaries at every step.",
+          "techniques": ["SMB lateral movement (T1021.002)", "RDP hop (T1021.001)", "WMI remote execution (T1047)", "Unrestricted east-west traffic", "Missing host-based firewall enforcement"],
+          "impact": "In a flat network, ransomware can propagate to every reachable system within minutes. Segmentation converts a catastrophic incident into a contained one.",
+          "references": [
+            { "label": "MITRE ATT&CK — Lateral Movement (TA0008)", "url": "https://attack.mitre.org/tactics/TA0008/" },
+            { "label": "NIST SP 800-125B — Secure Virtual Network Configuration", "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-125Br1.pdf" },
+            { "label": "CIS Controls — Network Segmentation (Control 12)", "url": "https://www.cisecurity.org/controls" }
+          ]
+        },
+        {
+          "id": "exposed-services",
+          "name": "Exposed Remote Access Services",
+          "tagline": "RDP, VPN appliances, and legacy management interfaces are primary ransomware entry points.",
+          "description": "Remote Desktop Protocol exposed to the internet (TCP 3389) is brute-forced and credential-stuffed continuously. Legacy VPN appliances from Citrix, Ivanti, Fortinet, and Cisco have been the subject of CISA emergency advisories due to mass exploitation before patches are applied. These devices sit at the perimeter and, when compromised, give attackers a fully authenticated foothold with no further exploitation required.",
+          "techniques": ["RDP Brute Force (T1110)", "Exploitation of perimeter device CVE (T1190)", "Valid credentials on VPN (T1078)", "Exposed management interfaces (T1133)"],
+          "impact": "Compromised perimeter devices give direct, authenticated access to the internal network — bypassing all inbound security controls that assume the threat comes from outside.",
+          "references": [
+            { "label": "CISA KEV Catalog — Perimeter Device CVEs", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog" },
+            { "label": "NSA/CISA — Network Security Best Practices", "url": "https://media.defense.gov/2023/Jun/12/2003233411/-1/-1/0/CSI_NETWORK_SECURITY_BEST_PRACTICES.PDF" },
+            { "label": "MITRE ATT&CK — External Remote Services (T1133)", "url": "https://attack.mitre.org/techniques/T1133/" }
+          ]
+        },
+        {
+          "id": "outbound-exfiltration",
+          "name": "Outbound Data Exfiltration",
+          "tagline": "Most organisations inspect inbound traffic but have no visibility into what leaves.",
+          "description": "Attackers exfiltrate data through DNS tunnelling, HTTPS to attacker-controlled infrastructure, and legitimate cloud storage services (Mega, Dropbox, OneDrive) that bypass firewall rules allowing common cloud destinations. Without Secure Web Gateway (SWG) and CASB controls, outbound traffic to the internet and to cloud services is uninspected and uncontrolled.",
+          "techniques": ["Exfiltration via DNS tunnel (T1048.003)", "Exfiltration to cloud storage (T1537)", "Exfiltration via HTTPS C2 (T1041)", "Use of legitimate cloud services for staging (T1567)"],
+          "impact": "Data exfiltration is often the first step toward double extortion. Without outbound traffic controls, it is undetectable until after the fact.",
+          "references": [
+            { "label": "MITRE ATT&CK — Exfiltration (TA0010)", "url": "https://attack.mitre.org/tactics/TA0010/" },
+            { "label": "MITRE ATT&CK — Exfiltration Over Web Service (T1567)", "url": "https://attack.mitre.org/techniques/T1567/" },
+            { "label": "NIST SP 800-41r1 — Firewall Guidelines", "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-41r1.pdf" }
+          ]
+        },
+        {
+          "id": "legacy-protocols",
+          "name": "Legacy Protocol Abuse",
+          "tagline": "SMBv1, Telnet, and unencrypted management protocols create exploitable paths inside the network.",
+          "description": "Legacy protocols like SMBv1 (exploited by EternalBlue/WannaCry), Telnet, FTP, and unencrypted SNMP remain active in many environments years after vendor end-of-support. These protocols lack modern authentication and encryption, and are exploited both for initial access and lateral movement. LLMNR and NBT-NS poisoning exploits legacy Windows name resolution to capture NTLMv2 hashes passively.",
+          "techniques": ["EternalBlue (MS17-010) — SMBv1 exploitation", "LLMNR/NBT-NS Poisoning (T1557.001)", "NTLM relay attacks (T1557)", "Unencrypted Telnet/FTP credential capture"],
+          "impact": "Legacy protocol vulnerabilities are trivially exploitable using freely available tools. They are frequently present in network assessments years after the vulnerability was publicly disclosed.",
+          "references": [
+            { "label": "MITRE ATT&CK — Adversary-in-the-Middle (T1557)", "url": "https://attack.mitre.org/techniques/T1557/" },
+            { "label": "CISA — Disable SMBv1", "url": "https://www.cisa.gov/news-events/alerts/2017/05/15/windows-smb-vulnerability" },
+            { "label": "NSA — Eliminating Obsolete Transport Layer Security (TLS)", "url": "https://media.defense.gov/2021/Jan/05/2002560140/-1/-1/0/ELIMINATING_OBSOLETE_TLS_UOO197443-20.PDF" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "monitoring",
+      "name": "Security Monitoring Gaps",
+      "description": "Having monitoring tools is not the same as having detection capability. Most environments have significant gaps in log coverage, detection rule quality, and analyst process.",
+      "threats": [
+        {
+          "id": "log-coverage-gaps",
+          "name": "Log Coverage Gaps",
+          "tagline": "Critical detection signals are not being collected — attacks pass through invisible.",
+          "description": "Windows security event logs (4624, 4648, 4688), DNS query logs, PowerShell script block logging, cloud audit trails, and endpoint process execution events are frequently not collected, not forwarded to the SIEM, or collected without enrichment. Without the raw log data, no detection rule can fire regardless of how well it is written. Log coverage mapping against the MITRE ATT&CK framework reveals which techniques are structurally invisible.",
+          "techniques": ["Missing Windows event log forwarding", "No DNS query logging", "PowerShell logging disabled", "Cloud audit trail gaps (CloudTrail, Azure Monitor)", "Endpoint telemetry not reaching SIEM"],
+          "impact": "Attackers operating in environments with log gaps can execute entire intrusion chains — credential theft, lateral movement, data staging — without generating a single alert.",
+          "references": [
+            { "label": "CISA — Logging Made Easy (Free SIEM baseline)", "url": "https://www.cisa.gov/resources-tools/resources/logging-made-easy" },
+            { "label": "CIS Control 8 — Audit Log Management", "url": "https://www.cisecurity.org/controls/audit-log-management" },
+            { "label": "MITRE ATT&CK — Data Sources matrix", "url": "https://attack.mitre.org/datasources/" }
+          ]
+        },
+        {
+          "id": "alert-fatigue",
+          "name": "Alert Fatigue",
+          "tagline": "Alert volume so high that analysts stop triaging — real threats pass unreviewed.",
+          "description": "Default SIEM rule packs generate high false positive rates when applied to environments they were not tuned for. Analysts under volume pressure triage for speed, not accuracy. Rules that fire hundreds of times daily with 0% true positive rate are eventually muted or ignored entirely. Alert fatigue is the primary operational reason why organisations with monitoring tools still miss attacks in progress.",
+          "techniques": ["Uncalibrated detection rules", "Excessive low-fidelity alerts from default rulesets", "No alert quality metrics (TP/FP ratio)", "Missing analyst runbooks causing slow triage"],
+          "impact": "An organisation can be fully breached while producing thousands of alerts per day — none of which were the relevant ones. Alert fatigue converts monitoring investment into noise with no security value.",
+          "references": [
+            { "label": "NIST SP 800-137 — Information Security Continuous Monitoring", "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-137.pdf" },
+            { "label": "MITRE ATT&CK — Defense Evasion (TA0005)", "url": "https://attack.mitre.org/tactics/TA0005/" },
+            { "label": "Verizon DBIR 2024 — Time to Detect", "url": "https://www.verizon.com/business/resources/reports/dbir/" }
+          ]
+        },
+        {
+          "id": "attack-coverage-blindspots",
+          "name": "ATT&CK Coverage Blindspots",
+          "tagline": "Most environments detect fewer than 20% of MITRE ATT&CK techniques.",
+          "description": "The MITRE ATT&CK framework documents over 400 adversary techniques across 14 tactics. Most organisations have detection coverage for a small fraction of these — typically the most visible techniques with the most established signatures. Techniques under Defense Evasion (TA0005), Command and Control (TA0011), and Collection (TA0009) are commonly undetected because they require specific log sources or correlation logic that generic SIEM rules do not provide.",
+          "techniques": ["LOLBin execution evading process monitoring (T1218)", "Encrypted C2 over legitimate protocols (T1071)", "Data staged in unusual locations (T1074)", "Timestomping and log deletion (T1070)", "Living off the land — no malware involved"],
+          "impact": "Attackers who understand common detection gaps deliberately use the techniques least likely to be detected. Operating only on well-known detection signals creates a predictable blind spot.",
+          "references": [
+            { "label": "MITRE ATT&CK — Full Technique Matrix", "url": "https://attack.mitre.org/" },
+            { "label": "MITRE ATT&CK Navigator — Coverage Visualisation", "url": "https://mitre-attack.github.io/attack-navigator/" },
+            { "label": "MITRE ATT&CK Evaluations", "url": "https://attackevals.mitre-engenuity.org/" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "name": "Data Security",
+      "description": "Data security is a program, not a tool. Classification gaps, DLP misconfiguration, and unmapped data flows leave sensitive data at constant risk of loss or regulatory exposure.",
+      "threats": [
+        {
+          "id": "data-classification-gaps",
+          "name": "Data Classification Gaps",
+          "tagline": "Data you cannot classify, you cannot protect.",
+          "description": "Without a functioning data classification framework, DLP rules have no basis for policy and DSPM has no sensitivity labels to enforce access against. Most organisations have classification policies on paper but inconsistent or absent enforcement. Classification labels assigned at creation are frequently lost as data is copied, transformed, or migrated to new platforms. Unclassified sensitive data accumulates in shared drives, email archives, and cloud storage.",
+          "techniques": ["Unclassified PII/PCI data in shared storage", "Classification labels not propagated on copy/export", "No automated discovery of sensitive data", "Inconsistent labelling across business units"],
+          "impact": "Unclassified data cannot be protected by DLP or DSPM controls — it is invisible to policy enforcement regardless of how well those controls are configured.",
+          "references": [
+            { "label": "NIST SP 800-60 — Information Classification Guide", "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-60v1r1.pdf" },
+            { "label": "CIS Control 3 — Data Protection", "url": "https://www.cisecurity.org/controls/data-protection" },
+            { "label": "OWASP — Data Classification Guidance", "url": "https://owasp.org/www-community/Data_Classification" }
+          ]
+        },
+        {
+          "id": "dlp-policy-failures",
+          "name": "DLP Policy Failures",
+          "tagline": "DLP tuned to vendor defaults generates thousands of false positives — and gets ignored.",
+          "description": "Data Loss Prevention controls prevent sensitive data from leaving through email, USB, web upload, cloud sync, and print channels. When DLP policies are deployed with vendor defaults rather than calibrated to the organisation's actual data classification and business workflows, false positive rates become unmanageable. Analysts stop acting on DLP alerts. The controls remain active but provide no practical protection. Ongoing fine-tuning is not optional — it is what makes DLP function as prevention rather than logging.",
+          "techniques": ["Exfiltration via email attachment (T1048)", "Upload to personal cloud storage (T1567)", "USB drive data transfer (T1052.001)", "Print-to-PDF and physical exfiltration", "Web form data submission"],
+          "impact": "Effective DLP requires policies calibrated to specific classification tiers, channel risk levels, and business workflow exceptions. Generic policies provide the appearance of control without the substance.",
+          "references": [
+            { "label": "MITRE ATT&CK — Exfiltration (TA0010)", "url": "https://attack.mitre.org/tactics/TA0010/" },
+            { "label": "CISA — Data Loss Prevention Guidance", "url": "https://www.cisa.gov/resources-tools/resources/data-loss-prevention" },
+            { "label": "NIST Cybersecurity Framework — Protect/Data Security (PR.DS)", "url": "https://www.nist.gov/cyberframework" }
+          ]
+        },
+        {
+          "id": "cloud-data-exposure",
+          "name": "Cloud Data Exposure",
+          "tagline": "Sensitive data stored in cloud environments is frequently misconfigured or over-accessible.",
+          "description": "DSPM (Data Security Posture Management) addresses the challenge of knowing where sensitive data resides across cloud and on-premises environments, who can access it, and whether that access is appropriate. Without DSPM, organisations have no continuous visibility into whether S3 buckets, SharePoint sites, or database instances holding sensitive data are correctly permissioned — and no alert when that posture drifts.",
+          "techniques": ["Overly permissive cloud storage ACLs", "Database instances accessible outside VPC", "SaaS application over-sharing", "Data residency violations", "Unencrypted data at rest"],
+          "impact": "Cloud data exposure is frequently discovered by external researchers or attackers rather than by the owning organisation. Regulatory consequences apply regardless of whether the data was actively accessed.",
+          "references": [
+            { "label": "CSA Top Threats — Insecure Data Storage", "url": "https://cloudsecurityalliance.org/research/topics/top-threats" },
+            { "label": "OWASP Cloud Native Security Top 10", "url": "https://owasp.org/www-project-cloud-native-application-security-top-10/" },
+            { "label": "CIS Benchmark — Cloud Storage Controls", "url": "https://www.cisecurity.org/cis-benchmarks" }
+          ]
+        },
+        {
+          "id": "data-flow-blindspots",
+          "name": "Data Flow Blind Spots",
+          "tagline": "Knowing where data is stored is not the same as knowing where it goes.",
+          "description": "Sensitive data flows across internal systems, third-party APIs, SaaS integrations, and business processes in ways that are rarely fully mapped. Data classified as restricted on the source system may flow unencrypted to a log aggregator, be synced to an uncontrolled SaaS application, or transit through a third-party analytics pipeline without appropriate contractual controls. Manual data flow mapping exercises produce point-in-time snapshots that are stale within weeks.",
+          "techniques": ["Uncontrolled data movement to SaaS applications", "API integrations sending sensitive data to third parties", "Log pipelines capturing PII in plaintext", "ETL processes bypassing classification labels"],
+          "impact": "Regulatory exposure from unmapped data flows is often discovered during breach investigation or regulatory audit — not during normal operations. Mitigence's DFAnalyzer automates continuous data flow mapping and policy validation.",
+          "references": [
+            { "label": "MITRE ATT&CK — Data from Information Repositories (T1213)", "url": "https://attack.mitre.org/techniques/T1213/" },
+            { "label": "NIST Privacy Framework", "url": "https://www.nist.gov/privacy-framework" },
+            { "label": "GDPR — Article 30 Records of Processing Activities", "url": "https://gdpr-info.eu/art-30-gdpr/" }
+          ]
+        },
+        {
+          "id": "insider-exfiltration",
+          "name": "Insider Data Exfiltration",
+          "tagline": "Malicious or negligent insiders bypass perimeter controls because they already have access.",
+          "description": "Insider threats range from malicious employees deliberately exfiltrating data before departure to negligent users who unknowingly send sensitive data to personal email or cloud storage. Departing employees are a particularly high-risk window — significant data exfiltration occurs in the weeks before resignation. DLP controls for email, USB, and cloud upload are the primary technical countermeasures, supplemented by user activity monitoring and access review.",
+          "techniques": ["Email data exfiltration to personal account (T1048)", "USB transfer (T1052.001)", "Personal cloud sync (Dropbox, Google Drive) (T1567)", "Bulk data download before departure", "Credential sharing with external parties"],
+          "impact": "Insider data exfiltration is consistently harder to detect than external intrusion because access is legitimate. The signal is data volume and destination anomalies, not authentication failures.",
+          "references": [
+            { "label": "MITRE ATT&CK — Insider Threat", "url": "https://attack.mitre.org/tactics/TA0010/" },
+            { "label": "CISA — Insider Threat Mitigation Guide", "url": "https://www.cisa.gov/insider-threat-mitigation" },
+            { "label": "CERT Insider Threat Centre", "url": "https://www.cmu.edu/sei/our-work/insider-risk/index.html" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "detection",
+      "name": "Detection Engineering",
+      "description": "Detection engineering is the discipline of building and maintaining the rules, pipelines, and analytics that surface real threats. It is distinct from deploying monitoring tools — and far harder to do well.",
+      "threats": [
+        {
+          "id": "rule-quality",
+          "name": "Poor Detection Rule Quality",
+          "tagline": "Rules written once and never maintained become stale, noisy, or blind to evolved attacker techniques.",
+          "description": "Detection rules degrade over time as environments change and attacker techniques evolve. A rule written for a specific process path breaks when the path changes. A rule calibrated for a previous log schema stops matching after an upgrade. Rules based on static IOCs (IP addresses, file hashes) become useless as attackers rotate infrastructure. High-quality detection requires rules based on attacker behaviour and technique — not artifact-based indicators that expire.",
+          "techniques": ["IOC-based rules with expired indicators", "Rules broken by environment changes", "No rule testing or validation process", "Missing coverage for new attacker TTPs", "Sigma rule adoption without environment tuning"],
+          "impact": "A rule that does not fire is worse than no rule — it creates false confidence that a detection exists where none actually does. Detection rule quality requires active maintenance, not set-and-forget deployment.",
+          "references": [
+            { "label": "MITRE ATT&CK — Detection Guidance per technique", "url": "https://attack.mitre.org/" },
+            { "label": "Sigma — Generic Signature Format for SIEM", "url": "https://github.com/SigmaHQ/sigma" },
+            { "label": "NIST SP 800-137 — Continuous Monitoring", "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-137.pdf" }
+          ]
+        },
+        {
+          "id": "threat-hunting",
+          "name": "Absence of Threat Hunting",
+          "tagline": "Detection rules only catch what was anticipated — threat hunting finds what slipped through.",
+          "description": "Threat hunting is the proactive search for attacker activity that has not triggered automated detection. It is hypothesis-driven — a hunter formulates a theory about how an attacker might be present in the environment and searches the data to confirm or deny it. Environments that rely exclusively on automated alerting miss attacker activity that falls outside the rule set. Threat hunting closes this gap and produces new detection rules as a by-product.",
+          "techniques": ["Uncaught living-off-the-land (LOLBin) execution", "Long dwell periods without alerting", "Subtle persistence mechanisms (scheduled tasks, registry run keys)", "Anomalous authentication patterns not covered by existing rules"],
+          "impact": "The average dwell time for undetected breaches is months, not days. Threat hunting reduces dwell time by actively searching rather than waiting for alerts.",
+          "references": [
+            { "label": "MITRE ATT&CK Navigator — Hunt Coverage Planning", "url": "https://mitre-attack.github.io/attack-navigator/" },
+            { "label": "TaHiTI — Threat Hunting Methodology", "url": "https://github.com/NVISO-BE/TaHiTI" },
+            { "label": "SANS — Threat Hunting Survey & Methodology", "url": "https://www.sans.org/white-papers/threat-hunting/" }
+          ]
+        },
+        {
+          "id": "log-normalization",
+          "name": "Log Pipeline & Normalisation",
+          "tagline": "Raw log data from different sources cannot be correlated without normalisation.",
+          "description": "A SIEM ingesting logs from Windows, Linux, cloud platforms, firewalls, and identity providers receives logs in dozens of different formats. Without normalisation — mapping source-specific field names to a common schema — correlation rules cannot operate across sources. A login event from Azure AD and a login event from a VPN appliance have different field names, different timestamp formats, and different event structures. Detection rules that require correlation across both will not fire without a normalisation layer.",
+          "techniques": ["Inconsistent field naming across log sources", "Timestamp timezone mismatches breaking correlation", "Missing enrichment (hostname to IP resolution)", "Raw log ingest without schema mapping", "Parser failures silently dropping log lines"],
+          "impact": "Correlation rules fail silently when log normalisation is broken. The SIEM appears to be working but cross-source detections never fire.",
+          "references": [
+            { "label": "OSSEM — Open Source Security Events Metadata", "url": "https://github.com/OTRF/OSSEM" },
+            { "label": "Elastic Common Schema (ECS)", "url": "https://www.elastic.co/guide/en/ecs/current/index.html" },
+            { "label": "CISA — Logging Made Easy", "url": "https://www.cisa.gov/resources-tools/resources/logging-made-easy" }
+          ]
+        },
+        {
+          "id": "behavioral-analytics",
+          "name": "Behavioural Analytics Gaps",
+          "tagline": "Signature-based detection misses threats that use valid tools and credentials.",
+          "description": "Signature-based detection — rules that match specific commands, file hashes, or process names — cannot detect attackers using legitimate system tools (LOLBins), valid credentials, or novel techniques. Behavioural analytics establishes baselines of normal activity per user, device, or system, and alerts on statistically anomalous deviations. UEBA (User and Entity Behaviour Analytics) platforms implement this at scale, but require sufficient data volume and clean baselines to produce actionable signals.",
+          "techniques": ["LOLBin execution blending into legitimate admin activity", "Credential abuse by compromised accounts appearing as normal login", "Anomalous data access volumes by legitimate users", "First-seen process execution paths", "Off-hours administrative activity"],
+          "impact": "Attackers who operate exclusively with legitimate tools and credentials are invisible to signature-based detection. Behavioural analytics is the primary detection approach for insider threats and sophisticated external intrusion.",
+          "references": [
+            { "label": "MITRE ATT&CK — Living Off the Land Techniques", "url": "https://attack.mitre.org/tactics/TA0005/" },
+            { "label": "NIST SP 800-137 — Continuous Monitoring with Analytics", "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-137.pdf" },
+            { "label": "CISA — Insider Threat Mitigation (Behavioural Indicators)", "url": "https://www.cisa.gov/insider-threat-mitigation" }
+          ]
+        }
+      ]
+    }
+  ]
+}
