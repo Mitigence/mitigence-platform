@@ -69,10 +69,10 @@ function HeroHeadline() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={DISSOLVE_TRANSITION}
-            className="text-5xl md:text-7xl font-bold text-white tracking-tight"
+            className="text-6xl md:text-[9rem] font-bold text-white tracking-tight leading-none"
             style={{ fontFamily: 'var(--font-nunito), var(--font-geist-sans), sans-serif' }}
           >
-            Mitigence
+            M<span className="text-red-600">i</span>t<span className="text-red-600">i</span>gence
           </motion.h1>
         )}
       </AnimatePresence>
