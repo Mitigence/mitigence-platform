@@ -69,10 +69,13 @@ function HeroHeadline() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={DISSOLVE_TRANSITION}
-            className="text-6xl md:text-[9rem] font-bold text-white tracking-tight leading-none"
-            style={{ fontFamily: 'var(--font-nunito), var(--font-geist-sans), sans-serif' }}
+            className="text-6xl md:text-[9rem] font-bold text-white tracking-tight leading-none italic"
           >
-            M<span className="text-red-600">i</span>t<span className="text-red-600">i</span>gence
+            {'M'}
+            <span style={{ background: 'linear-gradient(to bottom, #dc2626 0%, #dc2626 28%, #ffffff 28%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>i</span>
+            {'t'}
+            <span style={{ background: 'linear-gradient(to bottom, #dc2626 0%, #dc2626 28%, #ffffff 28%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>i</span>
+            {'gence'}
           </motion.h1>
         )}
       </AnimatePresence>
