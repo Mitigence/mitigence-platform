@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/platform/engineer/delivery-framework' },
 }
 
-const BADGE_CLASS = 'text-red-400 border-red-800 bg-red-950/40'
+const BADGE_CLASS = 'text-zinc-400 border-zinc-700 bg-zinc-900'
 
 export default function DeliveryFrameworkPage() {
   return (
