@@ -11,6 +11,7 @@ const footerLinks = {
   Platform: [
     { label: 'Enterprise Explorer', href: '/platform/understand/enterprise-explorer' },
     { label: 'Security Journey', href: '/platform/understand/security-journey' },
+    { label: 'Compliance Journey', href: '/platform/understand/compliance-journey' },
     { label: 'Engagement Studio', href: '/platform/engineer/engagement-studio' },
     { label: 'Capability Explorer', href: '/platform/engineer/capability-explorer' },
     { label: 'Customer Workspace', href: '/platform/operate/customer-workspace' },
