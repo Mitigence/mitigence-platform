@@ -502,6 +502,78 @@
           "engagementIds": ["compliance-program"]
         }
       ]
+    },
+    {
+      "id": "hipaa",
+      "name": "HIPAA",
+      "fullName": "Health Insurance Portability and Accountability Act (US)",
+      "scope": "United States",
+      "scopeBadge": "US",
+      "status": "In force",
+      "effectiveDate": "Privacy & Security Rules 2003/2005; HITECH 2009; Omnibus Rule 2013",
+      "penalty": "$100–$50,000 per violation; up to $1.9M per violation category per year; criminal penalties for wilful neglect",
+      "tagline": "The US federal standard for protecting patient health information — mandatory for healthcare providers, health plans, and every vendor that touches PHI.",
+      "whoMustComply": "Covered Entities — healthcare providers (hospitals, clinics, physicians, pharmacies), health plans (insurers, HMOs), and healthcare clearinghouses — and their Business Associates (any vendor, contractor, or subcontractor that creates, receives, maintains, or transmits Protected Health Information on behalf of a Covered Entity). Business Associate Agreements (BAAs) are legally required before any PHI is shared.",
+      "keyRequirements": [
+        "Privacy Rule: minimum necessary standard for PHI access and disclosure; patient rights to access, amend, and restrict use of their records",
+        "Security Rule: administrative, physical, and technical safeguards for electronic PHI (ePHI) — 45 CFR §164.308/310/312",
+        "Risk Analysis: mandatory written assessment of threats and vulnerabilities to ePHI confidentiality, integrity, and availability",
+        "Breach Notification Rule: notify HHS and affected individuals within 60 days of discovering a breach of unsecured PHI",
+        "Business Associate Agreements required with all vendors and subcontractors handling PHI",
+        "Workforce training: all staff with PHI access must receive role-appropriate HIPAA training",
+        "Audit controls: hardware, software, and procedural mechanisms to record and examine ePHI access",
+        "HITECH Act: enhanced civil and criminal penalties; mandatory BAAs; breach notification to media for breaches affecting 500+ individuals in a state"
+      ],
+      "complianceJourney": [
+        {
+          "phase": "Entity Classification & PHI Mapping",
+          "duration": "1–2 weeks",
+          "description": "Confirm your classification (Covered Entity or Business Associate) and map all PHI flows — where ePHI is created, received, stored, transmitted, and destroyed. Identify all systems and third parties that touch PHI.",
+          "engagementIds": ["security-assessment"]
+        },
+        {
+          "phase": "Risk Analysis (Security Rule §164.308)",
+          "duration": "2–3 weeks",
+          "description": "Conduct the mandatory written risk analysis — assess threats and vulnerabilities to ePHI across your environment, determine likelihood and impact of each risk, and produce a documented risk register. This is the foundation of HIPAA Security Rule readiness.",
+          "engagementIds": ["security-assessment", "compliance-program"]
+        },
+        {
+          "phase": "Administrative Safeguards",
+          "duration": "3–5 weeks",
+          "description": "Develop or update HIPAA policies and procedures, workforce training programme, access management procedures, contingency plans, and incident response procedures aligned to the Security Rule's administrative requirements.",
+          "engagementIds": ["compliance-program", "incident-response-planning"]
+        },
+        {
+          "phase": "Technical Safeguards for ePHI",
+          "duration": "4–8 weeks",
+          "description": "Implement access controls (unique user IDs, emergency access procedures), audit logging for ePHI systems, integrity controls, and encryption for ePHI at rest and in transit. Engineer controls to the Security Rule's technical requirements.",
+          "engagementIds": ["identity-security-engineering", "endpoint-protection"]
+        },
+        {
+          "phase": "Physical Safeguards",
+          "duration": "1–2 weeks",
+          "description": "Assess and strengthen facility access controls for areas housing ePHI systems, workstation use and security policies, and device and media controls — covering the physical tier of the Security Rule.",
+          "engagementIds": ["security-assessment", "compliance-program"]
+        },
+        {
+          "phase": "Business Associate Programme",
+          "duration": "2–3 weeks",
+          "description": "Inventory all Business Associates and subcontractors, execute or update BAAs, and assess each BA's security posture against the Security Rule. Third-party risk from BAs is a leading source of HIPAA breach incidents.",
+          "engagementIds": ["third-party-risk-assessment"]
+        },
+        {
+          "phase": "Breach Response Readiness",
+          "duration": "1–2 weeks",
+          "description": "Build and test a breach identification, investigation, and notification playbook — covering HHS notification (60-day deadline), individual notification, and media notification for large breaches. The OCR breach investigation process is rigorous; readiness matters.",
+          "engagementIds": ["incident-response-planning"]
+        },
+        {
+          "phase": "Ongoing Compliance Programme",
+          "duration": "Continuous",
+          "description": "Annual risk analysis review, workforce HIPAA training refresh, BA security reassessment, and policy updates to reflect system or regulatory changes. HIPAA compliance is ongoing — OCR audits can occur at any time.",
+          "engagementIds": ["compliance-program", "third-party-risk-assessment"]
+        }
+      ]
     }
   ]
 }
