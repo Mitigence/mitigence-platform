@@ -5,8 +5,9 @@
       "name": "Financial Services",
       "description": "Banks, insurers, asset managers, and fintechs operating in one of the most targeted and heavily regulated sectors in cybersecurity.",
       "challenges": [
-        "High-value targets for financially motivated attackers",
-        "Complex regulatory requirements (PCI DSS, DORA, SOC 2, FCA expectations)",
+        "High-value targets for financially motivated attackers and nation-state actors",
+        "DORA (Digital Operational Resilience Act) in force from January 2025 — mandatory ICT risk management, incident reporting, and third-party oversight",
+        "PCI DSS v4.0.1 — all future-dated requirements mandatory from March 2025",
         "Legacy systems that cannot easily be patched or replaced",
         "Third-party and supply chain risk from extensive ecosystem dependencies"
       ],
@@ -19,10 +20,11 @@
       "name": "Healthcare",
       "description": "Hospitals, clinics, medical device manufacturers, and health-tech companies protecting some of the most sensitive personal data in existence.",
       "challenges": [
-        "Patient data protection under HIPAA and equivalent regulations",
-        "Medical device security and OT/IoT risk",
-        "Clinical system availability requirements",
-        "Ransomware as a leading threat vector for the sector"
+        "Patient data protection under HIPAA (US) and NIS2 (EU, transposed October 2024)",
+        "Medical device security under updated FDA cybersecurity guidance and IEC 62443",
+        "OT/IoT risk from connected clinical devices with long lifecycles and no patch path",
+        "Clinical system availability requirements — ransomware remains the leading cause of healthcare disruption",
+        "Ransomware groups specifically targeting healthcare for maximum extortion leverage"
       ],
       "commonEngagements": ["Medical Device Security Assessment", "Ransomware Readiness Review", "Identity Security Engineering", "Incident Response Planning"],
       "recommendedJourney": ["Risk Assessment", "Identity Engineering", "Endpoint Protection", "IR Readiness"],
@@ -33,9 +35,10 @@
       "name": "Government",
       "description": "Public sector organizations managing critical infrastructure, citizen data, and national security requirements.",
       "challenges": [
-        "Nation-state threat actors with sophisticated capabilities",
-        "Complex procurement and accreditation requirements",
-        "Aging IT infrastructure with limited modernization budgets",
+        "Nation-state threat actors with sophisticated capabilities — cyber operations increasingly linked to geopolitical conflict",
+        "NIS2 Directive (EU, transposed October 2024) — mandatory security requirements for public sector entities",
+        "Complex procurement and accreditation requirements (FedRAMP, NCSC Cyber Essentials Plus, NIST RMF)",
+        "Aging IT infrastructure with limited modernisation budgets",
         "Insider threat risk in sensitive environments"
       ],
       "commonEngagements": ["Security Accreditation Support", "Network Segmentation", "Insider Threat Program", "Cloud Security Engineering"],
@@ -47,10 +50,11 @@
       "name": "Education",
       "description": "Universities, schools, and ed-tech platforms balancing open academic environments with protection of student and research data.",
       "challenges": [
-        "Open network environments that conflict with security controls",
-        "Large attack surfaces from diverse student, staff, and research devices",
-        "Research data and intellectual property protection",
-        "Limited security budget relative to complexity"
+        "Open network environments that conflict with security controls — segmentation without disrupting academic freedom",
+        "Large attack surfaces from diverse student, staff, and BYOD research devices",
+        "Research data and intellectual property targeted by nation-state actors",
+        "Ransomware increasingly targeting schools and universities for extortion",
+        "Limited security budget relative to complexity — often no dedicated CISO"
       ],
       "commonEngagements": ["Security Assessment", "Network Segmentation", "Identity Security Engineering", "Endpoint Protection"],
       "recommendedJourney": ["Assessment", "Architecture Review", "Engineering", "Operational Support"],
@@ -61,10 +65,11 @@
       "name": "Manufacturing",
       "description": "Industrial manufacturers with operational technology environments that were never designed with cybersecurity in mind.",
       "challenges": [
-        "OT/IT convergence introducing cyber risk to production environments",
-        "Legacy industrial systems with no patch path",
-        "Supply chain compromise as an entry vector",
-        "Business continuity requirements limiting maintenance windows"
+        "OT/IT convergence introducing cyber risk to production environments — IEC 62443 the governing standard",
+        "Legacy industrial control systems (ICS/SCADA) with no vendor patch path",
+        "Supply chain compromise as a primary entry vector — software and hardware supply chain both targeted",
+        "Business continuity requirements limiting maintenance windows and patching",
+        "NIS2 Directive (EU) imposing mandatory security requirements on critical infrastructure operators"
       ],
       "commonEngagements": ["OT Security Assessment", "Network Segmentation", "Incident Response Planning", "Third-Party Risk Assessment"],
       "recommendedJourney": ["OT Assessment", "Segmentation Engineering", "Monitoring", "IR Readiness"],
@@ -75,10 +80,10 @@
       "name": "Retail",
       "description": "Retailers and e-commerce businesses protecting payment card data, customer information, and high-availability transaction systems.",
       "challenges": [
-        "PCI DSS compliance and cardholder data environment scoping",
-        "E-commerce application security and fraud risk",
-        "Seasonal traffic spikes that complicate security operations",
-        "Third-party integrations and supply chain risk"
+        "PCI DSS v4.0.1 compliance — all future-dated requirements mandatory from March 2025; tighter requirements on authentication, scripts, and e-skimming controls",
+        "E-commerce application security — Magecart/web skimming attacks targeting payment pages remain active",
+        "Seasonal traffic spikes that complicate security operations and patching windows",
+        "Third-party integrations and supply chain risk from payment processors and logistics partners"
       ],
       "commonEngagements": ["PCI DSS Assessment", "Application Security Testing", "Cloud Security Engineering", "Third-Party Risk Assessment"],
       "recommendedJourney": ["Compliance Assessment", "Application Engineering", "Monitoring", "Continuous Validation"],

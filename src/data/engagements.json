@@ -104,7 +104,7 @@
       "description": "Compliance programmes fail when they treat certification as a destination rather than an ongoing capability. Mitigence designs compliance programmes that satisfy auditors and genuinely reduce risk — mapping controls to multiple frameworks simultaneously where possible to reduce duplicated effort.",
       "timeline": "8–16 weeks",
       "phases": [
-        { "name": "Gap Assessment", "duration": "1–2 weeks", "description": "Measure current controls against target framework requirements (ISO 27001, SOC 2, NIST CSF, PCI DSS, DORA, or equivalent)." },
+        { "name": "Gap Assessment", "duration": "1–2 weeks", "description": "Measure current controls against target framework requirements (ISO 27001:2022, SOC 2, NIST CSF 2.0, PCI DSS v4.0.1, DORA, or equivalent)." },
         { "name": "Control Mapping", "duration": "1–2 weeks", "description": "Map requirements to controls, identify overlaps across frameworks, and assign ownership for each control domain." },
         { "name": "Policy & Procedure Development", "duration": "2–4 weeks", "description": "Author or update policies, standards, and procedures to the level of evidence required for audit." },
         { "name": "Implementation Support", "duration": "3–6 weeks", "description": "Support control owners through implementation — technical, operational, and process-level changes." },
@@ -118,7 +118,7 @@
         "Internal audit readiness report",
         "Audit preparation briefing for key stakeholders"
       ],
-      "tags": ["Compliance", "GRC", "ISO 27001", "SOC 2", "NIST", "DORA"]
+      "tags": ["Compliance", "GRC", "ISO 27001:2022", "SOC 2", "NIST CSF 2.0", "DORA"]
     },
     {
       "id": "medical-device-security",
@@ -221,7 +221,7 @@
       "name": "Security Accreditation Support",
       "activityType": "Compliance / GRC",
       "tagline": "Expert-led preparation and support through formal security accreditation and certification processes.",
-      "description": "Security accreditations — Cyber Essentials, ISO 27001, NIST RMF, FedRAMP, and sector-specific schemes — require precise preparation. Mitigence navigates the technical and procedural requirements alongside your team, reducing time-to-certification and audit surprises.",
+      "description": "Security accreditations — Cyber Essentials Plus, ISO 27001:2022, NIST RMF, FedRAMP, and sector-specific schemes — require precise preparation. Mitigence navigates the technical and procedural requirements alongside your team, reducing time-to-certification and audit surprises.",
       "timeline": "6–12 weeks",
       "phases": [
         { "name": "Requirements Analysis", "duration": "3–5 days", "description": "Clarify the full scope of accreditation requirements, assess applicability to your environment, and define the certification boundary." },
@@ -296,7 +296,7 @@
       "description": "Before you can improve, you need an honest picture of where you stand. Mitigence's security assessment combines structured interviews, document review, and technical analysis to produce an accurate, unvarnished view of your current security posture — and a practical roadmap for improvement.",
       "timeline": "2–4 weeks",
       "phases": [
-        { "name": "Scoping & Planning", "duration": "1–2 days", "description": "Agree assessment scope, access requirements, stakeholder interviews, and framework alignment (NIST CSF, CIS Controls, ISO 27001)." },
+        { "name": "Scoping & Planning", "duration": "1–2 days", "description": "Agree assessment scope, access requirements, stakeholder interviews, and framework alignment (NIST CSF 2.0, CIS Controls v8, ISO 27001:2022)." },
         { "name": "Interview & Document Review", "duration": "4–6 days", "description": "Structured interviews with key stakeholders across IT, security, operations, and leadership. Review existing policies and procedures." },
         { "name": "Technical Review", "duration": "4–6 days", "description": "Review technical controls: network architecture, identity management, endpoint posture, logging, vulnerability management, and cloud configuration." },
         { "name": "Risk Analysis & Scoring", "duration": "2–3 days", "description": "Score findings against a consistent risk framework and identify the highest-priority gaps relative to your threat environment." },
@@ -365,7 +365,7 @@
       "name": "PCI DSS Assessment",
       "activityType": "Compliance Assessment",
       "tagline": "Scope, assess, and remediate against PCI DSS requirements for cardholder data environments.",
-      "description": "PCI DSS compliance requires precise scoping, control implementation, and evidence collection. Mitigence brings both technical and QSA-adjacent expertise to PCI DSS programmes — helping organisations scope correctly, remediate efficiently, and maintain compliance across annual assessment cycles.",
+      "description": "PCI DSS v4.0.1 compliance requires precise scoping, control implementation, and evidence collection. All future-dated v4.0 requirements became mandatory from March 31, 2025. Mitigence brings both technical and QSA-adjacent expertise to PCI DSS programmes — helping organisations scope correctly, remediate efficiently, and maintain compliance across annual assessment cycles.",
       "timeline": "3–6 weeks",
       "phases": [
         { "name": "CDE Scoping", "duration": "3–5 days", "description": "Define the cardholder data environment boundary, identify all in-scope systems and data flows, and explore scope reduction opportunities." },

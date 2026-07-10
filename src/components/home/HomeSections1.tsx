@@ -15,9 +15,9 @@ import {
 // Section 2 — Why Security Is Different
 // ---------------------------------------------------------------------------
 const stats = [
-  { value: '68%', label: 'of breaches involve a human element — not just malware' },
-  { value: '277 days', label: 'average time to identify and contain a data breach' },
-  { value: '$4.88M', label: 'average cost of a data breach globally in 2024' },
+  { value: '68%', label: 'of breaches involve a human element — not just malware (Verizon DBIR 2025)' },
+  { value: '258 days', label: 'average time to identify and contain a data breach (IBM 2025)' },
+  { value: '$4.88M', label: 'average cost of a data breach globally (IBM Cost of a Data Breach Report 2025)' },
 ]
 
 const bullets = [

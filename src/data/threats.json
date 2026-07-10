@@ -9,21 +9,21 @@
           "id": "credential-theft",
           "name": "Credential Theft",
           "tagline": "Stolen credentials are the most common breach starting point.",
-          "description": "Attackers obtain valid credentials through phishing, password spraying, credential stuffing from leaked databases, or keyloggers. Over 77% of breaches in the Verizon DBIR 2024 involved the use of stolen credentials. Unlike malware, credential-based intrusion produces no malware signatures and blends into normal authentication logs.",
+          "description": "Attackers obtain valid credentials through phishing, password spraying, credential stuffing from leaked databases, or keyloggers. Stolen credentials remain the top initial access vector according to the Verizon DBIR 2025, appearing in the majority of hacking-related breaches. Unlike malware, credential-based intrusion produces no malware signatures and blends into normal authentication logs.",
           "techniques": ["Phishing (T1566)", "Credential Stuffing (T1110.004)", "Password Spraying (T1110.003)", "Adversary-in-the-Middle phishing kits (T1557)", "Keylogging (T1056.001)", "LSASS Memory Dumping (T1003.001)"],
           "impact": "An attacker with valid credentials can authenticate to any system that account has access to — bypassing firewalls, VPNs, and most monitoring that looks for malware rather than authenticated sessions.",
           "references": [
             { "label": "MITRE ATT&CK — Credential Access (TA0006)", "url": "https://attack.mitre.org/tactics/TA0006/" },
-            { "label": "Verizon DBIR 2024", "url": "https://www.verizon.com/business/resources/reports/dbir/" },
+            { "label": "Verizon DBIR 2025", "url": "https://www.verizon.com/business/resources/reports/dbir/" },
             { "label": "CISA — Phishing Guidance", "url": "https://www.cisa.gov/phishing" },
-            { "label": "NIST SP 800-63B — Authentication Guidelines", "url": "https://pages.nist.gov/800-63-3/sp800-63b.html" }
+            { "label": "NIST SP 800-63B — Authentication Guidelines (SP 800-63-4, September 2024)", "url": "https://pages.nist.gov/800-63-4/" }
           ]
         },
         {
           "id": "mfa-fatigue",
           "name": "MFA Fatigue & Bypass",
           "tagline": "Modern attacks bypass or exhaust MFA rather than crack passwords.",
-          "description": "MFA fatigue (push bombing) floods a user with authentication requests until they approve one out of frustration or confusion. Adversary-in-the-Middle (AiTM) phishing kits proxy real authentication sessions in real time, capturing session cookies after MFA is completed. SIM swapping hijacks SMS-based MFA by porting the victim's phone number to an attacker-controlled SIM.",
+          "description": "MFA fatigue (push bombing) floods a user with authentication requests until they approve one out of frustration or confusion. Adversary-in-the-Middle (AiTM) phishing kits proxy real authentication sessions in real time, capturing session cookies after MFA is completed. SIM swapping hijacks SMS-based MFA by porting the victim's phone number to an attacker-controlled SIM. Passkey-resistant phishing pages that capture FIDO2 session tokens are an emerging variant in 2025.",
           "techniques": ["MFA Push Bombing (T1621)", "AiTM Phishing (T1557.002)", "SIM Swapping (T1078)", "Pass-the-Cookie (T1550.004)", "Bypass via legacy auth protocols (T1078.004)"],
           "impact": "Even organisations with MFA enforced are vulnerable. A bypassed MFA session gives attacker-controlled access that appears fully legitimate, with no password compromise involved.",
           "references": [
@@ -89,7 +89,7 @@
           "references": [
             { "label": "MITRE ATT&CK Cloud Matrix — Valid Accounts (T1078)", "url": "https://attack.mitre.org/techniques/T1078/" },
             { "label": "CIS Benchmarks — AWS / Azure / GCP", "url": "https://www.cisecurity.org/cis-benchmarks" },
-            { "label": "CSA Top Threats 2024", "url": "https://cloudsecurityalliance.org/research/topics/top-threats" }
+            { "label": "CSA Top Threats 2025", "url": "https://cloudsecurityalliance.org/research/topics/top-threats" }
           ]
         },
         {
@@ -109,7 +109,7 @@
           "id": "secrets-in-code",
           "name": "Secrets & API Keys in Code",
           "tagline": "Hard-coded credentials in source code are scraped by automated tools within minutes of being pushed.",
-          "description": "API keys, cloud credentials, database connection strings, and private keys committed to source repositories are discovered by automated scanning tools that continuously monitor public repositories. GitHub's secret scanning found over 12 million exposed secrets in public repos in 2023. Internal repositories are not safe either — build pipelines, CI/CD logs, and container images frequently contain credentials in plaintext.",
+          "description": "API keys, cloud credentials, database connection strings, and private keys committed to source repositories are discovered by automated scanning tools that continuously monitor public repositories. GitHub's secret scanning found over 39 million exposed secrets in public repositories in 2024 — more than triple the 2023 figure. Internal repositories are not safe either — build pipelines, CI/CD logs, and container images frequently contain credentials in plaintext.",
           "techniques": ["Repository secrets scanning by attackers", "CI/CD pipeline secrets exposure", "Container image inspection for secrets (T1552.007)", "Environment variable leakage", "Hard-coded credentials (T1552.001)"],
           "impact": "A leaked cloud API key gives immediate, authenticated access to cloud infrastructure — often with the same permissions as the developer who committed it.",
           "references": [
@@ -205,7 +205,7 @@
           "tagline": "Most ransomware intrusions begin with phishing or exposed remote access services.",
           "description": "Ransomware groups gain initial access through phishing emails delivering malware loaders, exploitation of public-facing vulnerabilities in VPN appliances and RDP servers, or purchase of access from Initial Access Brokers (IABs) who sell pre-compromised environments. CISA's Known Exploited Vulnerabilities catalog tracks dozens of perimeter device CVEs actively exploited by ransomware groups.",
           "techniques": ["Phishing with malware attachment (T1566.001)", "Exploit of VPN/RDP vulnerability (T1190)", "Purchased initial access via IABs", "Valid account abuse (T1078)", "Drive-by compromise (T1189)"],
-          "impact": "Initial access is the start of a multi-day intrusion that culminates in encryption. The window between access and encryption averages 5–10 days — detection during this phase prevents the ransomware event entirely.",
+          "impact": "Initial access is the start of a multi-day intrusion that culminates in encryption. The window between initial access and encryption has been shrinking — averaging 2–5 days in recent ransomware campaigns. Detection during this dwell period prevents the ransomware event entirely.",
           "references": [
             { "label": "CISA — #StopRansomware Advisories", "url": "https://www.cisa.gov/stopransomware" },
             { "label": "CISA KEV Catalog — Ransomware-Exploited CVEs", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog" },
@@ -216,7 +216,7 @@
           "id": "double-extortion",
           "name": "Double Extortion",
           "tagline": "Data is exfiltrated before encryption — paying the ransom no longer restores confidentiality.",
-          "description": "Modern ransomware groups exfiltrate data during the dwell period before deploying encryption. This creates a second extortion lever: even organisations with clean backups face the threat of public data release. Ransomware leak sites operated by groups like LockBit, ALPHV/BlackCat, and Cl0p have published data from thousands of victims.",
+          "description": "Modern ransomware groups exfiltrate data during the dwell period before deploying encryption. This creates a second extortion lever: even organisations with clean backups face the threat of public data release. Following law enforcement disruptions of LockBit (Operation Cronos, February 2024) and ALPHV/BlackCat (March 2024), RansomHub emerged as the most prolific ransomware-as-a-service group in 2024–2025, alongside Cl0p, Play, and Akira — each operating leak sites publishing victim data from thousands of organisations.",
           "techniques": ["Data exfiltration via Rclone / cloud sync (T1537)", "Exfiltration over C2 channel (T1041)", "Staged data collection (T1074)", "Use of legitimate cloud storage for staging"],
           "impact": "Organisations that recover from backups still face regulatory notification obligations if data was exfiltrated. Clean backups do not prevent data breach consequences.",
           "references": [
@@ -347,7 +347,7 @@
           "id": "attack-coverage-blindspots",
           "name": "ATT&CK Coverage Blindspots",
           "tagline": "Most environments detect fewer than 20% of MITRE ATT&CK techniques.",
-          "description": "The MITRE ATT&CK framework documents over 400 adversary techniques across 14 tactics. Most organisations have detection coverage for a small fraction of these — typically the most visible techniques with the most established signatures. Techniques under Defense Evasion (TA0005), Command and Control (TA0011), and Collection (TA0009) are commonly undetected because they require specific log sources or correlation logic that generic SIEM rules do not provide.",
+          "description": "The MITRE ATT&CK framework documents over 600 adversary techniques and sub-techniques across 14 tactics. Most organisations have detection coverage for a small fraction of these — typically the most visible techniques with the most established signatures. Techniques under Defense Evasion (TA0005), Command and Control (TA0011), and Collection (TA0009) are commonly undetected because they require specific log sources or correlation logic that generic SIEM rules do not provide.",
           "techniques": ["LOLBin execution evading process monitoring (T1218)", "Encrypted C2 over legitimate protocols (T1071)", "Data staged in unusual locations (T1074)", "Timestomping and log deletion (T1070)", "Living off the land — no malware involved"],
           "impact": "Attackers who understand common detection gaps deliberately use the techniques least likely to be detected. Operating only on well-known detection signals creates a predictable blind spot.",
           "references": [
@@ -386,7 +386,7 @@
           "references": [
             { "label": "MITRE ATT&CK — Exfiltration (TA0010)", "url": "https://attack.mitre.org/tactics/TA0010/" },
             { "label": "CISA — Data Loss Prevention Guidance", "url": "https://www.cisa.gov/resources-tools/resources/data-loss-prevention" },
-            { "label": "NIST Cybersecurity Framework — Protect/Data Security (PR.DS)", "url": "https://www.nist.gov/cyberframework" }
+            { "label": "NIST Cybersecurity Framework 2.0 — Protect/Data Security (PR.DS)", "url": "https://www.nist.gov/cyberframework" }
           ]
         },
         {
