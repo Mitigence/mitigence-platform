@@ -1,0 +1,507 @@
+{
+  "frameworks": [
+    {
+      "id": "dpdp",
+      "name": "DPDP",
+      "fullName": "Digital Personal Data Protection Act, 2023",
+      "scope": "India",
+      "scopeBadge": "IN",
+      "status": "Enacted — rules under development",
+      "effectiveDate": "August 2023 (rules expected 2025–2026)",
+      "penalty": "Up to ₹250 crore (~$30M USD) per violation",
+      "tagline": "India's landmark personal data law governing digital personal data of Indian residents.",
+      "whoMustComply": "Any organisation — domestic or international — that processes digital personal data of individuals located in India. Includes SaaS companies, e-commerce platforms, financial institutions, healthcare providers, and any business collecting data from Indian users.",
+      "keyRequirements": [
+        "Consent-based data processing with clear, itemised notice",
+        "Data Principal rights: access, correction, erasure, grievance redressal",
+        "Significant Data Fiduciaries subject to enhanced obligations including DPIA",
+        "Data Breach notification to the Data Protection Board",
+        "Restrictions on transfer of personal data outside India for specified categories",
+        "Children's data requires verifiable parental consent",
+        "Retention limitation — data must not be held beyond the stated purpose"
+      ],
+      "complianceJourney": [
+        {
+          "phase": "Data Mapping & Inventory",
+          "duration": "2–3 weeks",
+          "description": "Identify all personal data flows — collection, processing, storage, sharing, and deletion. Understand which data falls under DPDP scope and which categories are sensitive.",
+          "engagementIds": ["security-assessment"]
+        },
+        {
+          "phase": "Gap Assessment",
+          "duration": "2–3 weeks",
+          "description": "Measure current consent mechanisms, privacy notices, data subject request workflows, breach response capability, and third-party data sharing arrangements against DPDP requirements.",
+          "engagementIds": ["compliance-program", "third-party-risk-assessment"]
+        },
+        {
+          "phase": "Control Design & Policy",
+          "duration": "3–6 weeks",
+          "description": "Design consent management architecture, data subject rights workflows, retention and deletion controls, breach notification procedures, and Data Protection Officer (DPO) function.",
+          "engagementIds": ["compliance-program", "identity-security-engineering"]
+        },
+        {
+          "phase": "Implementation",
+          "duration": "4–8 weeks",
+          "description": "Implement technical controls — consent management platform, data classification, access controls for personal data stores, audit logging, and automated data deletion workflows.",
+          "engagementIds": ["identity-security-engineering", "endpoint-protection"]
+        },
+        {
+          "phase": "Incident Response Readiness",
+          "duration": "1–2 weeks",
+          "description": "Build and test a breach notification playbook that meets DPDP timelines and Data Protection Board notification requirements.",
+          "engagementIds": ["incident-response-planning"]
+        },
+        {
+          "phase": "Ongoing Compliance",
+          "duration": "Continuous",
+          "description": "Periodic DPIAs for new processing activities, third-party vendor reviews, access audits, and annual compliance review.",
+          "engagementIds": ["compliance-program", "third-party-risk-assessment"]
+        }
+      ]
+    },
+    {
+      "id": "gdpr",
+      "name": "GDPR",
+      "fullName": "General Data Protection Regulation (EU) 2016/679",
+      "scope": "European Union",
+      "scopeBadge": "EU",
+      "status": "In force",
+      "effectiveDate": "May 25, 2018",
+      "penalty": "Up to €20M or 4% of global annual turnover (whichever is higher)",
+      "tagline": "The gold standard of data protection law — with worldwide reach for any business handling EU resident data.",
+      "whoMustComply": "Any organisation worldwide that processes personal data of EU residents — regardless of where the organisation is based. Controllers (who determine the purpose of processing) and Processors (who process on behalf of controllers) both carry obligations.",
+      "keyRequirements": [
+        "Lawful basis for every processing activity (consent, contract, legitimate interest, etc.)",
+        "Data Subject Rights: access, rectification, erasure, portability, objection",
+        "Data Protection Impact Assessment (DPIA) for high-risk processing",
+        "Data Protection Officer (DPO) required for public bodies and certain controllers",
+        "Personal data breach notification within 72 hours to supervisory authority",
+        "Restrictions on international data transfers — SCCs, adequacy decisions, or BCRs",
+        "Privacy by Design and Default — embedded into product architecture",
+        "Records of Processing Activities (Article 30 register)"
+      ],
+      "complianceJourney": [
+        {
+          "phase": "Data Mapping (Article 30 Register)",
+          "duration": "2–4 weeks",
+          "description": "Map all personal data processing activities — purposes, legal basis, data categories, retention periods, third-party recipients, and cross-border transfers.",
+          "engagementIds": ["security-assessment"]
+        },
+        {
+          "phase": "Gap Assessment",
+          "duration": "2–3 weeks",
+          "description": "Assess current technical and organisational measures against GDPR requirements — consent workflows, privacy notices, subject rights procedures, breach response, and transfer mechanisms.",
+          "engagementIds": ["compliance-program", "third-party-risk-assessment"]
+        },
+        {
+          "phase": "Privacy & Security Control Design",
+          "duration": "3–6 weeks",
+          "description": "Design data minimisation controls, pseudonymisation/encryption for personal data stores, consent management, Subject Access Request (SAR) workflows, and transfer mechanisms (SCCs).",
+          "engagementIds": ["compliance-program", "identity-security-engineering"]
+        },
+        {
+          "phase": "Technical Implementation",
+          "duration": "4–8 weeks",
+          "description": "Implement encryption at rest and in transit for personal data, access controls and audit logging for data stores, data classification and DLP, and automated deletion schedules.",
+          "engagementIds": ["identity-security-engineering", "endpoint-protection"]
+        },
+        {
+          "phase": "Third-Party & Transfer Review",
+          "duration": "2–3 weeks",
+          "description": "Review and update Data Processing Agreements (DPAs), validate Standard Contractual Clauses for international transfers, and conduct vendor security assessments.",
+          "engagementIds": ["third-party-risk-assessment"]
+        },
+        {
+          "phase": "Breach Readiness & DPIA",
+          "duration": "1–2 weeks",
+          "description": "Establish and test breach notification procedures (72-hour clock), complete DPIAs for high-risk processing, and document residual risk decisions.",
+          "engagementIds": ["incident-response-planning"]
+        },
+        {
+          "phase": "Ongoing Compliance Program",
+          "duration": "Continuous",
+          "description": "Annual DPIA refresh, quarterly SAR response audits, data transfer adequacy monitoring, and supervisory authority engagement tracking.",
+          "engagementIds": ["compliance-program"]
+        }
+      ]
+    },
+    {
+      "id": "iso27001",
+      "name": "ISO 27001:2022",
+      "fullName": "ISO/IEC 27001:2022 — Information Security Management Systems",
+      "scope": "Global",
+      "scopeBadge": "GLOBAL",
+      "status": "Current standard",
+      "effectiveDate": "Published October 2022 — transition deadline October 2025",
+      "penalty": "Loss of certification; contractual and reputational consequences",
+      "tagline": "The international standard for information security management — demonstrating systematic, risk-based security governance.",
+      "whoMustComply": "Any organisation seeking ISO 27001 certification — commonly required by enterprise customers, public sector contracts, and regulated industries. 2022 edition supersedes 2013; certified organisations must transition by October 2025.",
+      "keyRequirements": [
+        "Information Security Management System (ISMS) covering scope, policy, and objectives",
+        "Information security risk assessment and risk treatment process",
+        "Statement of Applicability (SoA) for all 93 Annex A controls across 4 themes",
+        "Leadership commitment and defined information security roles",
+        "Internal audit programme and management review",
+        "Supplier and third-party security requirements (new in 2022)",
+        "Threat intelligence integration (new control A.5.7 in 2022)",
+        "Cloud security controls (new Annex A theme in 2022)"
+      ],
+      "complianceJourney": [
+        {
+          "phase": "Scope & Context Definition",
+          "duration": "1–2 weeks",
+          "description": "Define the ISMS scope — which assets, processes, and locations are in scope. Establish organisational context and interested parties (Clause 4).",
+          "engagementIds": ["security-assessment"]
+        },
+        {
+          "phase": "Risk Assessment",
+          "duration": "2–4 weeks",
+          "description": "Identify information assets, assess threats and vulnerabilities, determine risk levels, and select risk treatment options (Clause 6). Produce the risk register.",
+          "engagementIds": ["security-assessment", "compliance-program"]
+        },
+        {
+          "phase": "Statement of Applicability",
+          "duration": "1–2 weeks",
+          "description": "Review all 93 Annex A controls, determine applicability, document justification for exclusions, and map implemented controls.",
+          "engagementIds": ["compliance-program"]
+        },
+        {
+          "phase": "Control Implementation",
+          "duration": "6–12 weeks",
+          "description": "Implement or strengthen controls across all applicable Annex A domains — identity management, physical security, incident response, cryptography, supplier security, and cloud controls.",
+          "engagementIds": ["identity-security-engineering", "network-segmentation", "endpoint-protection", "incident-response-planning"]
+        },
+        {
+          "phase": "Policy & Documentation",
+          "duration": "3–4 weeks",
+          "description": "Author the information security policy, procedures, and supporting documentation to the depth required for Stage 1 audit.",
+          "engagementIds": ["compliance-program"]
+        },
+        {
+          "phase": "Internal Audit & Review",
+          "duration": "1–2 weeks",
+          "description": "Conduct an internal audit of the ISMS, identify nonconformities, and present findings to management for review.",
+          "engagementIds": ["security-accreditation"]
+        },
+        {
+          "phase": "Certification Audit Support",
+          "duration": "2–4 weeks",
+          "description": "Support Stage 1 (documentation review) and Stage 2 (on-site audit) — prepare evidence packs, coordinate with the certification body, and manage audit findings.",
+          "engagementIds": ["security-accreditation"]
+        }
+      ]
+    },
+    {
+      "id": "soc2",
+      "name": "SOC 2",
+      "fullName": "SOC 2 Type II — Trust Services Criteria (AICPA)",
+      "scope": "United States / Global",
+      "scopeBadge": "US",
+      "status": "Ongoing — annual assessment",
+      "effectiveDate": "Ongoing — no single effective date",
+      "penalty": "No regulatory penalty; loss of market access and enterprise customer trust",
+      "tagline": "The market standard for technology and cloud service providers — required by enterprise customers before sharing data or systems access.",
+      "whoMustComply": "SaaS companies, cloud service providers, managed service providers, data processors, and any technology organisation whose customers require assurance over security, availability, and data handling. Widely required in B2B procurement.",
+      "keyRequirements": [
+        "Security (Common Criteria) — the baseline Trust Services Criterion, required for all SOC 2 reports",
+        "Availability — system available for operation as committed or agreed",
+        "Processing Integrity — system processing is complete, valid, accurate, and timely",
+        "Confidentiality — information designated as confidential is protected",
+        "Privacy — personal information is collected, used, retained, and disclosed in conformity with commitments",
+        "Change management controls with defined approval and testing procedures",
+        "Logical and physical access controls aligned to principle of least privilege",
+        "Vendor risk management programme",
+        "Monitoring and alerting for security events across all in-scope systems"
+      ],
+      "complianceJourney": [
+        {
+          "phase": "Scope & Criteria Selection",
+          "duration": "1 week",
+          "description": "Define the SOC 2 scope — which systems, services, and infrastructure are in scope. Select which Trust Services Criteria to include beyond Security.",
+          "engagementIds": ["security-assessment"]
+        },
+        {
+          "phase": "Readiness Assessment",
+          "duration": "2–3 weeks",
+          "description": "Measure current controls against the Trust Services Criteria. Identify gaps in evidence collection, control documentation, and monitoring completeness.",
+          "engagementIds": ["compliance-program", "security-accreditation"]
+        },
+        {
+          "phase": "Control Design & Policy",
+          "duration": "3–6 weeks",
+          "description": "Design and document controls mapped to each applicable Trust Services Criterion — access management, change control, incident response, vulnerability management, and monitoring.",
+          "engagementIds": ["compliance-program", "identity-security-engineering"]
+        },
+        {
+          "phase": "Technical Control Implementation",
+          "duration": "4–8 weeks",
+          "description": "Implement identity controls (MFA, access reviews), endpoint security, vulnerability scanning, logging and alerting, encryption, and change management tooling.",
+          "engagementIds": ["identity-security-engineering", "endpoint-protection", "security-assessment"]
+        },
+        {
+          "phase": "Evidence Collection & Monitoring",
+          "duration": "Observation period (minimum 6 months for Type II)",
+          "description": "Operate controls continuously during the observation period, collect evidence for each control, and maintain an evidence repository for auditor review.",
+          "engagementIds": ["compliance-program"]
+        },
+        {
+          "phase": "Audit Support",
+          "duration": "3–4 weeks",
+          "description": "Prepare evidence packs, support auditor walkthroughs and testing, respond to findings, and obtain the SOC 2 Type II report.",
+          "engagementIds": ["security-accreditation"]
+        }
+      ]
+    },
+    {
+      "id": "pcidss",
+      "name": "PCI DSS v4.0.1",
+      "fullName": "Payment Card Industry Data Security Standard v4.0.1",
+      "scope": "Global",
+      "scopeBadge": "GLOBAL",
+      "status": "In force — all requirements mandatory",
+      "effectiveDate": "v4.0.1 June 2024; all future-dated requirements mandatory March 31, 2025",
+      "penalty": "Fines of $5,000–$100,000/month; card acceptance termination; breach liability",
+      "tagline": "The mandatory baseline for any organisation that stores, processes, or transmits payment card data.",
+      "whoMustComply": "All merchants, payment processors, acquiring banks, service providers, and any organisation that stores, processes, or transmits cardholder data or sensitive authentication data — regardless of transaction volume. Scope is determined by card brand compliance programmes.",
+      "keyRequirements": [
+        "Cardholder Data Environment (CDE) scoping and network segmentation",
+        "Requirement 6: Secure software development and web application firewall for payment pages",
+        "Requirement 8: Strong authentication — MFA mandatory for all CDE access (including non-console admin access)",
+        "Requirement 10: Log management and audit trail retention for 12 months",
+        "Requirement 11: Penetration testing (annual external, annual internal, segmentation testing twice yearly)",
+        "Requirement 12.3.2: Targeted risk analysis for each PCI DSS requirement",
+        "New v4.0: Anti-skimming controls for e-commerce payment pages (Requirement 6.4.3)",
+        "ASV scanning quarterly; penetration test annually",
+        "Third-party service provider management and compliance confirmation"
+      ],
+      "complianceJourney": [
+        {
+          "phase": "CDE Scoping",
+          "duration": "3–5 days",
+          "description": "Define the Cardholder Data Environment boundary, identify all in-scope systems and data flows, and explore network segmentation to reduce scope.",
+          "engagementIds": ["pci-dss-assessment"]
+        },
+        {
+          "phase": "Gap Assessment",
+          "duration": "1–2 weeks",
+          "description": "Assess current controls against all applicable PCI DSS v4.0.1 requirements. Produce a prioritised gap closure plan for your merchant or service provider level.",
+          "engagementIds": ["pci-dss-assessment", "security-assessment"]
+        },
+        {
+          "phase": "Network Segmentation",
+          "duration": "2–4 weeks",
+          "description": "Design and implement segmentation controls to isolate the CDE from the rest of the network — reducing scope and limiting the blast radius of any breach.",
+          "engagementIds": ["network-segmentation"]
+        },
+        {
+          "phase": "Access & Identity Controls",
+          "duration": "2–3 weeks",
+          "description": "Implement MFA for all CDE access, enforce least privilege, establish privileged access management, and build quarterly access reviews.",
+          "engagementIds": ["privileged-access-management", "identity-security-engineering"]
+        },
+        {
+          "phase": "Penetration Testing & Scanning",
+          "duration": "2–3 weeks",
+          "description": "Annual external and internal penetration test of the CDE, ASV scanning for external-facing systems, segmentation testing, and e-commerce payment page script integrity checks.",
+          "engagementIds": ["penetration-testing", "application-security-testing"]
+        },
+        {
+          "phase": "Evidence Pack & SAQ/ROC",
+          "duration": "1–2 weeks",
+          "description": "Compile the complete evidence pack for SAQ self-assessment or QSA audit submission — policies, configurations, scan results, and penetration test reports.",
+          "engagementIds": ["pci-dss-assessment"]
+        }
+      ]
+    },
+    {
+      "id": "nistcsf",
+      "name": "NIST CSF 2.0",
+      "fullName": "NIST Cybersecurity Framework 2.0",
+      "scope": "United States / Global",
+      "scopeBadge": "US",
+      "status": "Current version",
+      "effectiveDate": "Released February 26, 2024",
+      "penalty": "Mandatory for US federal agencies (FISMA); voluntary but widely adopted globally",
+      "tagline": "The definitive risk-based cybersecurity framework — now with a new Govern function and supply chain focus.",
+      "whoMustComply": "Mandatory for US federal agencies. Widely adopted voluntarily by organisations globally as a best-practice framework for cybersecurity risk management. CSF 2.0 introduced a sixth function (Govern) and expanded supply chain guidance versus the 2018 v1.1.",
+      "keyRequirements": [
+        "GOVERN (GV) — new in CSF 2.0: Cybersecurity Risk Management Strategy, roles, policies, and supply chain risk",
+        "IDENTIFY (ID) — asset management, risk assessment, improvement planning",
+        "PROTECT (PR) — identity management, data security, platform security, resilience",
+        "DETECT (DE) — continuous monitoring, adverse event detection",
+        "RESPOND (RS) — incident management, analysis, mitigation, reporting",
+        "RECOVER (RC) — recovery planning, communication, improvements",
+        "Supply chain risk management (GOVERN.SC) — significantly expanded in v2.0",
+        "Organisation profiles (current and target) as the basis for gap analysis"
+      ],
+      "complianceJourney": [
+        {
+          "phase": "Current Profile Assessment",
+          "duration": "2–4 weeks",
+          "description": "Build your CSF 2.0 Current Profile — assess existing capabilities against all six Functions, Categories, and Subcategories. Produce a heat map showing coverage and gaps.",
+          "engagementIds": ["security-assessment"]
+        },
+        {
+          "phase": "Target Profile & Prioritisation",
+          "duration": "1–2 weeks",
+          "description": "Define your Target Profile based on risk appetite, regulatory requirements, and business objectives. Prioritise gaps by risk impact to build a CSF implementation roadmap.",
+          "engagementIds": ["security-assessment", "compliance-program"]
+        },
+        {
+          "phase": "GOVERN Function Implementation",
+          "duration": "2–4 weeks",
+          "description": "Establish cybersecurity governance — policy framework, roles and responsibilities, risk management strategy, and supply chain risk programme (the new CSF 2.0 function).",
+          "engagementIds": ["compliance-program", "third-party-risk-assessment"]
+        },
+        {
+          "phase": "PROTECT & IDENTIFY Controls",
+          "duration": "4–8 weeks",
+          "description": "Implement technical controls across identity, data protection, endpoint security, and network controls — aligned to your Target Profile subcategories.",
+          "engagementIds": ["identity-security-engineering", "endpoint-protection", "network-segmentation"]
+        },
+        {
+          "phase": "DETECT Function — Monitoring",
+          "duration": "3–6 weeks",
+          "description": "Build or mature the monitoring capability — log coverage, detection rules aligned to MITRE ATT&CK, and alert quality metrics.",
+          "engagementIds": ["security-assessment"]
+        },
+        {
+          "phase": "RESPOND & RECOVER Capability",
+          "duration": "2–3 weeks",
+          "description": "Develop and test incident response plans and recovery procedures. Run a tabletop exercise to validate decision-making across the Respond and Recover functions.",
+          "engagementIds": ["incident-response-planning", "ransomware-readiness"]
+        },
+        {
+          "phase": "Continuous Improvement",
+          "duration": "Ongoing",
+          "description": "Quarterly profile reviews, annual framework reassessment, and supply chain risk programme updates.",
+          "engagementIds": ["compliance-program"]
+        }
+      ]
+    },
+    {
+      "id": "dora",
+      "name": "DORA",
+      "fullName": "Digital Operational Resilience Act (EU) 2022/2554",
+      "scope": "European Union",
+      "scopeBadge": "EU",
+      "status": "In force",
+      "effectiveDate": "January 17, 2025",
+      "penalty": "Up to 1% of daily worldwide turnover for up to 6 months; up to 2% for ICT third-party providers",
+      "tagline": "Mandatory operational resilience for EU financial entities — ICT risk, incident reporting, resilience testing, and third-party oversight.",
+      "whoMustComply": "EU-regulated financial entities: banks, investment firms, insurance companies, payment institutions, crypto-asset service providers, data reporting services, and their critical ICT third-party providers. Enforcement began January 17, 2025.",
+      "keyRequirements": [
+        "ICT Risk Management Framework (Chapter II) — governance, strategy, protection, detection, response, recovery",
+        "ICT-Related Incident Classification and Reporting — initial report within 4 hours; intermediate within 72 hours; final within 1 month",
+        "Digital Operational Resilience Testing — mandatory TLPT (Threat-Led Penetration Testing) for significant entities every 3 years",
+        "ICT Third-Party Risk Management (Chapter V) — register of all ICT providers; mandatory contractual provisions",
+        "Oversight of Critical ICT Third-Party Providers — direct EU supervisory oversight regime",
+        "Information Sharing — voluntary intelligence sharing between financial entities",
+        "Simplified ICT Risk Management for smaller entities (proportionality principle)"
+      ],
+      "complianceJourney": [
+        {
+          "phase": "DORA Scoping & Applicability",
+          "duration": "1–2 weeks",
+          "description": "Confirm DORA applicability and proportionality classification (significant vs. simplified). Map ICT systems, services, and third-party providers in scope.",
+          "engagementIds": ["security-assessment"]
+        },
+        {
+          "phase": "ICT Risk Management Framework",
+          "duration": "4–8 weeks",
+          "description": "Design or update the ICT Risk Management Framework covering governance, identify, protect, detect, respond, and recover functions — aligned to DORA Chapter II requirements.",
+          "engagementIds": ["compliance-program", "security-assessment"]
+        },
+        {
+          "phase": "Incident Classification & Reporting",
+          "duration": "2–3 weeks",
+          "description": "Build the incident classification taxonomy, reporting workflows (4h/72h/1-month timelines), and integration with competent authority notification channels.",
+          "engagementIds": ["incident-response-planning"]
+        },
+        {
+          "phase": "ICT Third-Party Risk Register",
+          "duration": "3–4 weeks",
+          "description": "Build the register of all ICT service providers, classify by criticality, review contracts against DORA mandatory provisions, and establish ongoing oversight arrangements.",
+          "engagementIds": ["third-party-risk-assessment"]
+        },
+        {
+          "phase": "DORA Resilience Testing",
+          "duration": "2–4 weeks",
+          "description": "Conduct basic resilience testing (annual) and — for significant entities — Threat-Led Penetration Testing (TLPT) every 3 years using the TIBER-EU framework.",
+          "engagementIds": ["penetration-testing", "ransomware-readiness"]
+        },
+        {
+          "phase": "Ongoing Compliance",
+          "duration": "Continuous",
+          "description": "Annual ICT risk assessment review, incident reporting process maintenance, TLPT cycle management, and third-party ICT risk programme updates.",
+          "engagementIds": ["compliance-program", "third-party-risk-assessment"]
+        }
+      ]
+    },
+    {
+      "id": "nis2",
+      "name": "NIS2",
+      "fullName": "NIS2 Directive (EU) 2022/2555",
+      "scope": "European Union",
+      "scopeBadge": "EU",
+      "status": "In force",
+      "effectiveDate": "Transposed into national law by EU member states — October 17, 2024",
+      "penalty": "Essential entities: up to €10M or 2% of global turnover; Important entities: up to €7M or 1.4% of turnover",
+      "tagline": "The EU's expanded cybersecurity directive — covering 18 sectors with mandatory risk management and 24-hour incident reporting.",
+      "whoMustComply": "Essential entities (energy, transport, banking, financial market infrastructure, health, drinking water, wastewater, digital infrastructure, ICT service management, public administration, space) and Important entities (postal services, waste management, manufacturing, food, chemicals, digital providers, research). Applies to medium and large organisations within these sectors operating in the EU.",
+      "keyRequirements": [
+        "Cybersecurity risk management measures — policies, incident handling, BCM, supply chain security, encryption, MFA",
+        "Incident reporting: significant incidents reported within 24 hours (early warning), 72 hours (notification), 1 month (final report)",
+        "Supply chain security — assess and address risks from direct suppliers and service providers",
+        "Vulnerability disclosure and handling policies",
+        "Management body accountability — governing bodies can be held personally liable for non-compliance",
+        "Security of network and information systems — technical and organisational measures proportionate to risk",
+        "Business continuity and crisis management planning"
+      ],
+      "complianceJourney": [
+        {
+          "phase": "Applicability Assessment",
+          "duration": "1 week",
+          "description": "Confirm NIS2 classification (Essential vs. Important entity) under applicable national transposition law. Identify sector-specific requirements and competent authority.",
+          "engagementIds": ["security-assessment"]
+        },
+        {
+          "phase": "Gap Assessment",
+          "duration": "2–3 weeks",
+          "description": "Measure current technical and organisational measures against NIS2 Article 21 requirements — risk management, incident handling, supply chain, access controls, cryptography, and MFA.",
+          "engagementIds": ["compliance-program", "security-assessment"]
+        },
+        {
+          "phase": "Risk Management Measures",
+          "duration": "4–8 weeks",
+          "description": "Implement the technical controls required by NIS2 Article 21: MFA, encryption, endpoint security, network security, and supply chain security programme.",
+          "engagementIds": ["identity-security-engineering", "network-segmentation", "endpoint-protection", "third-party-risk-assessment"]
+        },
+        {
+          "phase": "Incident Response & Reporting",
+          "duration": "2–3 weeks",
+          "description": "Build incident classification, 24h early warning, 72h notification, and 1-month final report workflows. Integrate with competent authority reporting channels.",
+          "engagementIds": ["incident-response-planning"]
+        },
+        {
+          "phase": "Supply Chain Security Programme",
+          "duration": "2–4 weeks",
+          "description": "Assess direct suppliers and ICT service providers, build contractual security requirements, and establish ongoing vendor risk monitoring.",
+          "engagementIds": ["third-party-risk-assessment"]
+        },
+        {
+          "phase": "BCM & Recovery",
+          "duration": "1–2 weeks",
+          "description": "Develop business continuity and disaster recovery plans, validate backup integrity, and test recovery procedures against realistic incident scenarios.",
+          "engagementIds": ["ransomware-readiness", "incident-response-planning"]
+        },
+        {
+          "phase": "Ongoing Compliance",
+          "duration": "Continuous",
+          "description": "Annual NIS2 risk assessment, supply chain review, incident report register maintenance, and management body cybersecurity training.",
+          "engagementIds": ["compliance-program"]
+        }
+      ]
+    }
+  ]
+}

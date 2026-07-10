@@ -30,6 +30,7 @@ export const navItems: NavItem[] = [
             { label: 'Security Journey', href: '/platform/understand/security-journey', description: 'Discover your maturity level' },
             { label: 'Threat Insights', href: '/platform/understand/threat-insights', description: 'Learn about modern threats' },
             { label: 'Industry Challenges', href: '/platform/understand/industry-challenges', description: 'Sector-specific security context' },
+            { label: 'Compliance Journey', href: '/platform/understand/compliance-journey', description: 'Map your path to compliance' },
           ],
         },
         {
