@@ -56,7 +56,8 @@ export function ComplianceJourneyExplorer() {
     <div>
       <h2 className="text-2xl font-bold text-white mb-2">Select a compliance framework</h2>
       <p className="text-zinc-500 text-sm mb-6">
-        See the compliance journey, key obligations, and which Mitigence engagements support each phase.
+        See the key obligations, the readiness journey, and which Mitigence advisory and engineering
+        services help you get there. The audit is always conducted by an independent body — we get you ready for it.
       </p>
 
       <div className="flex flex-wrap gap-3 mb-10">
@@ -225,11 +226,11 @@ export function ComplianceJourneyExplorer() {
             <div className="border border-red-900/30 bg-red-950/10 rounded-lg p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div>
                 <p className="text-white font-semibold mb-1">
-                  Ready to start your {selected.name} compliance program?
+                  Ready to get audit-ready for {selected.name}?
                 </p>
                 <p className="text-zinc-400 text-sm leading-relaxed">
-                  Speak with a Mitigence engineer — we&apos;ll scope your compliance journey and build a
-                  delivery plan tailored to your environment.
+                  Mitigence provides the advisory and engineering services to close your gaps and
+                  prepare your evidence — so you go into any audit with confidence.
                 </p>
               </div>
               <div className="flex gap-3 flex-shrink-0">

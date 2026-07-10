@@ -17,8 +17,9 @@ export default function ComplianceJourneyPage() {
         <div className="w-8 h-0.5 bg-red-600 mb-6" />
         <h1 className="text-4xl font-bold text-white mb-4">Compliance Framework Journey</h1>
         <p className="text-zinc-400 text-lg max-w-2xl mb-12">
-          Select a compliance framework to see the phased journey from gap assessment to
-          certification — with the Mitigence engagements that support each stage.
+          Select a compliance framework to see how Mitigence&apos;s advisory and engineering
+          services help you close gaps, build controls, and get audit-ready — the audit itself
+          is always conducted by an independent body.
         </p>
         <ComplianceJourneyExplorer />
       </div>

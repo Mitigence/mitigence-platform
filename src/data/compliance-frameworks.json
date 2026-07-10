@@ -178,16 +178,16 @@
           "engagementIds": ["compliance-program"]
         },
         {
-          "phase": "Internal Audit & Review",
+          "phase": "Internal Readiness Review",
           "duration": "1–2 weeks",
-          "description": "Conduct an internal audit of the ISMS, identify nonconformities, and present findings to management for review.",
-          "engagementIds": ["security-accreditation"]
+          "description": "Run a structured internal readiness review of your ISMS against the ISO 27001:2022 requirements — surface nonconformities, close evidence gaps, and confirm management review is complete before engaging a certification body.",
+          "engagementIds": ["security-accreditation", "compliance-program"]
         },
         {
-          "phase": "Certification Audit Support",
-          "duration": "2–4 weeks",
-          "description": "Support Stage 1 (documentation review) and Stage 2 (on-site audit) — prepare evidence packs, coordinate with the certification body, and manage audit findings.",
-          "engagementIds": ["security-accreditation"]
+          "phase": "Pre-Audit Evidence Preparation",
+          "duration": "1–2 weeks",
+          "description": "Compile your evidence pack — policies, control documentation, risk register, SoA, and audit logs — so your team is fully prepared when an independent certification body conducts Stage 1 and Stage 2 reviews. The certification itself is performed by an accredited external body; Mitigence gets you ready for it.",
+          "engagementIds": ["security-accreditation", "compliance-program"]
         }
       ]
     },
@@ -245,10 +245,10 @@
           "engagementIds": ["compliance-program"]
         },
         {
-          "phase": "Audit Support",
-          "duration": "3–4 weeks",
-          "description": "Prepare evidence packs, support auditor walkthroughs and testing, respond to findings, and obtain the SOC 2 Type II report.",
-          "engagementIds": ["security-accreditation"]
+          "phase": "Pre-Audit Readiness",
+          "duration": "2–3 weeks",
+          "description": "Prepare your evidence pack, conduct a readiness walkthrough against each Trust Services Criterion, and confirm controls are consistently operated and documented before your independent CPA auditor begins the Type II review. The SOC 2 report is issued by the independent auditor — Mitigence makes sure you're ready for that engagement.",
+          "engagementIds": ["security-accreditation", "compliance-program"]
         }
       ]
     },
@@ -306,10 +306,10 @@
           "engagementIds": ["penetration-testing", "application-security-testing"]
         },
         {
-          "phase": "Evidence Pack & SAQ/ROC",
+          "phase": "Audit Readiness Pack",
           "duration": "1–2 weeks",
-          "description": "Compile the complete evidence pack for SAQ self-assessment or QSA audit submission — policies, configurations, scan results, and penetration test reports.",
-          "engagementIds": ["pci-dss-assessment"]
+          "description": "Compile the evidence pack — policies, network diagrams, configurations, scan results, and penetration test reports — so you're fully prepared to complete your SAQ self-assessment or engage an independent QSA for your Report on Compliance. The assessment itself is conducted by your QSA or internal team; Mitigence gets the evidence in order.",
+          "engagementIds": ["pci-dss-assessment", "compliance-program"]
         }
       ]
     },
